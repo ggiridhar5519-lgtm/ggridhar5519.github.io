@@ -13,3 +13,27 @@ p {
   color: #555;
   font-size: 18px;
 }
+h2 {
+  margin-top: 40px;
+  color: #34495e;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin: 10px auto;
+  padding: 10px;
+  width: 300px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.role {
+  font-size: 20px;
+  color: #666;
+}
+
