@@ -18,8 +18,8 @@
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: linear-gradient(
-      rgba(245, 247, 251, 0.65),
-      rgba(245, 247, 251, 0.65)
+      rgba(245, 247, 251, 0.50),
+      rgba(245, 247, 251, 0.50)
     ),
     url("./bg.png");
   background-size: cover;
