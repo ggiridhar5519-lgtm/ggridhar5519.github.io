@@ -17,20 +17,12 @@
 }
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background: linear-gradient(
-      rgba(245, 247, 251, 0.99),
-      rgba(245, 247, 251, 0.99)
-    ),
-    url("./bg.png");
+  background: url("./bg.png") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  text-align: center;
   margin: 0;
-  padding: 60px 20px;
+  padding: 0;
   color: #2c3e50;
 }
-
 
 h1 {
   font-size: 36px;
