@@ -1,20 +1,26 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f5f7fb;
   text-align: center;
-  margin-top: 100px;
-}
-
-h1 {
+  margin: 0;
+  padding: 60px 20px;
   color: #2c3e50;
 }
 
-p {
-  color: #555;
-  font-size: 18px;
+h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
 }
+
+.role {
+  font-size: 20px;
+  color: #6c757d;
+  margin-bottom: 40px;
+}
+
 h2 {
-  margin-top: 40px;
+  margin-top: 50px;
+  margin-bottom: 20px;
   color: #34495e;
 }
 
@@ -24,35 +30,41 @@ ul {
 }
 
 li {
-  background: white;
-  margin: 10px auto;
-  padding: 10px;
-  width: 300px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #ffffff;
+  margin: 12px auto;
+  padding: 16px;
+  max-width: 520px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  text-align: left;
 }
 
-.role {
-  font-size: 20px;
-  color: #666;
+ul li strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
 }
+
 a {
-  color: #3498db;
+  color: #0d6efd;
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
   text-decoration: underline;
 }
+
 @media (max-width: 600px) {
-  li {
-    width: 90%;
+  body {
+    padding: 40px 15px;
   }
 
-  body {
-    margin-top: 50px;
+  h1 {
+    font-size: 28px;
+  }
+
+  li {
+    width: 100%;
   }
 }
-
-
-
