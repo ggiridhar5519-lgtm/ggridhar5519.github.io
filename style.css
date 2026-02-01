@@ -1,20 +1,6 @@
-.header {
-  background: linear-gradient(135deg, #0d6efd, #4dabf7);
-  color: white;
-  padding: 60px 20px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 38px;
-}
-
-.header .role {
-  color: #eaf2ff;
-  margin-top: 8px;
-}
+/* ===============================
+   GLOBAL
+================================ */
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: url("./bg.png") no-repeat center center fixed;
@@ -24,151 +10,106 @@ body {
   color: #2c3e50;
 }
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 5px;
+/* ===============================
+   HERO SECTION (TEXT HIGHLIGHT)
+================================ */
+.hero {
+  padding: 120px 20px 80px;
+  text-align: center;
 }
 
-.role {
-  font-size: 20px;
-  color: #6c757d;
-  margin-bottom: 40px;
+.hero-text {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.65); /* STRONG text highlight */
+  padding: 40px 50px;
+  border-radius: 14px;
 }
 
-h2 {
-  margin-top: 50px;
-  margin-bottom: 20px;
+/* NAME */
+.hero-text h1 {
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.9);
+}
+
+/* ROLE */
+.hero-text .role {
+  color: #dbeafe;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* SUMMARY */
+.hero-text .summary {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 850px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* ===============================
+   SECTIONS (NAUKRI STYLE)
+================================ */
+.section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section h2 {
   color: #34495e;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  background: #ffffff;
-  margin: 12px auto;
-  padding: 16px;
-  max-width: 520px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  text-align: left;
-}
-
-ul li strong {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 16px;
-}
-
-a {
-  color: #0d6efd;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 40px 15px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  li {
-    width: 100%;
-  }
-}
-h2 {
+  margin-bottom: 20px;
   position: relative;
 }
 
-h2::after {
+/* underline */
+.section h2::after {
   content: "";
   display: block;
   width: 60px;
   height: 4px;
   background: #0d6efd;
-  margin: 10px auto 0;
+  margin-top: 8px;
   border-radius: 2px;
 }
-section {
-  margin-bottom: 60px;
-}
 
-ul {
-  margin-bottom: 40px;
-}
-
-li p {
-  margin: 6px 0 0;
-}
-/* NAUKRI STYLE PROFILE CARD */
-.profile-card {
-  background: #ffffff;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  text-align: left;
-}
-
-.profile-card h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-.profile-card .role {
-  font-size: 18px;
-  color: #0d6efd;
-  margin: 6px 0 12px;
-}
-
-.profile-card .summary {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* SECTIONS */
-.section {
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: left;
-}
-
-.section h2 {
-  margin-bottom: 20px;
-}
-
-/* SKILLS */
+/* ===============================
+   SKILLS
+================================ */
 .skill-list {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  list-style: none;
+  padding: 0;
 }
 
 .skill-list li {
   background: #eef3ff;
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 20px;
   font-size: 14px;
 }
 
-/* PROJECTS */
+/* ===============================
+   PROJECTS
+================================ */
+.project-list {
+  list-style: none;
+  padding: 0;
+}
+
 .project-list li {
   background: #ffffff;
-  padding: 16px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .project-list strong {
@@ -180,59 +121,40 @@ li p {
   color: #555;
 }
 
-/* HERO TEXT HIGHLIGHT */
-.hero-text h1 {
-  color: #ffffff;
-  font-size: 42px;
-  font-weight: 800; /* VERY THICK */
-  margin-bottom: 12px;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
-}
-
-.hero-text .role {
-  color: #dbeafe;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 18px;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-.hero-text .summary {
-  color: #ffffff;
-  font-size: 17px;
+/* ===============================
+   LINKS
+================================ */
+a {
+  color: #0d6efd;
+  text-decoration: none;
   font-weight: 500;
-  line-height: 1.7;
-  max-width: 820px;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-
-
-.hero-text {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.45); /* text highlight */
-  padding: 30px 40px;
-  border-radius: 12px;
+a:hover {
+  text-decoration: underline;
 }
 
-.hero-text h1 {
-  color: #ffffff;
-  font-size: 38px;
-  margin-bottom: 10px;
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 600px) {
+  .hero {
+    padding: 80px 15px 60px;
+  }
+
+  .hero-text {
+    padding: 30px 25px;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .hero-text .role {
+    font-size: 18px;
+  }
 }
 
-.hero-text .role {
-  color: #cfe2ff;
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.hero-text .summary {
-  color: #f1f1f1;
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 800px;
-}
 
 
 
