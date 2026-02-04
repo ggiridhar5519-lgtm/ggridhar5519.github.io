@@ -121,4 +121,45 @@ body {
   color: #cbd5f5;
   margin-bottom: 18px;
 }
+/* PROJECTS */
+.project-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.project-card h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.project-duration {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 14px;
+}
+
+.project-card p {
+  color: #cbd5f5;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.project-card ul {
+  margin-left: 18px;
+  margin-bottom: 14px;
+}
+
+.project-card li {
+  margin-bottom: 8px;
+  color: #e5e7eb;
+}
+
+.project-card .tools {
+  font-size: 14px;
+  color: #94a3b8;
+}
 
