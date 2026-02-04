@@ -8,7 +8,7 @@
 }
 
 /* =========================
-   GLOBAL
+   GLOBAL (CLOUD / DEVOPS BG)
 ========================= */
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
@@ -16,14 +16,11 @@ body {
   line-height: 1.6;
 
   background-color: #f8fafc;
-
-  /* Cloud / DevOps pattern */
   background-image:
     radial-gradient(circle at 25% 20%, rgba(14,165,233,0.10), transparent 35%),
     radial-gradient(circle at 75% 30%, rgba(99,102,241,0.08), transparent 35%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23cbd5e1' stroke-width='0.6' opacity='0.35'%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='40' cy='20' r='2'/%3E%3Ccircle cx='70' cy='10' r='2'/%3E%3Ccircle cx='20' cy='50' r='2'/%3E%3Ccircle cx='60' cy='60' r='2'/%3E%3Cline x1='10' y1='10' x2='40' y2='20'/%3E%3Cline x1='40' y1='20' x2='70' y2='10'/%3E%3Cline x1='20' y1='50' x2='60' y2='60'/%3E%3C/g%3E%3C/svg%3E");
 }
-
 
 /* =========================
    NAVBAR (PREMIUM WHITE)
@@ -46,45 +43,40 @@ body {
   align-items: center;
 }
 
-/* LOGO / LABEL WITH ANIMATION */
+/* =========================
+   LOGO ICON (ANIMATED)
+========================= */
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
   font-size: 18px;
   color: #0f172a;
-  position: relative;
   cursor: pointer;
-  animation: logoFade 0.8s ease-out forwards;
 }
 
-/* underline animation */
-.logo::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: #0ea5e9;
-  transition: width 0.4s ease;
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #0ea5e9;
+  border-radius: 50%;
+  animation: logoPulse 1.6s ease-in-out infinite;
 }
 
-.logo:hover::after {
-  width: 100%;
+.logo-text {
+  letter-spacing: 0.3px;
 }
 
-/* page load animation */
-@keyframes logoFade {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes logoPulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.8); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.5; }
 }
 
-
+/* =========================
+   NAV LINKS
+========================= */
 .nav-links a {
   color: #334155;
   margin-left: 20px;
@@ -167,14 +159,13 @@ body {
 ========================= */
 .hero-image img {
   width: 340px;
-  height: auto;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
 }
 
 /* =========================
-   GENERIC PAGE CONTENT
+   PAGE CONTENT
 ========================= */
 .page {
   max-width: 900px;
@@ -185,7 +176,6 @@ body {
 .page h1 {
   font-size: 36px;
   margin-bottom: 24px;
-  color: #0f172a;
 }
 
 .page p {
@@ -195,7 +185,7 @@ body {
 }
 
 /* =========================
-   PROJECT CARDS (PREMIUM)
+   PROJECT CARDS
 ========================= */
 .project-card {
   background: #ffffff;
@@ -208,27 +198,9 @@ body {
 
 .project-card h2 {
   font-size: 24px;
-  margin-bottom: 6px;
-  color: #0f172a;
 }
 
-.project-duration {
-  font-size: 14px;
-  color: #64748b;
-  margin-bottom: 14px;
-}
-
-.project-card p,
-.project-card li {
-  color: #475569;
-  line-height: 1.6;
-}
-
-.project-card ul {
-  margin-left: 18px;
-  margin-bottom: 14px;
-}
-
+.project-duration,
 .project-card .tools {
   font-size: 14px;
   color: #64748b;
@@ -251,85 +223,3 @@ body {
     width: 240px;
   }
 }
-
-/* =========================
-   LOGO ICON ANIMATION
-========================= */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 18px;
-  color: #0f172a;
-  cursor: pointer;
-}
-
-/* circular icon */
-.logo-dot {
-  width: 10px;
-  height: 10px;
-  background: #0ea5e9;
-  border-radius: 50%;
-  animation: pulse 1.6s ease-in-out infinite;
-}
-
-/* text */
-.logo-text {
-  letter-spacing: 0.3px;
-}
-
-/* pulse animation */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.6);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}
-
-/* FORCE LOGO ICON VISIBILITY */
-.navbar .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.navbar .logo-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #0ea5e9;
-  border-radius: 50%;
-  display: inline-block;
-  animation: logoPulse 1.6s ease-in-out infinite;
-}
-
-.navbar .logo-text {
-  font-weight: 700;
-  font-size: 18px;
-  color: #0f172a;
-}
-
-@keyframes logoPulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.8);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-}
-
-
