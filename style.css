@@ -102,6 +102,16 @@ body {
   padding: 80px 20px;
 }
 
+.hero {
+  background:
+    linear-gradient(
+      to right,
+      rgba(248,250,252,0.95),
+      rgba(248,250,252,0.85),
+      rgba(248,250,252,0.75)
+    );
+}
+
 .hero-container {
   max-width: 1200px;
   margin: auto;
