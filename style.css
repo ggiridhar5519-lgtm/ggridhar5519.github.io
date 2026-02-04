@@ -12,10 +12,23 @@
 ========================= */
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
-  background: #f8fafc;              /* premium off-white */
-  color: #0f172a;                   /* deep readable text */
+  color: #0f172a;
   line-height: 1.6;
+
+  /* Premium tech background */
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(14,165,233,0.08), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(99,102,241,0.06), transparent 40%),
+    linear-gradient(rgba(15,23,42,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,0.04) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    40px 40px,
+    40px 40px;
 }
+
 
 /* =========================
    NAVBAR (PREMIUM WHITE)
