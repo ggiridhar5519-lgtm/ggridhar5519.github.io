@@ -8,9 +8,7 @@
 /* BODY */
 body {
     font-family: 'Poppins', sans-serif;
-    color: white;
     overflow-x: hidden;
-    background: linear-gradient(120deg, #000000, #1a0033, #000000);
 }
 
 /* NAVBAR */
@@ -20,6 +18,8 @@ body {
     align-items: center;
     padding: 20px 10%;
     background: black;
+    color: white;
+    position: relative;
 }
 
 /* LINKS */
@@ -41,11 +41,43 @@ body {
     cursor: pointer;
 }
 
-/* BACKGROUND */
+/* HERO */
+.hero-modern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    background: #ffffff;
+    color: black;
+}
+
+.hero-left h1 {
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 0.9;
+}
+
+.hero-left p {
+    margin: 20px 0;
+    color: #555;
+}
+
+/* BUTTON */
+.btn-modern {
+    padding: 12px 25px;
+    background: black;
+    color: white;
+    text-decoration: none;
+}
+
+/* IMAGE */
+.hero-right img {
+    width: 350px;
+}
+
+/* BACKGROUND SLIDER */
 .bg-slider {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -70,40 +102,6 @@ body {
     5% { opacity: 1; }
     25% { opacity: 1; }
     30% { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-/* HERO */
-.hero-modern {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 10%;
-    background: #ffffff;
-    color: black;
-}
-
-.hero-left h1 {
-    font-size: 110px;
-    line-height: 0.85;
-    font-weight: 900;
-}
-
-.hero-left p {
-    margin: 25px 0;
-    color: #555;
-}
-
-.btn-modern {
-    padding: 12px 25px;
-    background: black;
-    color: white;
-    text-decoration: none;
-}
-
-/* IMAGE */
-.hero-right img {
-    width: 350px;
 }
 
 /* MOBILE */
@@ -122,10 +120,6 @@ body {
         right: 20px;
         width: 200px;
         padding: 20px;
-    }
-
-    .nav-links a {
-        margin: 10px 0;
     }
 
     .nav-links.active {
