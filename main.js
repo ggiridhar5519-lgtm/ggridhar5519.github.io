@@ -1,15 +1,10 @@
-// ACTIVE NAV LINK
-const links = document.querySelectorAll(".nav-link");
-const currentPage = location.pathname.split("/").pop();
+document.addEventListener("DOMContentLoaded", function () {
 
-links.forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-    }
-});
-
-// HAMBURGER MENU TOGGLE
-function toggleMenu() {
+    const menuBtn = document.querySelector(".menu-toggle");
     const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
-}
+
+    menuBtn.addEventListener("click", function () {
+        nav.classList.toggle("active");
+    });
+
+});
