@@ -5,12 +5,11 @@
     box-sizing: border-box;
 }
 
-/* BODY - STRONG VISIBLE CHANGE */
+/* BODY */
 body {
     font-family: 'Poppins', sans-serif;
     color: white;
     overflow-x: hidden;
-
     background: linear-gradient(120deg, #000000, #1a0033, #000000);
 }
 
@@ -29,45 +28,56 @@ body {
     font-weight: bold;
 }
 
-/* HERO SECTION */
-.hero {
+/* MODERN HERO */
+.hero-modern {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 10%;
+    padding: 100px 10%;
+    background: #ffffff;
+    color: black;
 }
 
-/* TEXT */
-.hero h1 {
-    font-size: 50px;
-    color: yellow;
+/* LEFT */
+.hero-left {
+    max-width: 500px;
 }
 
-.hero h2 {
-    color: orange;
+.hero-left h1 {
+    font-size: 110px;
+    line-height: 0.85;
+    font-weight: 900;
+    letter-spacing: -2px;
 }
 
-/* IMAGE FIX */
-.hero img {
-    width: 250px;
-    border-radius: 10px;
+.hero-left p {
+    margin: 25px 0;
+    color: #555;
+    font-size: 15px;
 }
 
 /* BUTTON */
-.btn {
-    background: red;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
+.btn-modern {
     display: inline-block;
-    margin-top: 10px;
+    padding: 12px 25px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* CARD */
+/* RIGHT IMAGE */
+.hero-right img {
+    width: 380px;
+    border-radius: 10px;
+}
+
+/* CARDS */
 .skill-card, .project-card {
     background: #111;
     padding: 20px;
     margin: 20px;
+    border-radius: 10px;
 }
 
 /* SKILL BAR */
@@ -82,12 +92,6 @@ body {
     background: red;
 }
 
-/* MOBILE */
-@media(max-width: 768px) {
-    .hero {
-        flex-direction: column;
-    }
-}
 /* BACKGROUND IMAGE SLIDER */
 .bg-slider {
     position: fixed;
@@ -96,7 +100,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    overflow: hidden;
 }
 
 .bg-slider img {
@@ -108,17 +111,43 @@ body {
     animation: slideShow 20s infinite;
 }
 
-/* EACH IMAGE DELAY */
 .bg-slider img:nth-child(1) { animation-delay: 0s; }
 .bg-slider img:nth-child(2) { animation-delay: 5s; }
 .bg-slider img:nth-child(3) { animation-delay: 10s; }
 .bg-slider img:nth-child(4) { animation-delay: 15s; }
 
-/* ANIMATION */
 @keyframes slideShow {
     0% { opacity: 0; }
     5% { opacity: 1; }
     25% { opacity: 1; }
     30% { opacity: 0; }
     100% { opacity: 0; }
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+
+    .hero-modern {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 50px;
+    }
+
+    .hero-right img {
+        margin-top: 20px;
+        width: 250px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 10px 0;
+    }
 }
