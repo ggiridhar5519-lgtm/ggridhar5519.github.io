@@ -320,3 +320,38 @@ body{
   }
 
 }
+/* SKILLS GROUP */
+.skills-group{
+  margin-top:40px;
+}
+
+.skills-group h2{
+  margin-bottom:15px;
+  font-size:18px;
+  color:#333;
+}
+
+/* SKILL */
+.skill{
+  margin:12px 0;
+}
+
+.skill span{
+  font-size:14px;
+}
+
+/* BAR */
+.bar{
+  height:6px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:6px;
+}
+
+.fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#4a6cf7,#00c3ff);
+  transition:1.5s ease;
+}
