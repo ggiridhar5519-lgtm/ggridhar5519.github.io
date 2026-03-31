@@ -1,59 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giridhar Rao</title>
 
-  /* ===== INTRO FIX ===== */
-  const intro = document.getElementById("introScreen");
-  const main = document.getElementById("mainContent");
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  function showMainSite() {
-    if (intro) {
-      intro.style.opacity = "0";
-      intro.style.pointerEvents = "none";
+<body>
 
-      setTimeout(() => {
-        intro.style.display = "none";
-      }, 600);
-    }
+  <!-- INTRO -->
+  <div id="introScreen">
+    <h1>Hello...</h1>
+    <h1>I'm Giridhar Rao</h1>
+  </div>
 
-    if (main) {
-      main.style.opacity = "1";
-      main.style.visibility = "visible";
-    }
-  }
+  <!-- MAIN -->
+  <div id="mainContent">
 
-  // Auto trigger after 2 seconds
-  setTimeout(showMainSite, 2000);
+    <nav>
+      <div id="menuToggle">☰</div>
+      <div id="navLinks">
+        <a href="#">Home</a>
+      </div>
+    </nav>
 
+    <section>
+      <h1>Main Content</h1>
+    </section>
 
-  /* ===== MENU ===== */
-  const btn = document.getElementById("menuToggle");
-  const nav = document.getElementById("navLinks");
+  </div>
 
-  if (btn && nav) {
-    btn.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-  }
+  <!-- ONLY THIS JS LINK -->
+  <script src="main.js"></script>
 
-});
-
-
-/* ===== SKILLS ===== */
-window.addEventListener("load", () => {
-  const cards = document.querySelectorAll(".skill-card");
-
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add("show");
-    }, index * 120);
-  });
-});
-
-
-/* ===== CURSOR ===== */
-document.querySelectorAll(".skill-card").forEach(card => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty("--x", `${e.clientX - rect.left}px`);
-    card.style.setProperty("--y", `${e.clientY - rect.top}px`);
-  });
-});
+</body>
+</html>
