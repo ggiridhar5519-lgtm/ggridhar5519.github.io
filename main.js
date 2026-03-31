@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
-const btn=document.querySelector(".menu-toggle");
-const nav=document.getElementById("navLinks");
+/* 🔥 NAV MENU */
+const btn = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
 
 if(btn){
   btn.addEventListener("click",()=>{
@@ -9,10 +10,19 @@ if(btn){
   });
 }
 
-/* SKILL ANIMATION */
+/* 🔥 INTRO CONTROL */
+const intro = document.getElementById("introScreen");
+const main = document.getElementById("mainContent");
+
+setTimeout(()=>{
+  intro.classList.add("hide");
+  main.classList.add("show");
+}, 2000); // 2 sec intro
+
+/* 🔥 SKILL ANIMATION (keep safe) */
 document.querySelectorAll(".fill").forEach(el=>{
   setTimeout(()=>{
-    el.style.width=el.dataset.width;
+    el.style.width = el.dataset.width;
   },500);
 });
 
