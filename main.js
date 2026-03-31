@@ -1,45 +1,75 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-/* 🔥 NAV MENU */
-const btn = document.getElementById("menuToggle");
-const nav = document.getElementById("navLinks");
+  /* =========================
+     📱 MOBILE MENU TOGGLE
+  ========================== */
+  const btn = document.getElementById("menuToggle");
+  const nav = document.getElementById("navLinks");
 
-if(btn){
-  btn.addEventListener("click",()=>{
-    nav.classList.toggle("active");
-  });
-}
+  if (btn) {
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
 
-/* 🔥 INTRO CONTROL */
+});
+
+
+/* =========================
+   🎬 INTRO SCREEN CONTROL
+========================== */
 const intro = document.getElementById("introScreen");
 const main = document.getElementById("mainContent");
 
-setTimeout(()=>{
-  intro.classList.add("hide");
-  main.classList.add("show");
-}, 2000); // 2 sec intro
+if (intro && main) {
+  setTimeout(() => {
+    intro.classList.add("hide");
+    main.classList.add("show");
+  }, 2200); // premium timing
+}
 
-/* 🔥 SKILL ANIMATION (keep safe) */
-document.querySelectorAll(".fill").forEach(el=>{
-  setTimeout(()=>{
-    el.style.width = el.dataset.width;
-  },500);
-});
 
-});
-/* 🔥 SKILL CARD ANIMATION */
+/* =========================
+   ⚡ SKILL CARD ANIMATION
+========================== */
+
 const cards = document.querySelectorAll(".skill-card");
 
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach((entry,index)=>{
-    if(entry.isIntersecting){
-      setTimeout(()=>{
-        entry.target.classList.add("show");
-      }, index * 120);
-    }
+function showSkills() {
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 120); // stagger effect
   });
-},{threshold:0.2});
+}
 
-cards.forEach(card=>{
-  observer.observe(card);
+
+/* =========================
+   🎯 TRIGGER WHEN PAGE LOADS
+========================== */
+
+window.addEventListener("load", () => {
+  if (cards.length > 0) {
+    showSkills();
+  }
+});
+
+
+/* =========================
+   🎯 OPTIONAL: CLICK TRIGGER
+========================== */
+
+const skillLink = document.querySelector('a[href="skills.html"]');
+
+if (skillLink) {
+  skillLink.addEventListener("click", () => {
+    localStorage.setItem("skillsAnim", "true");
+  });
+}
+
+window.addEventListener("load", () => {
+  if (localStorage.getItem("skillsAnim")) {
+    showSkills();
+    localStorage.removeItem("skillsAnim");
+  }
 });
