@@ -1,66 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giridhar Rao</title>
+document.addEventListener("DOMContentLoaded", () => {
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  /* ===== INTRO FIX ===== */
+  const intro = document.getElementById("introScreen");
+  const main = document.getElementById("mainContent");
 
-</head>
+  function showMainSite() {
+    if (intro) {
+      intro.style.opacity = "0";
+      intro.style.pointerEvents = "none";
 
-<body>
+      setTimeout(() => {
+        intro.style.display = "none";
+      }, 600);
+    }
 
-<!-- 🔥 INTRO SCREEN -->
-<div class="intro-screen" id="introScreen">
-  <h1 class="intro-text">Hello...</h1>
-  <h1 class="intro-text">I'm Giridhar Rao</h1>
-</div>
+    if (main) {
+      main.style.opacity = "1";
+      main.style.visibility = "visible";
+    }
+  }
 
-<!-- 🔥 MAIN WEBSITE -->
-<div class="main-content" id="mainContent">
+  // Auto trigger after 2 seconds
+  setTimeout(showMainSite, 2000);
 
-  <!-- NAVBAR -->
-  <nav class="navbar container">
-    <h2 class="logo">Giridhar Rao</h2>
 
-    <div class="menu-toggle" id="menuToggle">☰</div>
+  /* ===== MENU ===== */
+  const btn = document.getElementById("menuToggle");
+  const nav = document.getElementById("navLinks");
 
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="experience.html">Experience</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+  if (btn && nav) {
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
 
-  <!-- 🔥 HERO SECTION -->
-  <section class="hero container">
+});
 
-    <!-- LEFT -->
-    <div class="hero-text">
-      <h1>👋 Hello, I'm Giridhar Rao</h1>
-      <h2 class="subtitle">SAP CPI Developer | Integration Specialist</h2>
 
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn primary">Hire Me</a>
-        <a href="GIRIDHAR RAO DEVOPS_RESUME.docx" class="btn secondary">Download Resume</a>
-      </div>
-    </div>
+/* ===== SKILLS ===== */
+window.addEventListener("load", () => {
+  const cards = document.querySelectorAll(".skill-card");
 
-    <!-- RIGHT -->
-    <div class="hero-image">
-      <img src="profile.png" alt="profile">
-    </div>
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 120);
+  });
+});
 
-  </section>
 
-</div>
-
-<script src="main.js"></script>
-
-</body>
-</html>
+/* ===== CURSOR ===== */
+document.querySelectorAll(".skill-card").forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--x", `${e.clientX - rect.left}px`);
+    card.style.setProperty("--y", `${e.clientY - rect.top}px`);
+  });
+});
