@@ -4,20 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About</title>
+
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-  <div class="bg-scroll"></div>
 
-<canvas id="particles"></canvas>
+<!-- NAVBAR -->
+<nav class="navbar container">
+  <h2 class="logo">Giridhar Rao</h2>
 
-<nav class="navbar">
-  <h2>Giridhar Rao</h2>
-  <div class="menu-toggle">☰</div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
   <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
     <a href="skills.html">Skills</a>
     <a href="projects.html">Projects</a>
     <a href="experience.html">Experience</a>
@@ -25,11 +28,53 @@
   </div>
 </nav>
 
-<main class="page">
-<h1>About Me</h1>
-<p>SAP CPI Consultant with 6+ years experience in enterprise integration.</p>
-</main>
+<!-- 🔥 ABOUT SECTION -->
+<section class="section container">
+
+  <!-- TITLE -->
+  <div class="section-header">
+    <h1>About Me</h1>
+    <p class="section-subtitle">
+      SAP CPI Consultant with 6+ years of experience in enterprise integration.
+    </p>
+  </div>
+
+  <!-- CARD -->
+  <div class="about-card">
+
+    <p>
+      I specialize in designing and developing integration solutions using SAP CPI and SAP BTP Integration Suite. 
+      I have hands-on experience working with enterprise systems like SAP S/4HANA, SAP ECC, and third-party platforms.
+    </p>
+
+    <p>
+      My expertise includes building scalable iFlows, handling real-time and batch integrations, and implementing 
+      secure communication using OAuth2 and certificates.
+    </p>
+
+    <!-- HIGHLIGHTS -->
+    <div class="about-highlights">
+      <div class="highlight">
+        <h3>6+ Years</h3>
+        <span>Experience</span>
+      </div>
+
+      <div class="highlight">
+        <h3>SAP CPI</h3>
+        <span>Integration</span>
+      </div>
+
+      <div class="highlight">
+        <h3>Groovy</h3>
+        <span>Scripting</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
 <script src="main.js"></script>
+
 </body>
 </html>
