@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
-     📱 MOBILE MENU TOGGLE
-  ========================== */
+  /* MENU */
   const btn = document.getElementById("menuToggle");
   const nav = document.getElementById("navLinks");
 
@@ -15,23 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* =========================
-   🎬 INTRO SCREEN CONTROL
-========================== */
-const intro = document.getElementById("introScreen");
-const main = document.getElementById("mainContent");
-
-if (intro && main) {
-  setTimeout(() => {
-    intro.classList.add("hide");
-    main.classList.add("show");
-  }, 2200); // premium timing
-}
-
-
-/* =========================
-   ⚡ SKILL CARD ANIMATION
-========================== */
+/* ===== SKILL ANIMATION ===== */
 
 const cards = document.querySelectorAll(".skill-card");
 
@@ -39,14 +21,9 @@ function showSkills() {
   cards.forEach((card, index) => {
     setTimeout(() => {
       card.classList.add("show");
-    }, index * 120); // stagger effect
+    }, index * 120);
   });
 }
-
-
-/* =========================
-   🎯 TRIGGER WHEN PAGE LOADS
-========================== */
 
 window.addEventListener("load", () => {
   if (cards.length > 0) {
@@ -55,21 +32,16 @@ window.addEventListener("load", () => {
 });
 
 
-/* =========================
-   🎯 OPTIONAL: CLICK TRIGGER
-========================== */
+/* ===== CURSOR GLOW ===== */
 
-const skillLink = document.querySelector('a[href="skills.html"]');
+document.querySelectorAll(".skill-card").forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
 
-if (skillLink) {
-  skillLink.addEventListener("click", () => {
-    localStorage.setItem("skillsAnim", "true");
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.setProperty("--x", `${x}px`);
+    card.style.setProperty("--y", `${y}px`);
   });
-}
-
-window.addEventListener("load", () => {
-  if (localStorage.getItem("skillsAnim")) {
-    showSkills();
-    localStorage.removeItem("skillsAnim");
-  }
 });
