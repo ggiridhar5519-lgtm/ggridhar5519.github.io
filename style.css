@@ -419,3 +419,22 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+/* 🔥 ANIMATED PREMIUM BACKGROUND */
+body{
+  background:
+    radial-gradient(circle at 20% 30%, rgba(74,108,247,0.15), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(0,195,255,0.12), transparent 40%),
+    linear-gradient(180deg, #f8faff 0%, #eef2ff 100%);
+  animation: bgMove 12s ease-in-out infinite alternate;
+}
+
+/* ✨ MOVEMENT */
+@keyframes bgMove{
+  0%{
+    background-position: 0% 0%, 100% 0%, 0% 0%;
+  }
+  100%{
+    background-position: 10% 10%, 90% 20%, 0% 0%;
+  }
+}
