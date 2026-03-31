@@ -1,28 +1,26 @@
-/* =========================
-   GLOBAL SAFE INIT
-========================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===== INTRO HANDLER ===== */
-  const intro = document.getElementById("intro");
+  const intro = document.getElementById("introScreen");
+  const main = document.getElementById("mainContent");
 
-  function hideIntro() {
+  function showMainSite() {
     if (intro) {
       intro.style.opacity = "0";
       intro.style.pointerEvents = "none";
 
       setTimeout(() => {
         intro.style.display = "none";
-      }, 500); // matches CSS transition
+      }, 600);
+    }
+
+    if (main) {
+      main.style.opacity = "1";
+      main.style.visibility = "visible";
     }
   }
 
-  // Force intro to disappear after max 2.5s
-  setTimeout(hideIntro, 2500);
+  setTimeout(showMainSite, 2000);
 
-
-  /* ===== MENU ===== */
   const btn = document.getElementById("menuToggle");
   const nav = document.getElementById("navLinks");
 
@@ -34,53 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-/* =========================
-   WINDOW LOAD (ALL ASSETS)
-========================= */
-
 window.addEventListener("load", () => {
-
-  /* ===== FORCE INTRO REMOVE (backup safety) ===== */
-  const intro = document.getElementById("intro");
-  if (intro) {
-    intro.style.display = "none";
-  }
-
-  /* ===== SKILL ANIMATION ===== */
   const cards = document.querySelectorAll(".skill-card");
 
-  function showSkills() {
-    cards.forEach((card, index) => {
-      setTimeout(() => {
-        card.classList.add("show");
-      }, index * 120);
-    });
-  }
-
-  if (cards.length > 0) {
-    showSkills();
-  }
-
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 120);
+  });
 });
 
-
-/* =========================
-   CURSOR GLOW (SAFE)
-========================= */
-
-const skillCards = document.querySelectorAll(".skill-card");
-
-if (skillCards.length > 0) {
-  skillCards.forEach(card => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      card.style.setProperty("--x", `${x}px`);
-      card.style.setProperty("--y", `${y}px`);
-    });
+document.querySelectorAll(".skill-card").forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--x", `${e.clientX - rect.left}px`);
+    card.style.setProperty("--y", `${e.clientY - rect.top}px`);
   });
-}
+});
