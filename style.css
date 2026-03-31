@@ -1,123 +1,68 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* 🔥 BACKGROUND IMAGE SCROLL */
-.bg-scroll{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:200%;
-  z-index:-1;
-  background-image:
-    url('https://images.unsplash.com/photo-1581091215367-59ab6b6d0c7c'),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475'),
-    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71');
-    
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
-  animation:scrollBg 40s linear infinite;
-  opacity:0.35;
-}
-
-@keyframes scrollBg{
-  0%{transform:translateY(0);}
-  100%{transform:translateY(-50%);}
-}
-
-/* NAVBAR */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(10px);
-}
-
-/* HAMBURGER */
-.menu-toggle{
-  font-size:28px;
-  cursor:pointer;
-  display:none;
-}
-
-/* LINKS */
-.nav-links{
-  display:flex;
-  gap:20px;
-}
-
-.nav-links a{
-  color:white;
-  text-decoration:none;
-}
-
-/* PAGE */
-.page{
-  padding:60px 20px;
-  text-align:center;
-}
-
-/* GLASS CARD */
-.glass-card{
-  margin:auto;
-  padding:25px;
-  max-width:350px;
-  border-radius:15px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(15px);
-}
-
-/* SKILLS */
-.skill{
-  margin:15px 0;
-  text-align:left;
-}
-
-.bar{
-  height:6px;
-  background:#333;
-}
-
-.fill{
-  height:100%;
-  width:0;
-  background:#00c3ff;
-  transition:2s;
-}
-
-/* MOBILE MENU */
+/* 📱 ULTRA COMPACT MOBILE DESIGN */
 @media(max-width:768px){
 
-  .menu-toggle{
-    display:block;
+  body{
+    font-size:14px;
   }
 
+  /* NAVBAR - tighter */
+  .navbar{
+    padding:12px 16px;
+  }
+
+  .navbar h1{
+    font-size:16px;
+  }
+
+  /* MENU PANEL */
   .nav-links{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:220px;
-    height:100%;
-    background:black;
-    flex-direction:column;
-    padding:80px 20px;
-    transition:0.3s;
+    width:200px;
+    padding:70px 16px;
+    gap:18px;
   }
 
-  .nav-links.active{
-    right:0;
+  .nav-links a{
+    font-size:14px;
+  }
+
+  /* PAGE SPACING */
+  .page{
+    padding:40px 14px;
+  }
+
+  /* CARD - tighter + edge friendly */
+  .glass-card{
+    max-width:100%;
+    padding:20px 16px;
+    border-radius:16px;
+  }
+
+  /* INPUTS - thumb optimized */
+  input, textarea{
+    padding:10px 12px;
+    font-size:13px;
+    margin:8px 0;
+    border-radius:8px;
+  }
+
+  textarea{
+    min-height:90px;
+  }
+
+  /* BUTTON - compact but tappable */
+  button{
+    padding:11px;
+    font-size:14px;
+    border-radius:10px;
+  }
+
+  /* SKILLS */
+  .skill{
+    margin:12px 0;
+  }
+
+  .bar{
+    height:5px;
   }
 
 }
