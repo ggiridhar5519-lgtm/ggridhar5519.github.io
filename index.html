@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Giridhar Rao</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -18,45 +18,35 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    #000 0px,
-    #000 50px,
-    #fff 50px,
-    #fff 100px
-  );
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  overflow: hidden;
 }
 
-/* TEXT */
-.welcome-text {
-  font-size: 100px;
-  font-weight: 900;
+/* TYPE TEXT */
+.type-text {
+  font-size: 80px;
+  font-weight: 800;
   font-style: italic;
-  color: #2563eb; /* strong blue */
-  text-shadow:
-    3px 3px 0 #000,
-    6px 6px 0 rgba(0,0,0,0.3),
-    10px 10px 20px rgba(0,0,0,0.5);
-  transform: scale(0.3) rotateX(60deg);
-  opacity: 0;
-  animation: zoom3d 2s ease forwards;
+  color: #0f172a;
+  border-right: 4px solid #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 2s steps(7) forwards, blink 0.7s infinite;
 }
 
-/* 3D ZOOM */
-@keyframes zoom3d {
-  0% {
-    transform: scale(0.3) rotateX(60deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) rotateX(0deg);
-    opacity: 1;
-  }
+/* TYPING EFFECT */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 320px; }
+}
+
+/* CURSOR BLINK */
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 /* EXIT */
@@ -89,7 +79,7 @@ section {
 
 <!-- INTRO -->
 <div id="intro">
-  <div class="welcome-text">WELCOME</div>
+  <div class="type-text">WELCOME</div>
 </div>
 
 <!-- HOME -->
@@ -105,13 +95,13 @@ section {
 <script>
 const intro = document.getElementById("intro");
 
-/* EXIT AFTER 3s */
+/* REMOVE INTRO AFTER 3s */
 setTimeout(() => {
   intro.classList.add("fadeOut");
   setTimeout(() => {
     intro.style.display = "none";
   }, 800);
-}, 3000);
+}, 3200);
 </script>
 
 </body>
