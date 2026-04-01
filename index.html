@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f8fafc;
+  background: #f1f5f9;
 }
 
 /* ===== INTRO ===== */
@@ -23,11 +23,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
   flex-direction: column;
+  z-index: 9999;
 }
 
-/* MAIN TEXT */
 .welcome-text {
   font-size: 64px;
   font-weight: 600;
@@ -38,9 +37,8 @@ body {
   animation: fadeUp 1s ease forwards;
 }
 
-/* TAGLINE */
 .tagline {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 18px;
   color: #64748b;
   opacity: 0;
@@ -48,7 +46,6 @@ body {
   animation-delay: 0.5s;
 }
 
-/* LINE (SAP STYLE TOUCH) */
 .line {
   width: 60px;
   height: 3px;
@@ -60,30 +57,20 @@ body {
   animation-delay: 1s;
 }
 
-/* ANIMATIONS */
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes lineIn {
-  to {
-    opacity: 1;
-    transform: scaleX(1);
-  }
+  to { opacity: 1; transform: scaleX(1); }
 }
 
-/* EXIT */
 .fadeOut {
   animation: fadeOut 0.6s forwards;
 }
 
 @keyframes fadeOut {
-  to {
-    opacity: 0;
-  }
+  to { opacity: 0; }
 }
 
 /* ===== HOME ===== */
@@ -98,6 +85,7 @@ body {
   transform: translateY(0);
 }
 
+/* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
@@ -108,20 +96,56 @@ nav {
 
 nav div {
   color: #0f172a;
+  font-weight: 500;
 }
 
-section {
-  padding: 60px 30px;
-  background: white;
-  min-height: 100vh;
+/* HERO STRIP */
+.hero {
+  background: #0ea5e9;
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
 }
 
-h1 {
+/* GRID */
+.container {
+  padding: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin: 0;
   color: #0f172a;
 }
 
-p {
-  color: #475569;
+.card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* PROJECTS */
+.section-title {
+  margin: 40px 0 20px;
+  color: #0f172a;
+  font-size: 20px;
 }
 </style>
 </head>
@@ -137,22 +161,69 @@ p {
 
 <!-- HOME -->
 <div id="home">
+
   <nav>
     <div><strong>Giridhar Rao</strong></div>
     <div>Home | About | Projects | Contact</div>
   </nav>
 
-  <section>
-    <h1>Welcome to My Portfolio</h1>
-    <p>SAP CPI Consultant with 6+ years of experience in enterprise integration.</p>
-  </section>
+  <div class="hero">
+    SAP CPI Consultant | SAP BTP | Enterprise Integration
+  </div>
+
+  <div class="container">
+
+    <!-- SKILLS -->
+    <div class="grid">
+      <div class="card">
+        <h3>SAP CPI</h3>
+        <p>Integration flow development and monitoring</p>
+      </div>
+
+      <div class="card">
+        <h3>APIs</h3>
+        <p>REST, SOAP, OData integrations</p>
+      </div>
+
+      <div class="card">
+        <h3>Transformations</h3>
+        <p>XML, JSON, CSV mappings</p>
+      </div>
+
+      <div class="card">
+        <h3>Adapters</h3>
+        <p>SFTP, HTTPS, IDoc, Process Direct</p>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section-title">Key Projects</div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Apple Analytics</h3>
+        <p>Real-time SAP integration with external platforms</p>
+      </div>
+
+      <div class="card">
+        <h3>Citi Bank</h3>
+        <p>Secure financial integrations using SAP CPI</p>
+      </div>
+
+      <div class="card">
+        <h3>Athena Health</h3>
+        <p>Healthcare data integration using XML/CSV</p>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 <script>
 const intro = document.getElementById("intro");
 const home = document.getElementById("home");
 
-/* EXIT INTRO */
 setTimeout(() => {
   intro.classList.add("fadeOut");
 
