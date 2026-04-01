@@ -2,14 +2,6 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg,#dbeafe,#fbcfe8,#c7d2fe);
-  background-size: 200% 200%;
-  animation: bgMove 10s ease infinite;
-}
-
-@keyframes bgMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
 }
 
 /* INTRO */
@@ -26,106 +18,46 @@ body {
   z-index: 9999;
 }
 
-#intro h1 {
-  font-size: 42px;
-  letter-spacing: 8px;
-}
-
-#intro p {
-  color: #38bdf8;
-}
-
 /* NAVBAR */
 #navbar {
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  padding: 15px 20px;
+  background: white;
 }
 
 .logo {
   font-weight: 600;
 }
 
-/* LINKS DESKTOP */
+/* HAMBURGER */
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
 .nav-links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: white;
   display: flex;
-  gap: 25px;
+  flex-direction: column;
+  padding-top: 80px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.nav-links.show {
+  right: 0;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: black;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background: #0ea5e9;
-  transition: 0.3s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ===== MOBILE ===== */
-.menu-toggle {
-  display: none;
-}
-
-@media (max-width: 768px) {
-
-  /* HAMBURGER ALWAYS TOP */
-  .menu-toggle {
-    display: block;
-    position: fixed;
-    top: 18px;
-    right: 20px;
-    font-size: 26px;
-    cursor: pointer;
-    z-index: 10001;
-  }
-
-  /* FULL SCREEN MENU */
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-
-    width: 70%;
-    height: 100vh;
-
-    background: rgba(255,255,255,0.98);
-    backdrop-filter: blur(10px);
-
-    display: flex;
-    flex-direction: column;
-
-    padding-top: 80px;
-
-    transition: right 0.3s ease;
-    z-index: 10000;
-  }
-
-  .nav-links.show {
-    right: 0;
-  }
-
-  .nav-links a {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-    font-size: 18px;
-  }
+  padding: 20px;
+  border-bottom: 1px solid #eee;
 }
 
 /* HOME */
@@ -136,73 +68,44 @@ body {
 /* HERO */
 .hero {
   height: 100vh;
-  max-width: 800px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .hero-img {
   width: 140px;
   border-radius: 50%;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
-  animation: float 4s ease-in-out infinite;
 }
 
 .hero-title {
-  font-size: 40px;
-  margin: 10px 0;
-  color: #0f172a;
+  font-size: 28px;
+  text-align: center;
 }
 
 .hero-sub {
-  color: #64748b;
-  max-width: 600px;
+  text-align: center;
+  color: gray;
 }
 
 /* BUTTONS */
 .hero-buttons {
-  margin-top: 25px;
-  display: flex;
-  gap: 15px;
+  margin-top: 20px;
 }
 
 .btn {
-  padding: 12px 24px;
-  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 5px;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-.btn.primary {
+.primary {
   background: #0ea5e9;
   color: white;
 }
 
-.btn.secondary {
+.secondary {
   border: 1px solid #0ea5e9;
   color: #0ea5e9;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-/* FLOAT */
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-/* HAMBURGER FIX FINAL */
-.menu-toggle {
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  z-index: 11000; /* ABOVE MENU */
-  cursor: pointer;
 }
