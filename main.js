@@ -12,3 +12,12 @@ const links = document.getElementById("navLinks");
 toggle.addEventListener("click", () => {
   links.classList.toggle("show");
 });
+toggle.addEventListener("click", () => {
+  links.classList.toggle("show");
+
+  if (links.classList.contains("show")) {
+    toggle.innerHTML = "✖";
+  } else {
+    toggle.innerHTML = "☰";
+  }
+});
