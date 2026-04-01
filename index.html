@@ -18,64 +18,75 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, #111827, #020617);
   display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 9999;
+  overflow: hidden;
 }
 
-/* NAME TEXT */
-.intro-text {
-  font-size: 48px;
-  color: #ffffff;
-  letter-spacing: 10px;
-  opacity: 0;
-  transform: scale(0.7);
-  animation: cinematicIn 2s ease forwards;
+/* LEFT PANEL */
+.left {
+  width: 50%;
+  background: #000;
+  animation: slideLeft 2s ease forwards;
 }
 
-/* WELCOME TEXT */
-#welcome {
+/* RIGHT PANEL */
+.right {
+  width: 50%;
+  background: #fff;
+  animation: slideRight 2s ease forwards;
+}
+
+/* TEXT */
+.center-text {
   position: absolute;
-  font-size: 26px;
-  color: #60a5fa;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  font-size: 80px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 6px;
   opacity: 0;
-  transform: translateY(20px);
+  animation: textIn 1.5s ease forwards;
+  animation-delay: 0.8s;
 }
 
-/* ANIMATIONS */
-@keyframes cinematicIn {
+/* TEXT COLORS */
+.center-text span:nth-child(1) {
+  color: white;
+}
+
+.center-text span:nth-child(2) {
+  color: black;
+}
+
+/* PANEL SLIDE */
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+/* TEXT ANIMATION */
+@keyframes textIn {
   0% {
     opacity: 0;
-    transform: scale(0.7);
-    letter-spacing: 20px;
-    filter: blur(8px);
+    transform: translate(-50%, -50%) scale(0.4);
+    filter: blur(10px);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
-    letter-spacing: 10px;
+    transform: translate(-50%, -50%) scale(1);
     filter: blur(0);
   }
 }
 
-.showWelcome {
-  animation: welcomeFade 1s forwards;
-}
-
-@keyframes welcomeFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* EXIT ANIMATION */
+/* EXIT */
 .fadeOut {
   animation: fadeOut 0.8s forwards;
 }
@@ -106,8 +117,12 @@ section {
 
 <!-- INTRO -->
 <div id="intro">
-  <div class="intro-text">GIRIDHAR RAO</div>
-  <div id="welcome">Welcome 🙂</div>
+  <div class="left"></div>
+  <div class="right"></div>
+
+  <div class="center-text">
+    <span>WEL</span><span>COME</span>
+  </div>
 </div>
 
 <!-- HOME -->
@@ -122,22 +137,14 @@ section {
 
 <script>
 const intro = document.getElementById("intro");
-const text = document.querySelector(".intro-text");
-const welcome = document.getElementById("welcome");
 
-/* AFTER NAME */
-setTimeout(() => {
-  text.style.display = "none";
-  welcome.classList.add("showWelcome");
-}, 2000);
-
-/* EXIT */
+/* EXIT AFTER ANIMATION */
 setTimeout(() => {
   intro.classList.add("fadeOut");
   setTimeout(() => {
     intro.style.display = "none";
   }, 800);
-}, 4000);
+}, 3500);
 </script>
 
 </body>
