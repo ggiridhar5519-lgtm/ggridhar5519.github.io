@@ -197,3 +197,12 @@ body {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
+/* HAMBURGER FIX FINAL */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  z-index: 11000; /* ABOVE MENU */
+  cursor: pointer;
+}
