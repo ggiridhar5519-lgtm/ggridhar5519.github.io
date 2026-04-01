@@ -9,18 +9,14 @@ setTimeout(() => {
 const toggle = document.getElementById("menuToggle");
 const links = document.getElementById("navLinks");
 
-/* TOGGLE MENU */
-toggle.addEventListener("click", (e) => {
-  e.stopPropagation(); // prevent auto close
+/* OPEN / CLOSE MENU */
+toggle.addEventListener("click", () => {
   links.classList.toggle("show");
 });
 
-/* CLOSE WHEN CLICK ANYWHERE */
-document.addEventListener("click", () => {
-  links.classList.remove("show");
-});
-
-/* PREVENT CLOSE WHEN CLICKING INSIDE MENU */
-links.addEventListener("click", (e) => {
-  e.stopPropagation();
+/* CLOSE WHEN CLICK LINK */
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    links.classList.remove("show");
+  });
 });
