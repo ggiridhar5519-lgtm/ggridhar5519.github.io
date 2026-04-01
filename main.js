@@ -21,3 +21,12 @@ toggle.addEventListener("click", () => {
     toggle.innerHTML = "☰";
   }
 });
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+
+  if (navLinks.classList.contains("show")) {
+    menuToggle.innerHTML = "✖";
+  } else {
+    menuToggle.innerHTML = "☰";
+  }
+});
