@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Giridhar Rao</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -22,56 +22,71 @@ body {
   z-index: 9999;
 }
 
-/* LEFT BLACK */
+/* SPLIT BACKGROUND */
 .left {
   width: 50%;
   background: #000;
 }
 
-/* RIGHT WHITE */
 .right {
   width: 50%;
   background: #fff;
 }
 
-/* CENTER TEXT */
-.center-text {
+/* TEXT WRAPPER */
+.text-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  font-size: 80px;
-  font-weight: 700;
+  transform: translate(-50%, -50%);
+}
+
+/* MAIN TEXT */
+.split-text {
+  font-size: 90px;
+  font-weight: 800;
   font-style: italic;
-  letter-spacing: 6px;
-  opacity: 0;
-  animation: zoomText 1.5s ease forwards;
+  letter-spacing: 8px;
+  position: relative;
+  animation: zoomIn 1.2s ease forwards;
 }
 
-/* COLOR SPLIT TEXT */
-.center-text span:first-child {
+/* LEFT PART (WHITE ON BLACK) */
+.split-text::before {
+  content: "WELCOME";
+  position: absolute;
   color: white;
+  clip-path: inset(0 50% 0 0);
 }
 
-.center-text span:last-child {
+/* RIGHT PART (BLACK ON WHITE) */
+.split-text::after {
+  content: "WELCOME";
+  position: absolute;
   color: black;
+  clip-path: inset(0 0 0 50%);
 }
 
-/* TEXT ANIMATION ONLY */
-@keyframes zoomText {
+/* HIDE ORIGINAL */
+.split-text span {
+  visibility: hidden;
+}
+
+/* ANIMATION */
+@keyframes zoomIn {
   from {
+    transform: scale(0.6);
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
   }
   to {
+    transform: scale(1);
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
   }
 }
 
 /* EXIT */
 .fadeOut {
-  animation: fadeOut 0.8s forwards;
+  animation: fadeOut 0.6s forwards;
 }
 
 @keyframes fadeOut {
@@ -101,8 +116,10 @@ section {
   <div class="left"></div>
   <div class="right"></div>
 
-  <div class="center-text">
-    <span>WEL</span><span>COME</span>
+  <div class="text-wrapper">
+    <div class="split-text">
+      <span>WELCOME</span>
+    </div>
   </div>
 </div>
 
@@ -119,12 +136,11 @@ section {
 <script>
 const intro = document.getElementById("intro");
 
-/* REMOVE INTRO */
 setTimeout(() => {
   intro.classList.add("fadeOut");
   setTimeout(() => {
     intro.style.display = "none";
-  }, 800);
+  }, 600);
 }, 3000);
 </script>
 
