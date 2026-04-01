@@ -49,3 +49,9 @@ document.querySelectorAll(".skill-card").forEach(card => {
     card.style.setProperty("--y", `${e.clientY - rect.top}px`);
   });
 });
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
