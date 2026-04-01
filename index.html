@@ -90,7 +90,20 @@
 
 </div>
 
-<script src="main.js"></script>
+<script>
+const intro = document.getElementById("intro");
+const home = document.getElementById("home");
+
+setTimeout(() => {
+  intro.classList.add("fadeOut");
+
+  setTimeout(() => {
+    intro.style.display = "none";
+    home.classList.add("show");
+  }, 600);
+
+}, 2500);
+</script>
 
 </body>
 </html>
