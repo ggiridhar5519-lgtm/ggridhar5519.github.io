@@ -9,17 +9,19 @@
 body {
   margin: 0;
   overflow: hidden;
-  background: black;
+  background: #f8fafc; /* SAP-like light background */
+  font-family: Arial, sans-serif;
 }
 
-/* ===== MATRIX BACKGROUND ===== */
+/* ===== SUBTLE BACKGROUND ===== */
 canvas {
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0.15; /* very subtle */
 }
 
-/* ===== SVG TEXT ===== */
+/* ===== INTRO ===== */
 #intro {
   position: fixed;
   width: 100%;
@@ -30,66 +32,46 @@ canvas {
   z-index: 2;
 }
 
-svg {
-  width: 90%;
-  max-width: 1000px;
-}
-
-/* TEXT STROKE */
+/* TEXT */
 text {
-  font-size: 120px;
-  font-weight: 900;
+  font-size: 110px;
+  font-weight: 700;
   font-style: italic;
   fill: transparent;
-  stroke: #00ffcc;
-  stroke-width: 4;
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: write 2.5s ease forwards, pop3d 2.5s ease forwards;
+  stroke: #0ea5e9; /* SAP blue */
+  stroke-width: 2.5;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: write 1.8s ease forwards;
 }
 
-/* DRAW EFFECT */
+/* WRITE */
 @keyframes write {
   to {
     stroke-dashoffset: 0;
   }
 }
 
-/* 3D POP */
-@keyframes pop3d {
-  0% {
-    transform: scale(0.7) translateZ(-200px);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translateZ(0);
-    opacity: 1;
-  }
-}
-
-/* FILL + GLOW */
+/* FILL */
 .fill {
-  animation: fillColor 1s forwards;
+  animation: fillColor 0.6s ease forwards;
 }
 
 @keyframes fillColor {
   to {
-    fill: #00ffcc;
-    stroke: #00ffcc;
-    filter: drop-shadow(0 0 20px #00ffcc)
-            drop-shadow(0 0 40px #00ffcc);
+    fill: #0ea5e9;
+    stroke: #0ea5e9;
   }
 }
 
 /* EXIT */
 .fadeOut {
-  animation: fadeOut 1s forwards;
+  animation: fadeOut 0.6s forwards;
 }
 
 @keyframes fadeOut {
   to {
     opacity: 0;
-    transform: scale(1.1);
   }
 }
 </style>
@@ -97,10 +79,8 @@ text {
 
 <body>
 
-<!-- MATRIX CANVAS -->
-<canvas id="matrix"></canvas>
+<canvas id="bg"></canvas>
 
-<!-- INTRO -->
 <div id="intro">
   <svg viewBox="0 0 1000 200">
     <text id="text" x="50" y="130">WELCOME</text>
@@ -109,58 +89,43 @@ text {
 
 <script>
 
-/* ===== MATRIX EFFECT ===== */
-const canvas = document.getElementById("matrix");
+/* ===== VERY SUBTLE BACKGROUND ===== */
+const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const letters = "01";
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
+function drawDots() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-for (let i = 0; i < columns; i++) {
-  drops[i] = 1;
-}
-
-function drawMatrix() {
-  ctx.fillStyle = "rgba(0,0,0,0.05)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = "#00ffcc";
-  ctx.font = fontSize + "px monospace";
-
-  for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
-    }
-    drops[i]++;
+  for (let i = 0; i < 50; i++) {
+    ctx.fillStyle = "#0ea5e9";
+    ctx.globalAlpha = 0.05;
+    ctx.beginPath();
+    ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, 2, 0, Math.PI * 2);
+    ctx.fill();
   }
 }
 
-setInterval(drawMatrix, 50);
+setInterval(drawDots, 800);
 
-/* ===== TEXT EFFECT ===== */
+/* ===== TEXT FLOW ===== */
 const textEl = document.getElementById("text");
 const intro = document.getElementById("intro");
 
-/* AFTER DRAW → FILL + GLOW */
+/* fill quickly */
 setTimeout(() => {
   textEl.classList.add("fill");
-}, 2600);
+}, 1800);
 
-/* EXIT */
+/* fast exit */
 setTimeout(() => {
   intro.classList.add("fadeOut");
   setTimeout(() => {
     intro.style.display = "none";
-  }, 1000);
-}, 4500);
+  }, 600);
+}, 2800);
 
 </script>
 
