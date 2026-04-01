@@ -11,39 +11,38 @@
 
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-  <h1>GIRIDHAR RAO</h1>
-  <p>SAP CPI CONSULTANT</p>
-</div>
-
-<!-- NAVBAR -->
-<nav id="navbar">
+<nav class="navbar">
   <div class="logo">Giridhar Rao</div>
-  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <!-- DESKTOP MENU -->
+  <div class="nav-desktop">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- HAMBURGER -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="nav-links" id="navLinks">
+<div class="mobile-menu" id="mobileMenu">
   <a href="#">Home</a>
   <a href="#">About</a>
   <a href="#">Projects</a>
   <a href="#">Contact</a>
 </div>
 
-<!-- HOME -->
-<div id="home">
-  <div class="hero">
-    <img src="profile.png" class="hero-img">
-    <h1 class="hero-title">Building Enterprise Integrations with SAP CPI</h1>
-    <p class="hero-sub">SAP CPI Consultant with 6+ years of experience delivering scalable solutions.</p>
-
-    <div class="hero-buttons">
-      <a href="#" class="btn primary">View Projects</a>
-      <a href="#" class="btn secondary">Contact Me</a>
-    </div>
-  </div>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <h1>Building Enterprise Integrations with SAP CPI</h1>
+  <p>6+ Years Experience</p>
+</section>
 
 <script src="main.js"></script>
 
