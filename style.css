@@ -55,10 +55,9 @@ body {
   gap: 25px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: black;
-  position: relative;
+.nav-links {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
 }
 
 /* underline */
