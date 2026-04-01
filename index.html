@@ -8,47 +8,88 @@
 <style>
 body {
   margin: 0;
-  background: #ffffff;
+  overflow: hidden;
+  background: black;
+}
+
+/* ===== MATRIX BACKGROUND ===== */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* ===== SVG TEXT ===== */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  z-index: 2;
 }
 
-/* SVG TEXT */
 svg {
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 1000px;
 }
 
-/* WRITING EFFECT */
+/* TEXT STROKE */
 text {
-  font-size: 100px;
-  font-weight: 800;
+  font-size: 120px;
+  font-weight: 900;
   font-style: italic;
-  fill: none;
-  stroke: #0f172a;
-  stroke-width: 3;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: write 2.5s ease forwards;
+  fill: transparent;
+  stroke: #00ffcc;
+  stroke-width: 4;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: write 2.5s ease forwards, pop3d 2.5s ease forwards;
 }
 
-/* ANIMATION */
+/* DRAW EFFECT */
 @keyframes write {
   to {
     stroke-dashoffset: 0;
   }
 }
 
+/* 3D POP */
+@keyframes pop3d {
+  0% {
+    transform: scale(0.7) translateZ(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+}
+
+/* FILL + GLOW */
+.fill {
+  animation: fillColor 1s forwards;
+}
+
+@keyframes fillColor {
+  to {
+    fill: #00ffcc;
+    stroke: #00ffcc;
+    filter: drop-shadow(0 0 20px #00ffcc)
+            drop-shadow(0 0 40px #00ffcc);
+  }
+}
+
 /* EXIT */
 .fadeOut {
-  animation: fadeOut 0.8s forwards;
+  animation: fadeOut 1s forwards;
 }
 
 @keyframes fadeOut {
   to {
     opacity: 0;
+    transform: scale(1.1);
   }
 }
 </style>
@@ -56,23 +97,71 @@ text {
 
 <body>
 
+<!-- MATRIX CANVAS -->
+<canvas id="matrix"></canvas>
+
 <!-- INTRO -->
 <div id="intro">
-  <svg viewBox="0 0 800 200">
-    <text x="50" y="120">WELCOME</text>
+  <svg viewBox="0 0 1000 200">
+    <text id="text" x="50" y="130">WELCOME</text>
   </svg>
 </div>
 
 <script>
+
+/* ===== MATRIX EFFECT ===== */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for (let i = 0; i < columns; i++) {
+  drops[i] = 1;
+}
+
+function drawMatrix() {
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#00ffcc";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
+}
+
+setInterval(drawMatrix, 50);
+
+/* ===== TEXT EFFECT ===== */
+const textEl = document.getElementById("text");
 const intro = document.getElementById("intro");
 
-/* EXIT AFTER DRAW */
+/* AFTER DRAW → FILL + GLOW */
+setTimeout(() => {
+  textEl.classList.add("fill");
+}, 2600);
+
+/* EXIT */
 setTimeout(() => {
   intro.classList.add("fadeOut");
   setTimeout(() => {
     intro.style.display = "none";
-  }, 800);
-}, 3200);
+  }, 1000);
+}, 4500);
+
 </script>
 
 </body>
