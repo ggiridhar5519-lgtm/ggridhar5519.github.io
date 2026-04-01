@@ -24,6 +24,8 @@ body {
   justify-content: space-between;
   padding: 15px 20px;
   background: white;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
@@ -34,21 +36,27 @@ body {
 .menu-toggle {
   font-size: 26px;
   cursor: pointer;
+  z-index: 20;
 }
 
-/* MOBILE MENU */
+/* MOBILE MENU (FULL SCREEN FIXED) */
 .nav-links {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 70%;
+
+  width: 100%;          /* 🔥 FULL SCREEN */
   height: 100vh;
-  background: white;
+
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+
   display: flex;
   flex-direction: column;
   padding-top: 80px;
-  transition: 0.3s;
-  z-index: 1000;
+
+  transition: right 0.3s ease;
+  z-index: 15;
 }
 
 .nav-links.show {
@@ -58,6 +66,9 @@ body {
 .nav-links a {
   padding: 20px;
   border-bottom: 1px solid #eee;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
 }
 
 /* HOME */
@@ -72,21 +83,25 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .hero-img {
   width: 140px;
   border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
 }
 
 .hero-title {
   font-size: 28px;
-  text-align: center;
+  margin: 10px 0;
+  color: #0f172a;
 }
 
 .hero-sub {
-  text-align: center;
-  color: gray;
+  color: #64748b;
+  max-width: 600px;
 }
 
 /* BUTTONS */
@@ -98,6 +113,8 @@ body {
   padding: 10px 20px;
   margin: 5px;
   text-decoration: none;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
 .primary {
@@ -108,4 +125,8 @@ body {
 .secondary {
   border: 1px solid #0ea5e9;
   color: #0ea5e9;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
