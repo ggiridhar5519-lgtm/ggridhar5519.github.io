@@ -6,7 +6,6 @@ setTimeout(() => {
   home.style.display = "block";
 }, 2000);
 
-/* MOBILE MENU */
 const toggle = document.getElementById("menuToggle");
 const links = document.getElementById("navLinks");
 
