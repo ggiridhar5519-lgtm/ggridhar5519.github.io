@@ -5,281 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Giridhar Rao</title>
 
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-
-  background: linear-gradient(135deg,#dbeafe,#fbcfe8,#c7d2fe);
-  background-size: 200% 200%;
-  animation: gradientMove 10s ease infinite;
-}
-
-/* BACKGROUND ANIMATION */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ===== FLOATING BLOBS ===== */
-.blob {
-  position: fixed;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(14,165,233,0.3), transparent);
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: float 20s infinite alternate ease-in-out;
-  z-index: 0;
-}
-
-.blob:nth-child(1) {
-  top: 10%;
-  left: 10%;
-}
-
-.blob:nth-child(2) {
-  bottom: 10%;
-  right: 10%;
-  background: radial-gradient(circle, rgba(236,72,153,0.3), transparent);
-  animation-duration: 25s;
-}
-
-@keyframes float {
-  from { transform: translateY(0px) translateX(0px); }
-  to { transform: translateY(-60px) translateX(40px); }
-}
-
-/* ===== INTRO ===== */
-#intro {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
-}
-
-.welcome-text {
-  font-size: 60px;
-  font-weight: 600;
-  letter-spacing: 6px;
-  color: #0f172a;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
-}
-
-.tagline {
-  margin-top: 10px;
-  color: #64748b;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.5s;
-}
-
-.line {
-  width: 60px;
-  height: 3px;
-  background: #0ea5e9;
-  margin-top: 20px;
-  opacity: 0;
-  transform: scaleX(0);
-  animation: lineIn 0.8s ease forwards;
-  animation-delay: 1s;
-}
-
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes lineIn {
-  to { opacity: 1; transform: scaleX(1); }
-}
-
-.fadeOut {
-  animation: fadeOut 0.6s forwards;
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; }
-}
-
-/* ===== HOME ===== */
-#home {
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-#home.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 30px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-}
-
-nav a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #0f172a;
-}
-
-nav a:hover {
-  color: #0ea5e9;
-}
-
-/* MAIN */
-.home-main {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-/* PROFILE */
-.profile img {
-  width: 160px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  transition: 0.3s;
-}
-
-.profile img:hover {
-  transform: scale(1.05);
-}
-
-.profile h1 {
-  margin: 0;
-  font-size: 30px;
-  color: #0f172a;
-}
-
-.profile p {
-  color: #64748b;
-}
-
-/* NAV CARDS */
-.nav-cards {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-
-.nav-card {
-  padding: 12px 26px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: #0f172a;
-
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.3);
-
-  transition: 0.3s;
-}
-
-.nav-card:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: #0ea5e9;
-  color: white;
-  box-shadow: 0 10px 25px rgba(14,165,233,0.3);
-}
-</style>
 </head>
 
 <body>
 
-<!-- BLOBS -->
-<div class="blob"></div>
-<div class="blob"></div>
-
 <!-- INTRO -->
 <div id="intro">
-  <div class="welcome-text">WELCOME</div>
-  <div class="tagline">Enterprise Integration | SAP CPI Consultant</div>
-  <div class="line"></div>
+  <h1>WELCOME</h1>
 </div>
 
-<!-- HOME -->
-<div id="home">
-
-<nav>
-  <div><strong>Giridhar Rao</strong></div>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Projects</a>
-    <a href="#">Skills</a>
-    <a href="#">Contact</a>
-  </div>
-</nav>
-
-<div class="home-main">
-
-  <div class="profile">
-    <img src="profile.png" alt="profile">
-    <h1>Giridhar Rao</h1>
-    <p>SAP CPI Consultant</p>
-  </div>
-
-  <div class="nav-cards">
-    <a href="#" class="nav-card">About</a>
-    <a href="#" class="nav-card">Projects</a>
-    <a href="#" class="nav-card">Skills</a>
-    <a href="#" class="nav-card">Contact</a>
-  </div>
-
-</div>
-
-</div>
-
-<script>
-const intro = document.getElementById("intro");
-const home = document.getElementById("home");
-
-setTimeout(() => {
-  intro.classList.add("fadeOut");
-
-  setTimeout(() => {
-    intro.style.display = "none";
-    home.classList.add("show");
-  }, 600);
-
-}, 2500);
-</script>
+<!-- NAVBAR -->
 <nav id="navbar">
   <div class="logo">Giridhar Rao</div>
 
   <div class="nav-links" id="navLinks">
-    <a href="#" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
   </div>
 
-  <!-- HAMBURGER -->
-  <div class="menu-toggle" id="menuToggle">
-    ☰
-  </div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
 </nav>
+
+<!-- HOME -->
+<div id="home">
+  <div class="profile">
+    <img src="profile.png" alt="">
+    <h1>Giridhar Rao</h1>
+    <p>SAP CPI Consultant</p>
+  </div>
+</div>
+
+<script src="main.js"></script>
+
 </body>
 </html>
