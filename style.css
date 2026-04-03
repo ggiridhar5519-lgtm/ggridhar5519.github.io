@@ -1,9 +1,8 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-  background: linear-gradient(135deg,#eef2ff,#f8fafc);
-  color: #0f172a;
+  background: linear-gradient(135deg,#020617,#0f172a);
+  color: white;
 }
 
 /* ===== INTRO ===== */
@@ -11,65 +10,53 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #020617;
-  color: white;
+  background: black;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   z-index: 9999;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2s;
 }
 
 .intro-title {
-  font-size: 42px;
-  letter-spacing: 6px;
+  font-size: 50px;
+  letter-spacing: 8px;
+  animation: zoomIn 1.5s ease;
 }
 
 .intro-sub {
   color: #38bdf8;
 }
 
+/* ANIMATION */
+@keyframes zoomIn {
+  from {transform: scale(0.5); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+@keyframes fadeOut {
+  to {opacity: 0; visibility: hidden;}
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 18px 40px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 20px 30px;
 }
 
-.logo {
-  font-weight: 600;
-}
-
-/* DESKTOP */
 .nav-desktop {
   display: flex;
   gap: 30px;
 }
 
 .nav-desktop a {
+  color: white;
   text-decoration: none;
-  color: #0f172a;
-  position: relative;
-}
-
-.nav-desktop a::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #0ea5e9;
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  transition: 0.3s;
-}
-
-.nav-desktop a:hover::after {
-  width: 100%;
 }
 
 /* ===== HAMBURGER ===== */
@@ -77,17 +64,16 @@ body {
   display: none;
   flex-direction: column;
   gap: 5px;
-  cursor: pointer;
 }
 
 .menu-toggle span {
-  width: 26px;
+  width: 25px;
   height: 3px;
-  background: #0f172a;
+  background: white;
   transition: 0.3s;
 }
 
-/* X animation */
+/* X */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px,5px);
 }
@@ -103,16 +89,12 @@ body {
   position: fixed;
   top: 80px;
   right: 20px;
-  width: 240px;
-  border-radius: 16px;
+  width: 220px;
 
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
 
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-
-  display: flex;
-  flex-direction: column;
+  border-radius: 15px;
 
   opacity: 0;
   transform: translateY(-10px);
@@ -127,51 +109,42 @@ body {
 }
 
 .mobile-menu a {
-  padding: 16px;
+  display: block;
+  padding: 15px;
+  color: white;
   text-decoration: none;
-  color: #0f172a;
 }
 
 /* ===== HERO ===== */
 .hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
-  padding: 0 20px;
 }
 
 .hero-img {
-  width: 170px;
+  width: 160px;
   border-radius: 50%;
-  margin-bottom: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
 .hero-title {
   font-size: 42px;
-  max-width: 700px;
-  line-height: 1.3;
 }
 
 .hero-sub {
-  color: #64748b;
-  max-width: 600px;
+  color: #94a3b8;
 }
 
 /* BUTTONS */
-.hero-buttons {
-  margin-top: 25px;
-}
-
 .btn {
-  padding: 12px 26px;
+  padding: 12px 25px;
   border-radius: 30px;
-  margin: 5px;
+  margin: 10px;
   text-decoration: none;
-  transition: 0.3s;
 }
 
 .primary {
@@ -184,47 +157,8 @@ body {
   color: #0ea5e9;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-/* ===== SECTION ===== */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 28px;
-}
-
-/* ===== CARDS ===== */
-.cards {
-  display: grid;
-  gap: 25px;
-  margin-top: 40px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  transition: 0.3s;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .nav-desktop { display: none; }
-  .menu-toggle { display: flex; }
-
-  .hero-title {
-    font-size: 28px;
-  }
+/* MOBILE */
+@media(max-width:768px){
+  .nav-desktop { display:none; }
+  .menu-toggle { display:flex; }
 }
