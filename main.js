@@ -1,11 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  const toggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
   const intro = document.getElementById("intro");
   const chatBtn = document.getElementById("chatBtn");
 
-  setTimeout(() => {
-    intro.classList.add("hide");
-    chatBtn.style.display = "block";
-  }, 4000);
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  }
+
+  if (intro) {
+    setTimeout(() => {
+      intro.classList.add("hide");
+
+      if (chatBtn) {
+        chatBtn.style.display = "flex";
+      }
+
+    }, 4000);
+  }
 
 });
