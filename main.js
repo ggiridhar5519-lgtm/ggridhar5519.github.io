@@ -5,7 +5,7 @@ const intro = document.getElementById("intro");
 
 // ===== MENU TOGGLE =====
 toggle.addEventListener("click", (e) => {
-  e.stopPropagation(); // prevent auto close
+  e.stopPropagation();
   toggle.classList.toggle("active");
   menu.classList.toggle("show");
 });
@@ -26,9 +26,6 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
   });
 });
 
-// ===== INTRO CONTROL =====
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    intro.style.display = "none";
-  }, 3000);
-});
+/* ===== INTRO FIX ===== */
+/* DO NOT HIDE WITH JS */
+/* CSS already handles fadeOut */
