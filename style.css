@@ -274,44 +274,34 @@ body {
   }
 }
 /* ===== CHAT BUTTON ===== */
+/* ===== CHAT BUTTON ===== */
 .chat-button {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-
-  width: 55px;
-  height: 55px;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-
   background: #0ea5e9;
   color: white;
-  font-size: 24px;
-
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  justify-content: center;
+  font-size: 22px;
   z-index: 9999;
-
-  transition: 0.3s;
-}
-
-.chat-button:hover {
-  transform: scale(1.1);
 }
 
 /* ===== POPUP ===== */
 .chat-popup {
   position: fixed;
-  bottom: 90px;
-  right: 25px;
+  bottom: 80px;
+  right: 15px;
 
-  width: 300px;
+  width: 90%;          /* FIX: responsive */
+  max-width: 320px;    /* FIX: control size */
 
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
 
   border-radius: 15px;
   overflow: hidden;
@@ -332,27 +322,27 @@ body {
 
 /* HEADER */
 .chat-header {
-  background: rgba(0,0,0,0.6);
   padding: 12px;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
-}
-
-.chat-header span {
-  cursor: pointer;
+  background: rgba(0,0,0,0.4);
 }
 
 /* BODY */
 .chat-body {
-  padding: 15px;
+  padding: 12px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   /* FIX: stack everything */
   gap: 10px;
 }
 
+/* INPUTS */
 .chat-body input,
 .chat-body textarea {
+  width: 100%;              /* FIX: full width */
+  box-sizing: border-box;   /* FIX: no overflow */
+
   padding: 10px;
   border: none;
   border-radius: 8px;
@@ -360,21 +350,25 @@ body {
 }
 
 .chat-body textarea {
-  resize: none;
   height: 80px;
+  resize: none;
 }
 
 /* BUTTON */
 .chat-body button {
+  width: 100%;              /* FIX: full width */
   padding: 10px;
   border: none;
   border-radius: 20px;
   background: #0ea5e9;
   color: white;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.chat-body button:hover {
-  background: #0284c7;
+/* ===== MOBILE EXTRA FIX ===== */
+@media(max-width:480px){
+  .chat-popup {
+    right: 10px;
+    left: 10px;   /* FIX: center on small screens */
+    width: auto;
+  }
 }
