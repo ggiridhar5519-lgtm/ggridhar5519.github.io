@@ -24,3 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 2500);
 
 });
+// ===== CHAT POPUP =====
+const chatBtn = document.getElementById("chatBtn");
+const chatPopup = document.getElementById("chatPopup");
+const closeChat = document.getElementById("closeChat");
+
+chatBtn.addEventListener("click", () => {
+  chatPopup.classList.toggle("show");
+});
+
+closeChat.addEventListener("click", () => {
+  chatPopup.classList.remove("show");
+});
