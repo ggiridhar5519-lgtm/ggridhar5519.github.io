@@ -1,23 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const intro = document.getElementById("intro");
-  const progress = document.querySelector(".progress");
+  const toggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
+  const close = document.getElementById("closeMenu");
   const status = document.getElementById("statusDot");
 
-  // INTRO
+  /* INTRO */
   setTimeout(() => {
     intro.classList.add("hide");
-  }, 2500);
+  }, 2200);
 
-  // STATUS
-  const hour = new Date().getHours();
-  status.style.background = (hour >= 9 && hour <= 18) ? "limegreen" : "gray";
-
-  // SCROLL BAR
-  window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY /
-      (document.body.scrollHeight - window.innerHeight);
-    progress.style.width = scrolled * 100 + "%";
+  /* MENU */
+  toggle.addEventListener("click", () => {
+    menu.classList.add("show");
   });
+
+  close.addEventListener("click", () => {
+    menu.classList.remove("show");
+  });
+
+  /* STATUS */
+  const hour = new Date().getHours();
+  status.style.background = (hour >= 9 && hour <= 18)
+    ? "limegreen"
+    : "gray";
 
 });
