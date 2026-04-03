@@ -7,33 +7,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatPopup = document.getElementById("chatPopup");
   const closeChat = document.getElementById("closeChat");
 
-  // MENU
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggle.classList.toggle("active");
-    menu.classList.toggle("show");
-  });
+  // ===== MENU =====
+  if (toggle && menu) {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggle.classList.toggle("active");
+      menu.classList.toggle("show");
+    });
 
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-      toggle.classList.remove("active");
-      menu.classList.remove("show");
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        toggle.classList.remove("active");
+        menu.classList.remove("show");
+      }
+    });
+  }
+
+  // ===== CHAT =====
+  if (chatBtn && chatPopup) {
+    chatBtn.addEventListener("click", () => {
+      chatPopup.classList.toggle("show");
+    });
+
+    if (closeChat) {
+      closeChat.addEventListener("click", () => {
+        chatPopup.classList.remove("show");
+      });
     }
-  });
+  }
 
-  // CHAT
-  chatBtn.addEventListener("click", () => {
-    chatPopup.classList.toggle("show");
-  });
+  // ===== INTRO =====
+  if (intro) {
+    setTimeout(() => {
+      intro.classList.add("hide");
 
-  closeChat.addEventListener("click", () => {
-    chatPopup.classList.remove("show");
-  });
+      if (chatBtn) {
+        chatBtn.style.display = "flex";
+      }
 
-  // INTRO
-  setTimeout(() => {
-    intro.classList.add("hide");
-    chatBtn.style.display = "flex";
-  }, 4000);
+    }, 4000);
+  }
 
 });
