@@ -5,7 +5,7 @@ body {
   color: white;
 }
 
-/* ===== INTRO ===== */
+/* ===== INTRO (JS CONTROLLED) ===== */
 #intro {
   position: fixed;
   width: 100%;
@@ -18,12 +18,17 @@ body {
   flex-direction: column;
 
   text-align: center;
-
   z-index: 9999;
-  animation: fadeOut 1s ease forwards;
-  animation-delay: 3s;
 }
 
+/* FADE CLASS (JS WILL ADD) */
+#intro.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s ease;
+}
+
+/* NAME */
 .intro-title {
   font-size: 60px;
   letter-spacing: 10px;
@@ -47,13 +52,6 @@ body {
   100% {
     transform: scale(1) translateY(0);
     opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
   }
 }
 
@@ -81,7 +79,7 @@ body {
   position: relative;
 }
 
-/* UNDERLINE EFFECT */
+/* UNDERLINE */
 .nav-desktop a::after {
   content: "";
   width: 0%;
