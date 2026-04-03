@@ -19,14 +19,23 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.remove("show");
   });
 
-  // STATUS (you control time here)
+  // STATUS (adjust time)
   const status = document.getElementById("statusDot");
   const hour = new Date().getHours();
 
-  if (hour >= 9 && hour <= 18) {
-    status.style.background = "limegreen"; // online
-  } else {
-    status.style.background = "gray"; // offline
-  }
+  status.style.background = (hour >= 9 && hour <= 18) ? "limegreen" : "gray";
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach(el => {
+      if (el.getBoundingClientRect().top < trigger) {
+        el.classList.add("active");
+      }
+    });
+  });
 
 });
