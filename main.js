@@ -10,22 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
     intro.classList.add("hide");
   }, 2500);
 
-  // MENU
+  // MENU OPEN
   toggle.addEventListener("click", () => {
     menu.classList.add("show");
   });
 
+  // MENU CLOSE
   close.addEventListener("click", () => {
     menu.classList.remove("show");
   });
 
-  // STATUS (adjust time)
+  // STATUS FIX
   const status = document.getElementById("statusDot");
   const hour = new Date().getHours();
-
   status.style.background = (hour >= 9 && hour <= 18) ? "limegreen" : "gray";
 
-  // SCROLL REVEAL
+  // SCROLL ANIMATION
   const reveals = document.querySelectorAll(".reveal");
 
   window.addEventListener("scroll", () => {
