@@ -81,8 +81,17 @@ body {
 }
 
 /* PROJECT SECTIONS */
+/* FULL CINEMATIC SECTION */
 .project {
   height: 100vh;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed; /* 🔥 parallax feel */
+
   display: flex;
   align-items: center;
   padding: 60px;
@@ -105,7 +114,12 @@ body {
 
 /* MOBILE */
 @media(max-width:768px){
-
+  .project {
+    background-attachment: scroll; /* fix mobile */
+    height: auto;
+    padding: 80px 20px;
+  }
+}
   .nav-desktop {
     display: none;
   }
@@ -147,6 +161,7 @@ body {
   align-items: center;
   padding: 60px;
 }
+
 
 /* DARK OVERLAY */
 .overlay {
