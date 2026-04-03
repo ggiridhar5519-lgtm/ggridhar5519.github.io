@@ -1,17 +1,12 @@
-/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: black;
   color: white;
+  overflow-x: hidden;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
-/* ===== INTRO (PREMIUM NETFLIX STYLE) ===== */
+/* ===== INTRO (CINEMATIC) ===== */
 #intro {
   position: fixed;
   width: 100%;
@@ -19,46 +14,70 @@ a {
   background: black;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   z-index: 9999;
 }
 
-/* TITLE */
-.intro-title {
-  font-size: 42px;
-  letter-spacing: 6px;
-  opacity: 0;
-
-  animation: introFade 1.5s ease forwards;
+.intro-wrapper {
+  text-align: center;
 }
 
-/* SUBTITLE */
+/* TEXT */
+.intro-title {
+  font-size: 42px;
+  letter-spacing: 2px;
+
+  color: white;
+
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* GLOW EFFECT */
+.intro-title::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+
+  animation: sweep 2s ease forwards;
+}
+
+/* SUBTEXT */
 .intro-sub {
   margin-top: 10px;
   color: #38bdf8;
-  opacity: 0;
 
-  animation: introFade 1.5s ease forwards;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
   animation-delay: 0.6s;
 }
 
-/* FADE ANIMATION */
-@keyframes introFade {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-    letter-spacing: 15px;
-  }
-  100% {
+/* ANIMATIONS */
+@keyframes fadeIn {
+  to {
     opacity: 1;
     transform: translateY(0);
-    letter-spacing: 6px;
   }
 }
 
+@keyframes sweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* HIDE */
 #intro.hide {
   opacity: 0;
   visibility: hidden;
@@ -70,10 +89,6 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   padding: 15px 20px;
 
@@ -95,137 +110,51 @@ a {
   border-radius: 50%;
 }
 
-/* DESKTOP NAV */
-.nav-desktop {
-  display: flex;
-  gap: 20px;
-}
-
-/* ===== HAMBURGER ===== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: white;
-}
-
-/* ===== MOBILE MENU ===== */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-
-  width: 70%;
-  height: 100%;
-
-  background: rgba(0,0,0,0.95);
-  backdrop-filter: blur(20px);
-
-  padding: 80px 30px;
-
-  display: flex;
-  flex-direction: column;
-
-  transform: translateX(100%);
-  transition: 0.4s ease;
-
-  z-index: 9999;
-}
-
-.mobile-menu.show {
-  transform: translateX(0);
-}
-
-#closeMenu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-}
-
 /* ===== HERO ===== */
 .hero {
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
+/* BACKGROUND (WORKING + MOVING) */
 .hero-bg {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+
+  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920");
+  background-size: cover;
+  background-position: center;
+
+  animation: slowMove 20s infinite alternate ease-in-out;
+}
+
+/* MOTION */
+@keyframes slowMove {
+  0% { transform: translateX(0) scale(1); }
+  100% { transform: translateX(-50px) scale(1.05); }
+}
+
+/* OVERLAY */
+.hero::after {
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-
-  background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920') center/cover;
-
-  transform: scale(1.02); /* 🔥 FIXED: no heavy zoom */
+  background: rgba(0,0,0,0.7);
 }
 
+/* CONTENT */
 .hero-content {
   position: relative;
+  z-index: 2;
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
   text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.hero-img {
-  width: 120px;
-  border-radius: 50%;
-}
-
-/* TEXT */
-.hero h1 {
-  font-size: 32px;
-}
-
-.hero-tagline {
-  color: #38bdf8;
-}
-
-.hero-desc {
-  max-width: 280px;
-  margin: auto;
-  color: #cbd5f5;
-}
-
-/* ===== SECTIONS ===== */
-.section {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-/* ===== SCROLL ANIMATION ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: 0.8s;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  padding: 60px;
-  text-align: center;
-  background: #020617;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-
-  .nav-desktop {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
 }
