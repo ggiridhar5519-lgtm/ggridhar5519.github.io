@@ -160,29 +160,13 @@ body {
   color: #0ea5e9;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  .nav-desktop { display:none; }
-  .menu-toggle { display:flex; }
-
-  .intro-title {
-    font-size: 34px;
-    letter-spacing: 6px;
-  }
-
-  .hero-title {
-    font-size: 26px;
-  }
-}
 /* ===== FOOTER ===== */
-/* ===== PREMIUM FOOTER ===== */
 .footer {
   background: linear-gradient(135deg,#020617,#0f172a);
   padding: 70px 20px 25px;
   color: #cbd5f5;
 }
 
-/* CONTAINER */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -191,12 +175,12 @@ body {
   margin: auto;
 }
 
-/* LEFT */
-.footer-left {
+.footer-left, .footer-right {
   flex: 1;
 }
 
-.footer-left h3 {
+.footer-left h3,
+.footer-right h3 {
   color: white;
   margin-bottom: 15px;
 }
@@ -205,28 +189,17 @@ body {
   line-height: 1.7;
 }
 
-/* RIGHT */
-.footer-right {
-  flex: 1;
-}
-
-.footer-right h3 {
-  color: white;
-  margin-bottom: 15px;
-}
-
 .footer-right p {
   margin: 10px 0;
   transition: 0.3s;
 }
 
-/* HOVER EFFECT */
 .footer-right p:hover {
   color: #38bdf8;
   transform: translateX(5px);
 }
 
-/* SOCIAL ICONS */
+/* SOCIAL */
 .socials {
   margin-top: 15px;
 }
@@ -247,14 +220,11 @@ body {
   transition: 0.3s;
 }
 
-/* ICON HOVER */
 .socials a:hover {
   background: #0ea5e9;
-  color: white;
   transform: translateY(-5px) scale(1.1);
 }
 
-/* BOTTOM */
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
@@ -262,43 +232,42 @@ body {
   color: #64748b;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .socials a {
-    margin: 8px;
-  }
-}
-/* ===== CHAT BUTTON ===== */
 /* ===== CHAT BUTTON ===== */
 .chat-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
+
   width: 50px;
   height: 50px;
   border-radius: 50%;
+
   background: #0ea5e9;
   color: white;
-  display: flex;
+
+  display: none; /* important */
+
   align-items: center;
   justify-content: center;
+
   font-size: 22px;
   z-index: 9999;
+
+  transition: 0.3s;
 }
 
-/* ===== POPUP ===== */
+.chat-button:hover {
+  transform: scale(1.1);
+}
+
+/* ===== CHAT POPUP ===== */
 .chat-popup {
   position: fixed;
   bottom: 80px;
   right: 15px;
 
-  width: 90%;          /* FIX: responsive */
-  max-width: 320px;    /* FIX: control size */
+  width: 90%;
+  max-width: 320px;
 
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(12px);
@@ -320,7 +289,6 @@ body {
   pointer-events: auto;
 }
 
-/* HEADER */
 .chat-header {
   padding: 12px;
   font-weight: 600;
@@ -329,19 +297,17 @@ body {
   background: rgba(0,0,0,0.4);
 }
 
-/* BODY */
 .chat-body {
   padding: 12px;
   display: flex;
-  flex-direction: column;   /* FIX: stack everything */
+  flex-direction: column;
   gap: 10px;
 }
 
-/* INPUTS */
 .chat-body input,
 .chat-body textarea {
-  width: 100%;              /* FIX: full width */
-  box-sizing: border-box;   /* FIX: no overflow */
+  width: 100%;
+  box-sizing: border-box;
 
   padding: 10px;
   border: none;
@@ -354,9 +320,8 @@ body {
   resize: none;
 }
 
-/* BUTTON */
 .chat-body button {
-  width: 100%;              /* FIX: full width */
+  width: 100%;
   padding: 10px;
   border: none;
   border-radius: 20px;
@@ -364,11 +329,34 @@ body {
   color: white;
 }
 
-/* ===== MOBILE EXTRA FIX ===== */
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .nav-desktop { display:none; }
+  .menu-toggle { display:flex; }
+
+  .intro-title {
+    font-size: 34px;
+    letter-spacing: 6px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .socials a {
+    margin: 8px;
+  }
+}
+
 @media(max-width:480px){
   .chat-popup {
     right: 10px;
-    left: 10px;   /* FIX: center on small screens */
+    left: 10px;
     width: auto;
   }
 }
