@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +6,36 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f9fafb;
+  background: #f8fafc;
   color: #111;
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#4d96ff,#6bcb77);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: 1s;
+}
+
+.intro-text {
+  font-size: 42px;
+  color: white;
+}
+
+.intro-sub {
+  color: #e0f2fe;
+}
+
+#intro.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* NAVBAR */
@@ -19,50 +46,75 @@ body {
   background: white;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .navbar a {
   margin-left: 20px;
   text-decoration: none;
   color: black;
+  font-weight: 500;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg,#ff6b6b,#4d96ff);
-  color: white;
+  padding: 100px 20px;
+  background: linear-gradient(135deg,#ff6b6b,#ffd93d);
 }
 
 .hero img {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid white;
+  border: 5px solid white;
   margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.hero h1 {
+  font-size: 32px;
+  color: white;
 }
 
 /* SECTIONS */
 .section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
+/* CARD */
 .card {
   background: white;
   margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 12px;
   max-width: 400px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 /* CONTACT */
 .contact {
   background: #111;
   color: white;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* MOBILE */
