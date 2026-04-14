@@ -1,3 +1,6 @@
+body {
+  background: red !important;
+}
 @media (max-width: 768px) {
 
   /* STACK LAYOUT */
