@@ -2,11 +2,20 @@
 window.onload = () => {
   setTimeout(() => {
     document.getElementById("intro").classList.add("hide");
-  }, 1200);
+  }, 2500);
 };
 
-// SCROLL
+// MOBILE MENU
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("mobileMenu");
+const close = document.getElementById("closeMenu");
+
+toggle.onclick = () => menu.classList.add("show");
+close.onclick = () => menu.classList.remove("show");
+
+// SCROLL ANIMATION
 const reveal = document.querySelectorAll(".reveal");
+
 window.addEventListener("scroll", () => {
   reveal.forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
@@ -14,32 +23,3 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
-// TYPING EFFECT
-const text = ["Engineer","Developer","Architect"];
-let i = 0, j = 0;
-let current = "";
-let isDeleting = false;
-
-function type() {
-  current = text[i];
-  
-  if (!isDeleting) {
-    document.getElementById("typing").textContent = current.substring(0, j++);
-    if (j > current.length) {
-      isDeleting = true;
-      setTimeout(type, 1000);
-      return;
-    }
-  } else {
-    document.getElementById("typing").textContent = current.substring(0, j--);
-    if (j < 0) {
-      isDeleting = false;
-      i = (i + 1) % text.length;
-    }
-  }
-
-  setTimeout(type, isDeleting ? 50 : 100);
-}
-
-type();
