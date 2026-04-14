@@ -1,15 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  const intro = document.getElementById("intro");
-  const status = document.getElementById("statusDot");
-
+// INTRO
+window.onload = () => {
   setTimeout(() => {
-    intro.classList.add("hide");
+    document.getElementById("intro").classList.add("hide");
   }, 1500);
+};
 
-  const hour = new Date().getHours();
-  status.style.background = (hour >= 9 && hour <= 18)
-    ? "green"
-    : "gray";
+// SCROLL ANIMATION
+const revealElements = document.querySelectorAll(".reveal");
 
+window.addEventListener("scroll", () => {
+  revealElements.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
 });
