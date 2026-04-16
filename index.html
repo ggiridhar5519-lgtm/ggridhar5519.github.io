@@ -5,30 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giridhar Rao</title>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ===================== -->
-<!-- 🎬 INTRO SCREEN -->
-<!-- ===================== -->
+<!-- 🎬 INTRO -->
 <div id="intro">
-  <h1 class="intro-logo">[ {} ]</h1>
-   <h2 class="intro-logo">@GR</h2>
-  <p class="intro-sub">Enterprise Integration Engineer</p>
-  <p class="intro-highlight">
-    Integrating Systems. Simplifying Complexity.
-  </p>
+
+  <!-- LION LOGO -->
+  <div class="lion-logo">
+    <svg viewBox="0 0 200 200">
+      <g fill="#111">
+        <circle cx="100" cy="60" r="5"/>
+        <circle cx="85" cy="70" r="4"/>
+        <circle cx="115" cy="70" r="4"/>
+        <circle cx="75" cy="90" r="3"/>
+        <circle cx="125" cy="90" r="3"/>
+        <circle cx="65" cy="110" r="2"/>
+        <circle cx="135" cy="110" r="2"/>
+        <circle cx="50" cy="80" r="3"/>
+        <circle cx="45" cy="100" r="3"/>
+        <circle cx="50" cy="120" r="3"/>
+        <circle cx="150" cy="80" r="3"/>
+        <circle cx="155" cy="100" r="3"/>
+        <circle cx="150" cy="120" r="3"/>
+        <circle cx="100" cy="120" r="4"/>
+        <circle cx="90" cy="130" r="3"/>
+        <circle cx="110" cy="130" r="3"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- LOGO -->
+  <h1 class="luxury-logo">GR</h1>
+
+  <div class="luxury-line"></div>
+
+  <p class="luxury-text">ENTERPRISE INTEGRATION ENGINEER</p>
+
+  <p class="intro-highlight">Integrating Systems. Simplifying Complexity.</p>
+
 </div>
 
-
-<!-- ===================== -->
 <!-- NAVBAR -->
-<!-- ===================== -->
 <header class="navbar">
   <h2>Giridhar Rao</h2>
 
@@ -40,14 +63,12 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
 </header>
 
-
-<!-- ===================== -->
 <!-- MOBILE MENU -->
-<!-- ===================== -->
 <div class="mobile-menu" id="mobileMenu">
+  <span id="closeMenu">✕</span>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="experience.html">Experience</a>
@@ -55,32 +76,13 @@
   <a href="contact.html">Contact</a>
 </div>
 
-
-<!-- ===================== -->
 <!-- HERO -->
-<!-- ===================== -->
 <section class="hero">
   <img src="profile.png" alt="profile">
-
   <h1>Enterprise Integration Engineer</h1>
   <p>SAP CPI • SAP BTP • API Systems</p>
 </section>
 
-
-<!-- ===================== -->
-<!-- ABOUT PREVIEW -->
-<!-- ===================== -->
-<section class="section reveal">
-  <h2>About</h2>
-  <p>
-    6+ years experience in SAP CPI, SAP BTP and enterprise integrations.
-  </p>
-</section>
-
-
-<!-- ===================== -->
-<!-- SCRIPT -->
-<!-- ===================== -->
 <script src="main.js"></script>
 
 </body>
