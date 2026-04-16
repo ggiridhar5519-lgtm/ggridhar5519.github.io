@@ -9,7 +9,7 @@ body {
   background: #f8fafc;
   color: #111;
 }
-/* INTRO BACKGROUND */
+/* PREMIUM INTRO */
 #intro {
   position: fixed;
   width: 100%;
@@ -17,7 +17,7 @@ body {
 
   background: linear-gradient(270deg, #ff6b6b, #4d96ff, #6bcb77, #f7b801);
   background-size: 800% 800%;
-  animation: gradientMove 8s ease infinite;
+  animation: gradientMove 10s ease infinite;
 
   display: flex;
   flex-direction: column;
@@ -29,24 +29,63 @@ body {
   transition: 1s;
 }
 
-/* ANIMATED GRADIENT */
+/* GRADIENT ANIMATION */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* TITLE */
+/* TITLE SPLIT */
 .intro-title {
-  font-size: 48px;
+  display: flex;
+  gap: 15px;
+  font-size: 50px;
   letter-spacing: 3px;
-
-  opacity: 0;
-  transform: scale(0.8);
-
-  animation: zoomIn 1.5s ease forwards;
 }
 
+/* EACH WORD */
+.intro-title span {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1s ease forwards;
+}
+
+.intro-title span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+/* SUBTEXT */
+.intro-sub {
+  margin-top: 15px;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* EXIT EFFECT */
+#intro.hide {
+  opacity: 0;
+  transform: scale(1.1);
+  visibility: hidden;
+}
 /* SUBTEXT */
 .intro-sub {
   margin-top: 10px;
