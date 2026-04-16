@@ -17,7 +17,7 @@ body {
 #intro {
   position: fixed;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 
   background: radial-gradient(circle at center, #ffffff, #e5e7eb);
 
@@ -29,22 +29,79 @@ body {
   text-align: center;
   z-index: 9999;
   transition: 0.8s ease;
+  overflow: hidden;
 }
 
 /* ===================== */
-/* 🔷 ELITE SYMBOL */
+/* 💎 ANIMATED SIDE BORDERS */
+/* ===================== */
+#intro::before,
+#intro::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  height: 60%;
+  width: 1.5px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(17, 24, 39, 0.5),
+    transparent
+  );
+}
+
+/* LEFT */
+#intro::before {
+  left: 8%;
+}
+
+/* RIGHT */
+#intro::after {
+  right: 8%;
+}
+
+/* 🔥 GLOW EFFECT */
+#intro::before::after,
+#intro::after::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40%;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #ffffff,
+    transparent
+  );
+
+  top: -50%;
+  animation: borderGlow 3s linear infinite;
+}
+
+/* ANIMATION */
+@keyframes borderGlow {
+  0% { top: -50%; opacity: 0; }
+  30% { opacity: 0.7; }
+  50% { opacity: 1; }
+  80% { opacity: 0.5; }
+  100% { top: 120%; opacity: 0; }
+}
+
+/* ===================== */
+/* 🔷 SYMBOL */
 /* ===================== */
 .symbol {
   display: grid;
   grid-template-columns: repeat(3, 12px);
-  gap: 12px;
-  margin-bottom: 25px;
+  gap: 10px;
+  margin-bottom: 20px;
 
   opacity: 0;
   animation: fadeUp 1s ease forwards;
 }
 
-/* DOT STYLE */
 .symbol span {
   width: 6px;
   height: 6px;
@@ -76,14 +133,16 @@ body {
   background: linear-gradient(
     120deg,
     #d4af37,
-    #f9e79f,
+    #fff6cc,
     #d4af37
   );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-shadow: 
+    0 10px 25px rgba(0,0,0,0.15),
+    0 0 15px rgba(212,175,55,0.3);
 
   opacity: 0;
   animation: fadeUp 1s ease forwards;
@@ -94,6 +153,7 @@ body {
 /* LINE */
 /* ===================== */
 .luxury-line {
+  position: relative;
   width: 200px;
   height: 2px;
   background: #111827;
@@ -102,6 +162,26 @@ body {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
   animation-delay: 0.8s;
+}
+
+/* SIDE DOTS */
+.luxury-line::before,
+.luxury-line::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  background: #111827;
+  border-radius: 50%;
+}
+
+.luxury-line::before {
+  left: -15px;
+}
+
+.luxury-line::after {
+  right: -15px;
 }
 
 /* ===================== */
@@ -159,34 +239,9 @@ body {
   padding: 15px 20px;
 }
 
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #111;
-}
-
-/* MOBILE */
-.menu-toggle {
-  display: none;
-}
-
-.mobile-menu {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 70%;
-  height: 100%;
-  background: white;
-  transform: translateX(100%);
-  transition: 0.3s;
-  padding: 40px;
-}
-
-.mobile-menu.show {
-  transform: translateX(0);
-}
-
+/* ===================== */
 /* HERO */
+/* ===================== */
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -199,59 +254,39 @@ body {
   border-radius: 50%;
 }
 
-/* MOBILE FIX */
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
 @media (max-width:768px) {
+
   .nav-links { display: none; }
   .menu-toggle { display: block; }
 
-  .luxury-logo {
-    font-size: 45px;
-  }
-}
-/* ===================== */
-/* 📱 MOBILE FIX (IMPORTANT) */
-/* ===================== */
-@media (max-width: 768px) {
-
   #intro {
     padding: 20px;
-    justify-content: center;
   }
 
-  /* SYMBOL */
-  .symbol {
-    gap: 8px;
-    margin-bottom: 18px;
-  }
-
-  .symbol span {
-    width: 5px;
-    height: 5px;
-  }
-
-  /* GR */
   .luxury-logo {
     font-size: 48px;
     letter-spacing: 3px;
   }
 
-  /* LINE */
   .luxury-line {
     width: 140px;
-    margin: 12px 0;
   }
 
-  /* ROLE TEXT */
   .luxury-text {
     font-size: 13px;
-    letter-spacing: 2px;
   }
 
-  /* HIGHLIGHT */
   .intro-highlight {
     font-size: 13px;
-    margin-top: 10px;
-    color: #2563eb; /* stronger (not faded) */
   }
 
+  #intro::before,
+  #intro::after {
+    left: 4%;
+    right: 4%;
+    opacity: 0.25;
+  }
 }
