@@ -285,8 +285,17 @@ body {
 /* ===================== */
 @media (max-width:768px) {
 
-  .nav-links { display: none; }
-  .menu-toggle { display: block; }
+  .nav-links {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+}
 
   #intro {
     padding: 20px;
