@@ -208,3 +208,50 @@ body {
     font-size: 45px;
   }
 }
+/* ===================== */
+/* 📱 MOBILE FIX (IMPORTANT) */
+/* ===================== */
+@media (max-width: 768px) {
+
+  #intro {
+    padding: 20px;
+    justify-content: center;
+  }
+
+  /* SYMBOL */
+  .symbol {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .symbol span {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* GR */
+  .luxury-logo {
+    font-size: 48px;
+    letter-spacing: 3px;
+  }
+
+  /* LINE */
+  .luxury-line {
+    width: 140px;
+    margin: 12px 0;
+  }
+
+  /* ROLE TEXT */
+  .luxury-text {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  /* HIGHLIGHT */
+  .intro-highlight {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #2563eb; /* stronger (not faded) */
+  }
+
+}
