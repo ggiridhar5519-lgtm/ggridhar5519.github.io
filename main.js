@@ -1,24 +1,29 @@
-// INTRO
-window.onload = () => {
+// INTRO CONTROL
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro");
+
   setTimeout(() => {
-    document.getElementById("intro").classList.add("hide");
-  }, 3000);
-};
+    intro.classList.add("hide");
+  }, 2500); // 2.5 sec intro
+});
+
 
 // MOBILE MENU
-const toggle = document.getElementById("menuToggle");
-const menu = document.getElementById("mobileMenu");
-const close = document.getElementById("closeMenu");
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("show");
+}
 
-toggle.onclick = () => menu.classList.add("show");
-close.onclick = () => menu.classList.remove("show");
 
 // SCROLL ANIMATION
-const reveal = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
-  reveal.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
       el.classList.add("active");
     }
   });
