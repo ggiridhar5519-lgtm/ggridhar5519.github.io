@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
   background: #f8fafc;
@@ -25,39 +26,46 @@ body {
   justify-content: center;
   align-items: center;
 
+  text-align: center;
+
   z-index: 9999;
   transition: 0.8s ease;
 }
 
-/* SOFT GLOW */
+/* SOFT GLOW BACKGROUND */
 #intro::before {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   background: radial-gradient(circle, rgba(37,99,235,0.08), transparent);
-  filter: blur(80px);
+  filter: blur(100px);
   z-index: -1;
 }
 
-/* LION */
+/* ===================== */
+/* 🦁 LION */
+/* ===================== */
 .lion-logo svg {
-  width: 100px;
-  margin-bottom: 25px;
+  width: 140px;
+  margin-bottom: 10px;
+
   opacity: 0;
 
   animation: fadeUp 1s ease forwards,
              float 3s ease-in-out infinite;
 }
 
-/* FLOAT */
+/* FLOAT EFFECT */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
 
-/* LOGO */
+/* ===================== */
+/* 💎 LOGO (GR) */
+/* ===================== */
 .luxury-logo {
   font-family: 'Playfair Display', serif;
   font-size: 72px;
@@ -74,31 +82,44 @@ body {
   animation-delay: 0.5s;
 }
 
-/* LINE */
+/* ===================== */
+/* 🔹 LINE */
+/* ===================== */
 .luxury-line {
-  width: 120px;
+  width: 180px;
   height: 2px;
-  background: linear-gradient(to right, #111827, #6b7280);
-  margin: 15px 0;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #111827,
+    transparent
+  );
+
+  margin: 20px 0;
 
   opacity: 0;
   animation: fadeUp 1s ease forwards;
   animation-delay: 0.8s;
 }
 
-/* TEXT */
+/* ===================== */
+/* 📝 ROLE TEXT */
+/* ===================== */
 .luxury-text {
   font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  letter-spacing: 3px;
-  color: #6b7280;
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #374151;
 
   opacity: 0;
   animation: fadeUp 1s ease forwards;
   animation-delay: 1.2s;
 }
 
-/* HIGHLIGHT */
+/* ===================== */
+/* ✨ HIGHLIGHT */
+/* ===================== */
 .intro-highlight {
   margin-top: 15px;
   font-size: 15px;
@@ -113,11 +134,13 @@ body {
   animation-delay: 1.6s;
 }
 
-/* ANIMATION */
+/* ===================== */
+/* 🎞 ANIMATION */
+/* ===================== */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -125,7 +148,9 @@ body {
   }
 }
 
-/* EXIT */
+/* ===================== */
+/* 🎬 EXIT */
+/* ===================== */
 #intro.hide {
   opacity: 0;
   transform: scale(1.05);
@@ -142,19 +167,29 @@ body {
   background: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   padding: 15px 20px;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
 }
 
 .nav-links a {
   margin-left: 20px;
   text-decoration: none;
-  color: black;
+  color: #111;
+  font-weight: 500;
 }
 
-/* MOBILE */
+/* ===================== */
+/* 📱 MOBILE MENU */
+/* ===================== */
 .menu-toggle {
   display: none;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
 }
 
@@ -162,28 +197,39 @@ body {
   position: fixed;
   top: 0;
   right: 0;
+
   width: 70%;
   height: 100%;
+
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
+
   transform: translateX(100%);
   transition: 0.3s;
+
   padding: 60px 20px;
+  z-index: 2000;
 }
 
 .mobile-menu a {
   display: block;
   margin: 20px 0;
+  font-size: 18px;
+  color: #111;
+  text-decoration: none;
 }
 
 .mobile-menu.show {
   transform: translateX(0);
 }
 
+/* ===================== */
 /* HERO */
+/* ===================== */
 .hero {
   text-align: center;
   padding: 100px 20px;
+
   background: linear-gradient(135deg,#ff6b6b,#4d96ff);
   color: white;
 }
@@ -193,9 +239,12 @@ body {
   height: 140px;
   border-radius: 50%;
   border: 4px solid white;
+  margin-bottom: 20px;
 }
 
-/* MOBILE */
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
 @media (max-width:768px) {
 
   .nav-links {
@@ -207,10 +256,20 @@ body {
   }
 
   .luxury-logo {
-    font-size: 40px;
+    font-size: 42px;
+    letter-spacing: 3px;
   }
 
   .lion-logo svg {
-    width: 70px;
+    width: 90px;
+  }
+
+  .luxury-text {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .intro-highlight {
+    font-size: 13px;
   }
 }
