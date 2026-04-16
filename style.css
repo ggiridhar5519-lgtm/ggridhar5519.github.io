@@ -9,49 +9,74 @@ body {
   background: #f8fafc;
   color: #111;
 }
-
-/* INTRO */
+/* INTRO BACKGROUND */
 #intro {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: black;
+
+  background: linear-gradient(270deg, #ff6b6b, #4d96ff, #6bcb77, #f7b801);
+  background-size: 800% 800%;
+  animation: gradientMove 8s ease infinite;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   color: white;
   z-index: 9999;
   transition: 1s;
 }
 
-.intro-title {
-  font-size: 40px;
-  animation: fadeZoom 1.5s ease forwards;
+/* ANIMATED GRADIENT */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* TITLE */
+.intro-title {
+  font-size: 48px;
+  letter-spacing: 3px;
+
+  opacity: 0;
+  transform: scale(0.8);
+
+  animation: zoomIn 1.5s ease forwards;
+}
+
+/* SUBTEXT */
 .intro-sub {
   margin-top: 10px;
-  font-size: 14px;
-  color: #ccc;
-  animation: fadeIn 1.5s ease forwards;
+  font-size: 16px;
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 1s;
 }
 
+/* ANIMATIONS */
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HIDE INTRO */
 #intro.hide {
   opacity: 0;
   visibility: hidden;
 }
-
-@keyframes fadeZoom {
-  from { opacity:0; transform: scale(0.9); }
-  to { opacity:1; transform: scale(1); }
-}
-
-@keyframes fadeIn {
-  from { opacity:0; }
-  to { opacity:1; }
-}
-
 /* NAVBAR */
 .navbar {
   position: sticky;
