@@ -2,7 +2,7 @@
 window.onload = () => {
   setTimeout(() => {
     document.getElementById("intro").classList.add("hide");
-  }, 2500);
+  }, 3000);
 };
 
 // MOBILE MENU
