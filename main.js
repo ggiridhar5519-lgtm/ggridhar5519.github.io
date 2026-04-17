@@ -1,11 +1,11 @@
+// RESET MENU ON LOAD
 window.addEventListener("load", () => {
-  const intro = document.getElementById("intro");
-
-  setTimeout(() => {
-    intro.classList.add("hide");
-  }, 2500);
+  const menu = document.getElementById("mobileMenu");
+  if (menu) menu.classList.remove("show");
 });
 
+// TOGGLE MENU
 function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("show");
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("show");
 }
