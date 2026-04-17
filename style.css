@@ -210,3 +210,34 @@ body.menu-open .section {
   color: #2563eb;
   font-weight: 600;
 }
+body {
+  animation: fadePage 0.5s ease;
+}
+
+@keyframes fadePage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+  transition: 0.3s;
+}
+.mobile-menu a {
+  position: relative;
+}
+
+.mobile-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.mobile-menu a:hover::after {
+  width: 100%;
+}
