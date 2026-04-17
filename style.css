@@ -419,3 +419,8 @@ body {
     font-size: 28px;
   }
 }
+#intro.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
