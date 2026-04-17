@@ -38,6 +38,14 @@
 
 </div>
 
+
+  <script>
+  // 🚑 Emergency fallback (mobile safe)
+  setTimeout(() => {
+    const intro = document.getElementById("intro");
+    if (intro) intro.style.display = "none";
+  }, 4000);
+</script>
 <!-- ===================== -->
 <!-- NAVBAR -->
 <!-- ===================== -->
