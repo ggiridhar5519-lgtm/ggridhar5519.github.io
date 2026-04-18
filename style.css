@@ -324,3 +324,34 @@ body {
 .section {
   border-bottom: 1px solid #e5e7eb;
 }
+.slider {
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 8);
+  animation: scroll 20s linear infinite;
+}
+
+.slide-track img {
+  width: 250px;
+  height: 160px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+/* animation */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width:768px) {
+  .slide-track img {
+    width: 180px;
+    height: 120px;
+  }
+}
