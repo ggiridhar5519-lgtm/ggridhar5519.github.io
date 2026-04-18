@@ -355,3 +355,17 @@ body {
     height: 120px;
   }
 }
+.bg-anim {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+
+  background: radial-gradient(circle, rgba(0,0,0,0.05), transparent);
+
+  animation: moveBg 10s linear infinite;
+}
+
+@keyframes moveBg {
+  from { transform: translate(0,0); }
+  to { transform: translate(-50px, -50px); }
+}
