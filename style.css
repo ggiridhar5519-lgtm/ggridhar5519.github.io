@@ -483,3 +483,34 @@ body.menu-open .section {
   background: #1e40af;
   transform: scale(1.05);
 }
+/* ===================== */
+/* CONTACT ICON LINKS */
+/* ===================== */
+.contact-links {
+  margin-top: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 10px 0;
+  text-decoration: none;
+
+  color: #475569;
+  font-size: 14px;
+
+  transition: 0.25s;
+}
+
+/* ICON STYLE */
+.contact-item span {
+  transition: 0.25s;
+}
+
+/* HOVER */
+.contact-item:hover {
+  color: #2563eb;
+  transform: translateX(6px);
+}
