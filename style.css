@@ -325,11 +325,13 @@ body.menu-open .section {
 /* ===================== */
 /* 💎 PREMIUM FOOTER */
 /* ===================== */
+/* ===================== */
+/* 💎 PREMIUM FOOTER FIX */
+/* ===================== */
 .footer {
-  background: #f1f5f9; /* light gray */
-  padding: 60px 20px;
-  color: #111;
-  border-top: 1px solid #e5e7eb;
+  background: #e2e8f0; /* better gray (clean) */
+  padding: 70px 20px;
+  color: #0f172a;
 }
 
 /* CONTAINER */
@@ -339,24 +341,24 @@ body.menu-open .section {
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 50px;
 }
 
 /* HEADINGS */
 .footer-col h3 {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   font-weight: 600;
-  color: #111;
+  color: #0f172a;
 }
 
 /* LINKS */
 .footer-col a {
   display: block;
-  margin: 8px 0;
-  color: #64748b;
+  margin: 10px 0;
+  color: #475569;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.25s ease;
 }
 
 /* HOVER */
@@ -367,47 +369,35 @@ body.menu-open .section {
 
 /* TEXT */
 .footer-col p {
-  margin: 8px 0;
-  color: #64748b;
+  margin: 10px 0;
+  color: #475569;
 }
 
-/* ===================== */
-/* ✨ GLASS CARD EFFECT */
-/* ===================== */
+/* SOFT CARD FEEL */
 .footer-col {
-  padding: 15px;
-  border-radius: 12px;
-  transition: 0.3s;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.footer-col:hover {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* ===================== */
-/* 🔹 DIVIDER LINE */
-/* ===================== */
-.footer::after {
-  content: "";
-  display: block;
+/* DIVIDER */
+.footer-bottom {
   margin-top: 40px;
-  height: 1px;
-  background: #e5e7eb;
+  border-top: 1px solid #cbd5f5;
 }
 
 /* ===================== */
-/* 📱 MOBILE */
+/* 📱 MOBILE FIX (IMPORTANT) */
 /* ===================== */
 @media (max-width:768px) {
+
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* force stack */
     text-align: center;
+    gap: 25px;
   }
 
-  .footer-col:hover {
-    transform: none;
+  .footer-col {
+    padding: 0;
   }
+
 }
