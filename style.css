@@ -43,6 +43,7 @@ body.menu-open .section {
   z-index: 9999;
   transition: 0.6s;
 }
+
 #intro.hide {
   opacity: 0;
   visibility: hidden;
@@ -294,4 +295,10 @@ body.menu-open .section {
     font-size: 14px;
   }
 
+}
+html, body {
+  height: 100%;
+}
+#intro {
+  overflow: hidden;
 }
