@@ -107,5 +107,27 @@
 </footer>
 
 <script src="main.js"></script>
+  <script>
+const menu = document.getElementById("mobileMenu");
+const openBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeMenu");
+
+// open menu
+openBtn.addEventListener("click", () => {
+  menu.classList.add("show");
+});
+
+// close menu
+closeBtn.addEventListener("click", () => {
+  menu.classList.remove("show");
+});
+
+// close on link click
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("show");
+  });
+});
+</script>
 </body>
 </html>
