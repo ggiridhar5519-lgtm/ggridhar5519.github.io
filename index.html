@@ -140,5 +140,22 @@ window.addEventListener("load", () => {
 });
 </script>
 </script>
+  <script>
+console.log("JS LOADED");
+
+window.addEventListener("load", () => {
+  console.log("WINDOW LOADED");
+
+  const intro = document.getElementById("intro");
+  console.log("INTRO ELEMENT:", intro);
+
+  if (intro) {
+    setTimeout(() => {
+      console.log("HIDING INTRO");
+      intro.classList.add("hide");
+    }, 2000);
+  }
+});
+</script>
 </body>
 </html>
