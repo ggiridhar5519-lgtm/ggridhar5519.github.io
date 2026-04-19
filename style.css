@@ -514,3 +514,100 @@ body.menu-open .section {
   color: #2563eb;
   transform: translateX(6px);
 }
+/* ===================== */
+/* 💎 NEXT LEVEL FOOTER */
+/* ===================== */
+.footer {
+  background: linear-gradient(180deg, #e2e8f0, #f8fafc);
+  padding: 70px 20px;
+}
+
+/* GRID */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+/* LINKS */
+.footer-col a {
+  display: block;
+  margin: 10px 0;
+  color: #475569;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.footer-col a:hover {
+  color: #2563eb;
+  transform: translateX(6px);
+}
+
+/* TEXT */
+.footer-col p {
+  margin: 8px 0;
+  color: #64748b;
+}
+
+/* ===================== */
+/* ICON LINKS */
+/* ===================== */
+.contact-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* ICON STYLE */
+.icon-link {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  border-radius: 50%;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+  transition: 0.3s ease;
+}
+
+/* ICON IMAGE */
+.icon-link img {
+  width: 18px;
+}
+
+/* HOVER */
+.icon-link:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+@media (max-width:768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact-links {
+    justify-content: center;
+  }
+}
