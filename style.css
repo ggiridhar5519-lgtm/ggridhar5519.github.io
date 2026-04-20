@@ -387,3 +387,18 @@ p{color:var(--muted)}
 .mobile-menu.show {
   transform: translateX(0);
 }
+/* Hide hamburger on desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
