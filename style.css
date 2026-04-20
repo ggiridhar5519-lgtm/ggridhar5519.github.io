@@ -321,3 +321,69 @@ p{color:var(--muted)}
   .intro-logo{font-size:48px; letter-spacing:4px;}
   .intro-line{animation:lineGrow 1s ease forwards .2s;}
 }
+/* ===================== */
+/* PREMIUM HAMBURGER */
+/* ===================== */
+.menu-toggle {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #111;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* ANIMATION TO X */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===================== */
+/* OVERLAY */
+/* ===================== */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+
+  z-index: 1500;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ===================== */
+/* MENU ANIMATION */
+/* ===================== */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: 0.35s ease;
+}
+
+.mobile-menu.show {
+  transform: translateX(0);
+}
