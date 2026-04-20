@@ -651,3 +651,38 @@ p{color:var(--muted)}
     width: 100%;
   }
 }
+/* ===================== */
+/* SUCCESS POPUP */
+/* ===================== */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+
+  z-index: 9999;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  animation: popupScale 0.3s ease;
+}
+
+@keyframes popupScale {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
