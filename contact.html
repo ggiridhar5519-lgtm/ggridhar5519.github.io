@@ -64,19 +64,30 @@
 
     <!-- RIGHT -->
     <div class="contact-right">
-      <form class="contact-form">
+     <form class="contact-form"
+      action="https://formsubmit.co/ggiridhar5519@gmail.com"
+      method="POST">
 
-        <input type="text" placeholder="Enter your Name">
-        <input type="email" placeholder="Enter a valid email address">
-        <textarea placeholder="Enter your message"></textarea>
+  <!-- hidden config -->
+  <input type="hidden" name="_subject" value="New Portfolio Message">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 
-        <button type="submit">SUBMIT</button>
+  <!-- fields -->
+  <input type="text" name="name" placeholder="Enter your Name" required>
+  <input type="email" name="email" placeholder="Enter a valid email address" required>
+  <textarea name="message" placeholder="Enter your message" required></textarea>
 
-      </form>
-    </div>
+  <button type="submit">SEND MESSAGE</button>
 
+</form>
+
+      <div id="successPopup" class="popup">
+  <div class="popup-box">
+    <h3>✅ Message Sent</h3>
+    <p>I’ll get back to you soon.</p>
   </div>
-
+</div>
 </section>
 
 <div class="page-indicator">Contact</div>
