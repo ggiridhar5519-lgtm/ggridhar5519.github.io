@@ -9,6 +9,7 @@
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
   <h2>Giridhar Rao</h2>
 
@@ -20,11 +21,16 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle" id="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </header>
 
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <span onclick="toggleMenu()">✕</span>
+  <span id="closeMenu">✕</span>
 
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -33,66 +39,136 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<section class="section">
+<!-- ===================== -->
+<!-- PROJECTS -->
+<!-- ===================== -->
+<section class="section container">
+
   <h1>Projects</h1>
+  <p>Selected enterprise integration projects showcasing SAP CPI expertise</p>
 
-  <div class="card">
-    <h3>Integration Platform</h3>
-    <p>SAP CPI enterprise integrations</p>
-  </div>
+  <div class="projects-grid">
 
-  <div class="card">
-    <h3>API System</h3>
-    <p>Secure API communication</p>
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <h3>Apple Analytics Platform</h3>
+
+      <p>
+        Designed enterprise integrations between SAP systems and analytics platforms,
+        enabling real-time data synchronization.
+      </p>
+
+      <div class="project-metrics">
+        ✔ Reduced data latency by ~40%  
+        ✔ Improved data reliability & monitoring
+      </div>
+
+      <div class="project-tags">
+        <span>SAP CPI</span>
+        <span>REST</span>
+        <span>JSON</span>
+        <span>Groovy</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <h3>Citi Bank Integration Platform</h3>
+
+      <p>
+        Built secure financial integrations between SAP ECC and banking systems
+        with real-time and batch processing.
+      </p>
+
+      <div class="project-metrics">
+        ✔ Automated transaction corrections  
+        ✔ Secure OAuth2-based integrations
+      </div>
+
+      <div class="project-tags">
+        <span>SOAP</span>
+        <span>OData</span>
+        <span>SFTP</span>
+        <span>OAuth2</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <h3>Healthcare Integration Platform</h3>
+
+      <p>
+        Enabled secure healthcare data exchange between SAP and external systems
+        with high reliability.
+      </p>
+
+      <div class="project-metrics">
+        ✔ Improved data processing reliability  
+        ✔ Reduced manual intervention
+      </div>
+
+      <div class="project-tags">
+        <span>XML</span>
+        <span>CSV</span>
+        <span>HTTPS</span>
+        <span>SFTP</span>
+      </div>
+    </div>
+
   </div>
 
 </section>
-<div class="page-indicator">Projects</div>
-<script src="main.js"></script>
-  <footer class="footer">
 
+<div class="page-indicator">Projects</div>
+
+<!-- FOOTER -->
+<footer class="footer">
   <div class="footer-container">
 
     <div class="footer-col">
       <h3>Useful Links</h3>
       <a href="#">AICTE</a>
       <a href="#">UGC</a>
-      <a href="#">NAAC</a>
-      <a href="#">DST</a>
-      <a href="#">Anna University</a>
     </div>
 
     <div class="footer-col">
       <h3>Academics</h3>
       <a href="#">Departments</a>
-      <a href="#">Admissions</a>
-      <a href="#">Students Life</a>
       <a href="#">Research</a>
-      <a href="#">Alumni</a>
     </div>
 
     <div class="footer-col">
-      <h3>Important Links</h3>
-      <a href="#">NIRF</a>
-      <a href="#">Statutory Bodies</a>
-      <a href="#">Non Statutory Bodies</a>
-      <a href="#">Anti Ragging</a>
-      <a href="#">NAAC - SSR</a>
-      <a href="#">Grievance Portal</a>
+      <h3>Important</h3>
       <a href="#">Privacy Policy</a>
     </div>
 
     <div class="footer-col">
-      <h3>Contact me😊</h3>
+      <h3>Contact</h3>
       <p>Giridhar Rao</p>
-      <p>Enterprise Integration Engineer</p>
-      <p>India</p>
-      <p>📞 8012122000</p>
-      <p>📧 yourmail@gmail.com</p>
+
+      <div class="contact-links">
+        <a href="mailto:ggiridhar5519@gmail.com" class="icon-link">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+        </a>
+
+        <a href="https://wa.me/918012122000" class="icon-link">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+        </a>
+
+        <a href="#" class="icon-link">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+        </a>
+
+        <a href="#" class="icon-link">
+          <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png">
+        </a>
+      </div>
     </div>
 
   </div>
-
 </footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>
