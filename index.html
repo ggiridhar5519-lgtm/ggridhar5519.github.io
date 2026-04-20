@@ -32,10 +32,13 @@
   </nav>
 
   <!-- ONLY ONE BUTTON -->
-  <div class="menu-toggle" id="menuBtn">☰</div>
-</header>
-
+<div class="menu-toggle" id="menuBtn">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 <!-- MOBILE MENU -->
+  <div class="menu-overlay" id="menuOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
   <span id="closeMenu">✕</span>
 
@@ -121,33 +124,30 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const menu = document.getElementById("mobileMenu");
-  const openBtn = document.getElementById("menuBtn");
+  const btn = document.getElementById("menuBtn");
   const closeBtn = document.getElementById("closeMenu");
+  const overlay = document.getElementById("menuOverlay");
 
-  // MENU OPEN
-  openBtn.addEventListener("click", () => {
+  // OPEN
+  btn.addEventListener("click", () => {
     menu.classList.add("show");
+    overlay.classList.add("show");
+    btn.classList.add("active");
   });
 
-  // MENU CLOSE
-  closeBtn.addEventListener("click", () => {
+  // CLOSE FUNCTION
+  function closeMenu() {
     menu.classList.remove("show");
-  });
-
-  // CLOSE ON LINK CLICK
-  document.querySelectorAll(".mobile-menu a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("show");
-    });
-  });
-
-  // INTRO EXIT
-  const intro = document.getElementById("intro");
-  if (intro) {
-    setTimeout(() => {
-      intro.classList.add("hide");
-    }, 2200);
+    overlay.classList.remove("show");
+    btn.classList.remove("active");
   }
+
+  closeBtn.addEventListener("click", closeMenu);
+  overlay.addEventListener("click", closeMenu);
+
+  document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
 
 });
 </script>
