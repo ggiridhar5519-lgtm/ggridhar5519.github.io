@@ -402,3 +402,9 @@ p{color:var(--muted)}
     display: none;
   }
 }
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+}
