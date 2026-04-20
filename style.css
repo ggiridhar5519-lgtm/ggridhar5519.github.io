@@ -686,3 +686,45 @@ p{color:var(--muted)}
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+/* ===================== */
+/* PREMIUM SOCIAL ICONS */
+/* ===================== */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.social img {
+  width: 20px;
+}
+
+/* HOVER EFFECT */
+.social:hover {
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* BRAND COLORS */
+.social.linkedin:hover { background: #0A66C2; }
+.social.naukri:hover { background: #4F46E5; }
+.social.freelance:hover { background: #29B2FE; }
+.social.whatsapp:hover { background: #25D366; }
+
+.social:hover img {
+  filter: brightness(0) invert(1);
+}
