@@ -8,7 +8,9 @@
 
 <body>
 
-<!-- INTRO (ONLY HERE) -->
+<!-- ===================== -->
+<!-- INTRO -->
+<!-- ===================== -->
 <div id="intro">
   <canvas id="intro-particles"></canvas>
 
@@ -19,7 +21,9 @@
   </div>
 </div>
 
+<!-- ===================== -->
 <!-- NAVBAR -->
+<!-- ===================== -->
 <header class="navbar">
   <h2>Giridhar Rao</h2>
 
@@ -31,14 +35,18 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- ONLY ONE BUTTON -->
-<div class="menu-toggle" id="menuBtn">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+  <!-- HAMBURGER -->
+  <div class="menu-toggle" id="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
 <!-- MOBILE MENU -->
-  <div class="menu-overlay" id="menuOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
   <span id="closeMenu">✕</span>
 
@@ -49,7 +57,9 @@
   <a href="contact.html">Contact</a>
 </div>
 
+<!-- ===================== -->
 <!-- HERO -->
+<!-- ===================== -->
 <section class="hero">
   <div>
     <img src="profile.png">
@@ -59,7 +69,9 @@
   </div>
 </section>
 
+<!-- ===================== -->
 <!-- CONTENT -->
+<!-- ===================== -->
 <section class="section container">
   <h2>Highlights</h2>
 
@@ -76,7 +88,9 @@
   </div>
 </section>
 
+<!-- ===================== -->
 <!-- FOOTER -->
+<!-- ===================== -->
 <footer class="footer">
   <div class="footer-container">
 
@@ -119,23 +133,24 @@
   </div>
 </footer>
 
-<!-- SINGLE CLEAN SCRIPT -->
+<!-- ===================== -->
+<!-- SCRIPT (FINAL CLEAN) -->
+<!-- ===================== -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+  // ===== MENU =====
   const menu = document.getElementById("mobileMenu");
   const btn = document.getElementById("menuBtn");
   const closeBtn = document.getElementById("closeMenu");
   const overlay = document.getElementById("menuOverlay");
 
-  // OPEN
   btn.addEventListener("click", () => {
     menu.classList.add("show");
     overlay.classList.add("show");
     btn.classList.add("active");
   });
 
-  // CLOSE FUNCTION
   function closeMenu() {
     menu.classList.remove("show");
     overlay.classList.remove("show");
@@ -148,6 +163,15 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".mobile-menu a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
+
+  // ===== INTRO FIX =====
+  const intro = document.getElementById("intro");
+
+  if (intro) {
+    setTimeout(() => {
+      intro.classList.add("hide");
+    }, 2200);
+  }
 
 });
 </script>
