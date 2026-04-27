@@ -1,7 +1,8 @@
-<!-- =============================== -->
-<!-- projects.html ELITE VERSION -->
-<!-- Replace old projects.html -->
-<!-- =============================== -->
+<!-- ====================================== -->
+<!-- projects.html FINAL FIXED VERSION -->
+<!-- Navigation Fixed + Premium Layout -->
+<!-- Replace old projects.html fully -->
+<!-- ====================================== -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,15 +10,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects | Giridhar Rao</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* NAV FIX */
+.navbar{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+max-width:1650px;
+z-index:9999;
+pointer-events:auto;
+}
+
+.navbar *{
+pointer-events:auto;
+}
+
+.nav-links a,
+.nav-btn{
+position:relative;
+z-index:10000;
+cursor:pointer;
+}
+
+/* PAGE SPACE */
+body{
+padding-top:110px;
+}
+</style>
+
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
-<div class="logo">GR <span>Giridhar Rao</span></div>
+
+<div class="logo">
+GR <span>Giridhar Rao</span>
+</div>
 
 <nav class="nav-links">
 <a href="index.html">Home</a>
@@ -28,18 +64,19 @@
 </nav>
 
 <a href="contact.html" class="nav-btn">Let's Connect ↗</a>
+
 </header>
 
-<!-- HERO + PROJECTS -->
+<!-- HERO -->
 <section class="section container">
 
-<p class="section-tag">MY WORK</p>
+<p class="section-tag">PORTFOLIO SHOWCASE</p>
 
 <h1>Enterprise Projects</h1>
 
 <p>
-Selected SAP CPI / BTP integration programs delivering scalable,
-secure and measurable business outcomes across enterprise platforms.
+Premium SAP CPI / BTP integration programs delivering scalable,
+secure and measurable enterprise outcomes.
 </p>
 
 <div class="projects-grid">
@@ -47,16 +84,15 @@ secure and measurable business outcomes across enterprise platforms.
 <!-- CARD 1 -->
 <div class="project-card">
 <h3>Apple Analytics Platform</h3>
-
 <p>
-Designed enterprise integrations connecting SAP systems with
-analytics platforms for real-time reporting and decision making.
+Connected SAP systems with analytics platforms for real-time reporting,
+faster insights and enterprise visibility.
 </p>
 
 <div class="project-metrics">
 ✓ Reduced latency by ~40% <br>
-✓ Improved monitoring visibility <br>
-✓ Real-time data synchronization
+✓ Real-time data sync <br>
+✓ Improved monitoring
 </div>
 
 <div class="project-tags">
@@ -70,16 +106,15 @@ analytics platforms for real-time reporting and decision making.
 <!-- CARD 2 -->
 <div class="project-card">
 <h3>Citi Bank Integration Platform</h3>
-
 <p>
-Built secure financial integrations between SAP ECC and banking
-systems supporting batch and real-time transactions.
+Built secure integrations between SAP ECC and banking systems
+for payment and reconciliation flows.
 </p>
 
 <div class="project-metrics">
-✓ OAuth2 secure connectivity <br>
-✓ Faster reconciliation cycles <br>
-✓ Stable batch processing
+✓ OAuth2 security <br>
+✓ Stable batch runs <br>
+✓ Faster processing
 </div>
 
 <div class="project-tags">
@@ -93,16 +128,15 @@ systems supporting batch and real-time transactions.
 <!-- CARD 3 -->
 <div class="project-card">
 <h3>Healthcare Data Exchange</h3>
-
 <p>
-Enabled reliable healthcare integrations between SAP and external
-systems with automated transformation flows.
+Designed reliable healthcare integrations across SAP and external
+systems with automated transformations.
 </p>
 
 <div class="project-metrics">
-✓ Reduced manual effort <br>
-✓ Improved reliability <br>
-✓ Faster data exchange
+✓ Better reliability <br>
+✓ Less manual work <br>
+✓ Faster exchange
 </div>
 
 <div class="project-tags">
@@ -116,14 +150,13 @@ systems with automated transformation flows.
 <!-- CARD 4 -->
 <div class="project-card">
 <h3>Retail Supply Chain Hub</h3>
-
 <p>
-Integrated procurement, warehouse and supplier systems to streamline
-inventory visibility and fulfillment operations.
+Integrated warehouse, supplier and procurement systems for
+real-time inventory visibility.
 </p>
 
 <div class="project-metrics">
-✓ Better stock accuracy <br>
+✓ Better stock control <br>
 ✓ Faster replenishment <br>
 ✓ Reduced delays
 </div>
@@ -131,24 +164,23 @@ inventory visibility and fulfillment operations.
 <div class="project-tags">
 <span>IDoc</span>
 <span>REST</span>
-<span>Groovy</span>
 <span>API</span>
+<span>Groovy</span>
 </div>
 </div>
 
 <!-- CARD 5 -->
 <div class="project-card">
-<h3>HR Employee Sync Platform</h3>
-
+<h3>HR Sync Platform</h3>
 <p>
 Connected HR master data across SAP SuccessFactors and enterprise
-applications with automated synchronization.
+applications automatically.
 </p>
 
 <div class="project-metrics">
-✓ Clean employee data flow <br>
-✓ Reduced duplicate entries <br>
-✓ Automated updates
+✓ Clean HR data <br>
+✓ Less duplicates <br>
+✓ Automated sync
 </div>
 
 <div class="project-tags">
@@ -161,17 +193,16 @@ applications with automated synchronization.
 
 <!-- CARD 6 -->
 <div class="project-card">
-<h3>Manufacturing Integration Core</h3>
-
+<h3>Manufacturing Core</h3>
 <p>
-Built plant-floor integrations for production orders, material
-movements and quality reporting.
+Integrated plant floor systems for production orders,
+movements and operational reporting.
 </p>
 
 <div class="project-metrics">
-✓ Improved process speed <br>
 ✓ Better traceability <br>
-✓ Reliable operations
+✓ Faster operations <br>
+✓ Reliable flows
 </div>
 
 <div class="project-tags">
@@ -211,7 +242,7 @@ Building scalable enterprise integrations.
 
 <div class="footer-bottom">
 <span>© 2026 Giridhar Rao</span>
-<span>Designed for Premium Portfolio Experience</span>
+<span>Premium Portfolio Experience</span>
 </div>
 
 </footer>
