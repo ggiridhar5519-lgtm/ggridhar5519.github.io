@@ -1,23 +1,22 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giridhar Rao | Premium SAP Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- ===================== -->
-<!-- INTRO -->
+<!-- PREMIUM INTRO -->
 <!-- ===================== -->
 <div id="intro">
-  <canvas id="intro-particles"></canvas>
-
-  <div class="intro-inner">
+  <div class="intro-content">
     <h1 class="intro-logo">GR</h1>
     <div class="intro-line"></div>
-    <p class="intro-tag">Enterprise Integration Engineer</p>
+    <p class="intro-text">Senior SAP CPI Integration Consultant</p>
   </div>
 </div>
 
@@ -25,7 +24,10 @@
 <!-- NAVBAR -->
 <!-- ===================== -->
 <header class="navbar">
-  <h2>Giridhar Rao</h2>
+
+  <div class="logo">
+    GR <span>Giridhar Rao</span>
+  </div>
 
   <nav class="nav-links">
     <a href="index.html">Home</a>
@@ -35,20 +37,19 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- HAMBURGER -->
+  <a href="contact.html" class="top-btn">Let's Connect ↗</a>
+
   <div class="menu-toggle" id="menuBtn">
     <span></span>
     <span></span>
     <span></span>
   </div>
-</header>
 
-<!-- OVERLAY -->
-<div class="menu-overlay" id="menuOverlay"></div>
+</header>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <span id="closeMenu">✕</span>
+  <span class="close-btn" id="closeBtn">✕</span>
 
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -61,136 +62,51 @@
 <!-- HERO -->
 <!-- ===================== -->
 <section class="hero">
- <h1>SAP CPI Integration Consultant</h1>
 
-<p>
-6+ Years Experience • SAP BTP • Enterprise Integrations  
-Connecting SAP S/4HANA, ECC & External Systems
-</p>
+  <div class="overlay"></div>
 
-<a href="projects.html" class="cta-btn">View My Work</a>
+  <div class="hero-left">
+
+    <p class="small-title">SENIOR PROFESSIONAL</p>
+
+    <h1>
+      SAP CPI / BTP<br>
+      Integration Consultant
+    </h1>
+
+    <p class="hero-text">
+      Helping enterprises integrate, automate and transform
+      business processes with SAP Integration Suite and leading technologies.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="projects.html" class="btn dark-btn">Explore My Work</a>
+      <a href="contact.html" class="btn light-btn">Download CV</a>
+    </div>
+
+  </div>
+
 </section>
 
-<!-- ===================== -->
-<!-- CONTENT -->
-<!-- ===================== -->
-<section class="section container">
-  <h2>Highlights</h2>
-
- <div class="cards">
-
-  <div class="card">
-    <h3>6+ Years Experience</h3>
-    <p>SAP CPI & Enterprise Integration</p>
-  </div>
-
-  <div class="card">
-    <h3>30+ Integrations</h3>
-    <p>REST, SOAP, IDoc, SFTP</p>
-  </div>
-
-  <div class="card">
-    <h3>Realtime + Batch</h3>
-    <p>High-performance scalable solutions</p>
-  </div>
-
-</div>
-</section>
-
-<!-- ===================== -->
-<!-- FOOTER -->
-<!-- ===================== -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-col">
-      <h3>XML-based web services</h3>
-      <a href="#">SAP CPI ↔ legacy enterprise systems</a>
-      <a href="#">Fetch business partner data from S/4</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>📬 Mail Adapter<h3>
-     <p>Send/receive emails<p>
-<p>Used for alerts or approvals</p>
-      <a href="#">XML/JSON</a>
-      <a href="#">SAP ↔ SAP communication</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>SAP Cloud Connector: An on-premise agent that creates a secure tunnel between on-premise systems and SAP BTP, essential for hybrid integration scenarios</h3>
-      <a href="#">@Privacy Policy</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <p>Giridhar Rao</p>
-
-      <div class="social-icons">
-
-  <!-- LINKEDIN -->
-  <a href="https://www.linkedin.com/in/giridhar-rao-sap-cpi/" target="_blank" class="social linkedin" title="LinkedIn">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
-  </a>
-
-  <!-- FREELANCER (fix when you get profile) -->
-  <a href="#" class="social freelance" title="Freelancer (Coming Soon)">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
-  </a>
-
-  <!-- WHATSAPP -->
-  <a href="https://wa.me/919515504419" target="_blank" class="social whatsapp" title="WhatsApp">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-  </a>
-
-</div>
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-<!-- ===================== -->
-<!-- SCRIPT (FINAL CLEAN) -->
-<!-- ===================== -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+/* ===================== */
+/* INTRO ZOOM */
+/* ===================== */
+window.onload = () => {
+  setTimeout(()=>{
+    document.getElementById("intro").classList.add("hide");
+  },2600);
+};
 
-  // ===== MENU =====
-  const menu = document.getElementById("mobileMenu");
-  const btn = document.getElementById("menuBtn");
-  const closeBtn = document.getElementById("closeMenu");
-  const overlay = document.getElementById("menuOverlay");
+/* ===================== */
+/* MENU */
+/* ===================== */
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeBtn");
 
-  btn.addEventListener("click", () => {
-    menu.classList.add("show");
-    overlay.classList.add("show");
-    btn.classList.add("active");
-  });
-
-  function closeMenu() {
-    menu.classList.remove("show");
-    overlay.classList.remove("show");
-    btn.classList.remove("active");
-  }
-
-  closeBtn.addEventListener("click", closeMenu);
-  overlay.addEventListener("click", closeMenu);
-
-  document.querySelectorAll(".mobile-menu a").forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  // ===== INTRO FIX =====
-  const intro = document.getElementById("intro");
-
-  if (intro) {
-    setTimeout(() => {
-      intro.classList.add("hide");
-    }, 2200);
-  }
-
-});
+menuBtn.onclick = ()=> mobileMenu.classList.add("show");
+closeBtn.onclick = ()=> mobileMenu.classList.remove("show");
 </script>
 
 </body>
