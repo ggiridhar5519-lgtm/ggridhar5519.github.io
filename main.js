@@ -28,3 +28,64 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+/* PASTE in main.js OR before </body> */
+
+/* ========================= */
+/* WORLD MAP LOADER */
+/* ========================= */
+
+const pageLoader = document.getElementById("pageLoader");
+const fill = document.getElementById("retroFill");
+const percent = document.getElementById("loaderPercent");
+
+/* apply to navbar links */
+document.querySelectorAll("a").forEach(link=>{
+
+  const href = link.getAttribute("href");
+
+  if(
+    href &&
+    !href.startsWith("#") &&
+    !href.startsWith("mailto:") &&
+    !href.startsWith("https://wa.me") &&
+    !link.hasAttribute("target")
+  ){
+
+    link.addEventListener("click",function(e){
+
+      e.preventDefault();
+
+      pageLoader.classList.add("show");
+
+      let i = 0;
+
+      fill.style.width = "0%";
+      percent.innerText = "0%";
+
+      const load = setInterval(()=>{
+
+        i += Math.floor(Math.random()*9)+3;
+
+        if(i >= 100){
+          i = 100;
+          clearInterval(load);
+
+          fill.style.width = "100%";
+          percent.innerText = "100%";
+
+          setTimeout(()=>{
+            window.location.href = href;
+          },300);
+        }
+
+        fill.style.width = i + "%";
+        percent.innerText = i + "%";
+
+      },60);
+
+    });
+
+  }
+
+});
