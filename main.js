@@ -1,231 +1,193 @@
-/* ===================== */
-/* MOBILE MENU */
-/* ===================== */
+/* ===================================== */
+/* FINAL CLEAN main.js */
+/* Works for all pages */
+/* Intro + Hero Slider + Mobile Menu + Loader */
+/* ===================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  const menu = document.getElementById("mobileMenu");
-  const toggle = document.querySelector(".menu-toggle");
-  const closeBtn = document.querySelector(".close-btn");
+/* ===================================== */
+/* INTRO SCREEN */
+/* ===================================== */
+const intro = document.getElementById("intro");
 
-  if(toggle && menu){
-    toggle.addEventListener("click", () => {
-      menu.classList.add("show");
-      document.body.style.overflow = "hidden";
-    });
-  }
+if(intro){
 
-  if(closeBtn && menu){
-    closeBtn.addEventListener("click", () => {
-      menu.classList.remove("show");
-      document.body.style.overflow = "auto";
-    });
-  }
+setTimeout(() => {
+intro.classList.add("hide");
+document.body.style.overflow = "auto";
+}, 3200);
 
-  document.querySelectorAll(".mobile-menu a").forEach(link=>{
-    link.addEventListener("click", ()=>{
-      menu.classList.remove("show");
-      document.body.style.overflow = "auto";
-    });
-  });
+document.body.style.overflow = "hidden";
 
-});
-
-
-/* ===================== */
-/* SMART ELITE LOADER */
-/* ===================== */
-
-const eliteLoader = document.getElementById("eliteLoader");
-const eliteFill = document.getElementById("eliteFill");
-const elitePercent = document.getElementById("elitePercent");
-const loaderTitle = document.getElementById("loaderTitle");
-
-let loadingNow = false;
-let nextPage = "";
-
-document.querySelectorAll("a").forEach(link => {
-
-  const href = link.getAttribute("href");
-
-  if(
-    href &&
-    !href.startsWith("#") &&
-    !href.startsWith("mailto:") &&
-    !href.startsWith("https://wa.me") &&
-    !link.hasAttribute("target")
-  ){
-
-    link.addEventListener("click", function(e){
-
-      /* Home page direct open */
-      if(
-        href === "index.html" ||
-        href === "./index.html"
-      ){
-        return;
-      }
-
-      e.preventDefault();
-
-      nextPage = href;
-
-      let label = "Loading Module...";
-      if(href.includes("experience")) label = "Loading Experience...";
-      if(href.includes("about")) label = "Loading Profile...";
-      if(href.includes("projects")) label = "Loading Projects...";
-      if(href.includes("contact")) label = "Opening Contact...";
-
-      loaderTitle.innerText = label;
-
-      eliteLoader.classList.add("show");
-
-      /* If already loading, just switch destination */
-      if(loadingNow) return;
-
-      loadingNow = true;
-
-      let i = 0;
-      eliteFill.style.width = "0%";
-      elitePercent.innerText = "0%";
-
-      const timer = setInterval(()=>{
-
-        i += 12; /* FAST */
-
-        if(i >= 100){
-          i = 100;
-          clearInterval(timer);
-
-          eliteFill.style.width = "100%";
-          elitePercent.innerText = "100%";
-
-          setTimeout(()=>{
-            window.location.href = nextPage;
-          },120);
-        }
-
-        eliteFill.style.width = i + "%";
-        elitePercent.innerText = i + "%";
-
-      },45);
-
-    });
-
-  }
-
-});
-/* ================================= */
-/* ABOUT PAGE ANIMATION JS */
-/* PASTE IN main.js bottom */
-/* ================================= */
-
-document.addEventListener("DOMContentLoaded", ()=>{
-
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
 }
+
+/* ===================================== */
+/* HERO BACKGROUND SLIDER */
+/* ===================================== */
+const slides = document.querySelectorAll(".slide");
+
+if(slides.length){
+
+let current = 0;
+
+setInterval(() => {
+
+slides[current].classList.remove("active");
+current = (current + 1) % slides.length;
+slides[current].classList.add("active");
+
+}, 4000);
+
+}
+
+/* ===================================== */
+/* EXPERIENCE IMAGE SLIDER */
+/* ===================================== */
+const visualGroups = document.querySelectorAll(".exp-visual");
+
+visualGroups.forEach(group => {
+
+const imgs = group.querySelectorAll(".slide-img");
+
+if(imgs.length){
+
+let i = 0;
+
+setInterval(() => {
+
+imgs[i].classList.remove("active");
+i = (i + 1) % imgs.length;
+imgs[i].classList.add("active");
+
+}, 3500);
+
+}
+
 });
-},{threshold:.18});
 
-/* cards */
-document.querySelectorAll(".a-card").forEach(el=>{
-observer.observe(el);
+/* ===================================== */
+/* MOBILE MENU */
+/* ===================================== */
+const menuBtn = document.getElementById("menuToggle");
+const menu = document.getElementById("mobileMenu");
+
+if(menuBtn && menu){
+
+menuBtn.addEventListener("click", () => {
+
+menuBtn.classList.toggle("active");
+menu.classList.toggle("active");
+
+if(menu.classList.contains("active")){
+document.body.style.overflow = "hidden";
+}else{
+document.body.style.overflow = "auto";
+}
+
 });
 
-/* trust blocks */
-document.querySelectorAll(".trust-grid div").forEach(el=>{
-observer.observe(el);
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+
+link.addEventListener("click", () => {
+menuBtn.classList.remove("active");
+menu.classList.remove("active");
+document.body.style.overflow = "auto";
 });
 
-/* dark title */
-const darkTitle = document.querySelector(".about-dark h2");
-if(darkTitle) observer.observe(darkTitle);
+});
 
+}
 
-/* COUNTER ANIMATION */
-function countUp(el,target,suffix=""){
-let n = 0;
-const speed = Math.ceil(target/35);
+/* ===================================== */
+/* SCROLL REVEAL */
+/* ===================================== */
+const revealItems = document.querySelectorAll(
+".project-card, .a-card, .trust-grid div"
+);
 
-const timer = setInterval(()=>{
-n += speed;
+if(revealItems.length){
 
-if(n >= target){
-n = target;
+const reveal = () => {
+
+revealItems.forEach(item => {
+
+const top = item.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 80){
+item.classList.add("show");
+}
+
+});
+
+};
+
+window.addEventListener("scroll", reveal);
+reveal();
+
+}
+
+/* ===================================== */
+/* SAFE PAGE LOADER */
+/* ===================================== */
+const pageLoader = document.getElementById("pageLoader");
+const fill = document.getElementById("retroFill");
+const percent = document.getElementById("loaderPercent");
+
+if(pageLoader && fill && percent){
+
+document.querySelectorAll("a[href]").forEach(link => {
+
+const href = link.getAttribute("href");
+
+if(
+href &&
+!href.startsWith("#") &&
+!href.startsWith("mailto:") &&
+!href.startsWith("tel:") &&
+!href.startsWith("javascript") &&
+!link.hasAttribute("target")
+){
+
+link.addEventListener("click", function(e){
+
+e.preventDefault();
+
+pageLoader.classList.add("show");
+
+let i = 0;
+
+fill.style.width = "0%";
+percent.innerText = "0%";
+
+const timer = setInterval(() => {
+
+i += 10;
+
+if(i >= 100){
+
+i = 100;
 clearInterval(timer);
+
+fill.style.width = "100%";
+percent.innerText = "100%";
+
+setTimeout(() => {
+window.location.href = href;
+}, 250);
+
 }
 
-el.innerText = n + suffix;
+fill.style.width = i + "%";
+percent.innerText = i + "%";
 
-},40);
-}
+}, 40);
 
-const stats = document.querySelectorAll(".about-stats h3");
-
-if(stats.length >= 3){
-
-const statsObserver = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-
-countUp(stats[0],6,"+");
-countUp(stats[1],30,"+");
-countUp(stats[2],100,"%");
-
-statsObserver.disconnect();
-}
 });
-},{threshold:.6});
-
-statsObserver.observe(document.querySelector(".about-stats"));
 
 }
 
 });
-/* ===================================== */
-/* NOTEBOOK ABOUT JS */
-/* PASTE IN main.js bottom */
-/* ===================================== */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-},{threshold:.18});
-
-document.querySelectorAll(".a-card").forEach(el=>observer.observe(el));
-document.querySelectorAll(".trust-grid div").forEach(el=>observer.observe(el));
-
-const darkTitle = document.querySelector(".about-dark h2");
-if(darkTitle) observer.observe(darkTitle);
-
-});
-/* ===================================== */
-/* PROJECTS PAGE JS */
-/* ADD IN main.js bottom */
-/* ===================================== */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-const cards = document.querySelectorAll(".project-card");
-
-if(cards.length){
-
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-},{threshold:.18});
-
-cards.forEach(card=>observer.observe(card));
 
 }
 
