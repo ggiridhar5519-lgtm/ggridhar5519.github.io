@@ -3,22 +3,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giridhar Rao | SAP CPI Consultant</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Giridhar Rao | SAP Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- ========================= -->
-<!-- PREMIUM INTRO -->
+<!-- CINEMATIC INTRO -->
 <!-- ========================= -->
 <div id="intro">
-  <div class="intro-light"></div>
-  <div class="intro-box">
-    <h1>GR</h1>
+
+  <div class="intro-film"></div>
+
+  <div class="intro-content">
+    <p class="intro-small">ENTERPRISE CONSULTANT</p>
+    <h1 class="intro-logo">GR</h1>
     <div class="intro-line"></div>
-    <p>Enterprise Integration Engineer</p>
+    <p class="intro-tag">SAP CPI / BTP Integration Consultant</p>
   </div>
+
+  <!-- short loading bar -->
+  <div class="loader-wrap">
+    <div class="loader-bar"></div>
+  </div>
+
 </div>
 
 <!-- ========================= -->
@@ -26,7 +35,9 @@
 <!-- ========================= -->
 <header class="navbar">
 
-<div class="brand">GR <span>Giridhar Rao</span></div>
+<div class="brand">
+GR <span>Giridhar Rao</span>
+</div>
 
 <nav class="nav-links">
 <a href="#">Home</a>
@@ -59,60 +70,67 @@
 <!-- ========================= -->
 <section class="hero">
 
-<!-- Animated Network Background -->
-<div class="network-bg">
+  <!-- image slider -->
+  <div class="bg-slider">
+    <div class="slide s1 active"></div>
+    <div class="slide s2"></div>
+    <div class="slide s3"></div>
+    <div class="slide s4"></div>
+  </div>
 
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
+  <div class="hero-overlay"></div>
 
-<div class="line l1"></div>
-<div class="line l2"></div>
-<div class="line l3"></div>
-<div class="line l4"></div>
+  <div class="hero-content">
 
-<div class="node n1"></div>
-<div class="node n2"></div>
-<div class="node n3"></div>
-<div class="node n4"></div>
-<div class="node n5"></div>
+    <p class="mini-title">SENIOR PROFESSIONAL</p>
 
-</div>
+    <h1>
+      SAP CPI / BTP<br>
+      Integration Consultant
+    </h1>
 
-<div class="hero-overlay"></div>
+    <p>
+      Helping enterprises integrate, automate and transform business
+      processes with SAP Integration Suite and enterprise technologies.
+    </p>
 
-<div class="hero-content">
+    <a href="#" class="cta-btn">Explore My Work</a>
 
-<p class="mini-title">GLOBAL ENTERPRISE CONSULTANT</p>
-
-<h1>
-SAP CPI / BTP<br>
-Integration Consultant
-</h1>
-
-<p>
-Helping enterprises integrate cloud and on-premise systems using
-SAP Integration Suite, APIs, automation and modern technologies.
-</p>
-
-<a href="#" class="cta-btn">Explore My Work</a>
-
-</div>
+  </div>
 
 </section>
 
 <script>
+/* ========================= */
+/* INTRO */
+/* ========================= */
 window.onload = ()=>{
 setTimeout(()=>{
 document.getElementById("intro").classList.add("hide");
-},2800);
+},3200);
 };
 
+/* ========================= */
+/* MOBILE MENU */
+/* ========================= */
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const closeBtn = document.getElementById("closeBtn");
 
 menuBtn.onclick = ()=> mobileMenu.classList.add("show");
 closeBtn.onclick = ()=> mobileMenu.classList.remove("show");
+
+/* ========================= */
+/* IMAGE SHUFFLE */
+/* ========================= */
+const slides = document.querySelectorAll(".slide");
+let current = 0;
+
+setInterval(()=>{
+slides[current].classList.remove("active");
+current = (current + 1) % slides.length;
+slides[current].classList.add("active");
+},4500);
 </script>
 
 </body>
