@@ -1211,71 +1211,76 @@ padding:24px;
 
 }
 /* ===================================== */
-/* PROJECTS PAGE PREMIUM CSS */
-/* ADD TO style.css */
+/* PROJECTS PAGE ELITE REBUILD */
+/* Replace current Projects CSS */
 /* ===================================== */
 
-/* HERO */
+/* PAGE WRAP */
 .section.container{
 position:relative;
 max-width:1450px;
 margin:auto;
-padding:170px 30px 90px;
-overflow:hidden;
+padding:170px 35px 90px;
 border-radius:28px;
+overflow:hidden;
 background:
-linear-gradient(rgba(7,7,7,.82),rgba(12,12,12,.88));
+linear-gradient(135deg,#111,#181818,#101010);
 }
 
-/* MOVING NODE BG */
+/* SOFT GRID */
 .section.container::before{
 content:"";
 position:absolute;
 inset:0;
-background-image:
-radial-gradient(circle at 12% 20%, rgba(255,255,255,.16) 2px, transparent 3px),
-radial-gradient(circle at 30% 60%, rgba(255,255,255,.12) 2px, transparent 3px),
-radial-gradient(circle at 72% 28%, rgba(255,255,255,.14) 2px, transparent 3px),
-radial-gradient(circle at 85% 70%, rgba(255,255,255,.12) 2px, transparent 3px),
-linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-
-background-size:
-100% 100%,
-100% 100%,
-100% 100%,
-100% 100%,
-55px 55px,
-55px 55px;
-
-animation:gridMove 14s linear infinite;
-opacity:.9;
+background:
+linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+background-size:52px 52px;
+opacity:.7;
+animation:gridShift 14s linear infinite;
 }
 
-/* HERO TEXT */
+/* LIGHT GLOW */
+.section.container::after{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+right:-120px;
+top:60px;
+border-radius:50%;
+background:radial-gradient(circle,
+rgba(255,255,255,.07),
+transparent 70%);
+filter:blur(25px);
+}
+
+/* HERO */
 .section.container h1{
 position:relative;
 z-index:2;
-font-size:78px;
+font-size:68px;
+font-weight:900;
 color:#fff;
-margin-bottom:18px;
 text-align:center;
+margin-bottom:14px;
+letter-spacing:-1px;
 opacity:0;
-transform:translateY(35px);
+transform:translateY(30px);
 animation:fadeRise .8s ease forwards;
 }
 
 .section.container > p{
 position:relative;
 z-index:2;
-max-width:860px;
+max-width:760px;
 margin:0 auto 55px;
 text-align:center;
 font-size:22px;
 line-height:1.8;
-color:rgba(255,255,255,.84);
+color:rgba(255,255,255,.80);
 opacity:0;
-transform:translateY(35px);
+transform:translateY(30px);
 animation:fadeRise .9s ease forwards .2s;
 }
 
@@ -1288,14 +1293,15 @@ grid-template-columns:repeat(3,1fr);
 gap:24px;
 }
 
-/* CARD */
+/* CARDS */
 .project-card{
-background:#fff;
-padding:30px;
-border-radius:24px;
-box-shadow:0 16px 38px rgba(0,0,0,.10);
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(10px);
+padding:26px;
+border-radius:22px;
+box-shadow:0 14px 34px rgba(0,0,0,.14);
 opacity:0;
-transform:translateY(45px);
+transform:translateY(40px);
 transition:.35s ease;
 }
 
@@ -1306,13 +1312,14 @@ transform:translateY(0);
 
 .project-card:hover{
 transform:translateY(-8px);
-box-shadow:0 24px 48px rgba(0,0,0,.14);
+box-shadow:0 22px 42px rgba(0,0,0,.18);
 }
 
 .project-card h3{
-font-size:30px;
-margin-bottom:16px;
-line-height:1.2;
+font-size:34px;
+line-height:1.18;
+margin-bottom:14px;
+color:#111;
 }
 
 .project-card p{
@@ -1324,8 +1331,8 @@ margin-bottom:18px;
 
 /* METRICS */
 .project-metrics{
+background:#f3f3f3;
 padding:16px 18px;
-background:#f5f5f5;
 border-radius:18px;
 line-height:1.9;
 font-size:15px;
@@ -1336,39 +1343,107 @@ margin-bottom:18px;
 /* TAGS */
 .project-tags{
 display:flex;
-gap:10px;
 flex-wrap:wrap;
+gap:10px;
 }
 
 .project-tags span{
 padding:10px 14px;
 border-radius:999px;
-background:#efefef;
+background:#ececec;
 font-size:14px;
-font-weight:600;
+font-weight:700;
 transition:.3s ease;
-cursor:default;
 }
 
 .project-tags span:hover{
 background:#111;
 color:#fff;
-box-shadow:0 0 16px rgba(0,0,0,.18);
 transform:translateY(-3px);
+box-shadow:0 0 16px rgba(0,0,0,.16);
 }
 
-/* PAGE INDICATOR */
+/* PAGE LABEL */
 .page-indicator{
 max-width:1450px;
 margin:18px auto 0;
-padding:0 10px;
+padding:0 8px;
 text-align:right;
 font-size:12px;
 letter-spacing:4px;
 color:#777;
 }
 
-/* ANIMATION */
+/* ===== FOOTER ELITE ===== */
+footer{
+margin-top:40px;
+background:#0f0f0f;
+padding:55px 30px 28px;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+.footer-container{
+max-width:1350px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.footer-left h3{
+font-size:28px;
+color:#fff;
+margin-bottom:8px;
+}
+
+.footer-left p{
+font-size:15px;
+color:#9d9d9d;
+line-height:1.7;
+}
+
+.footer-social{
+display:flex;
+gap:14px;
+align-items:center;
+}
+
+.footer-social a{
+width:46px;
+height:46px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#1b1b1b;
+color:#fff;
+font-size:18px;
+transition:.3s ease;
+text-decoration:none;
+}
+
+.footer-social a:hover{
+transform:translateY(-4px);
+background:#fff;
+color:#111;
+}
+
+.footer-bottom{
+max-width:1350px;
+margin:28px auto 0;
+padding-top:18px;
+border-top:1px solid rgba(255,255,255,.06);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:12px;
+font-size:14px;
+color:#777;
+}
+
+/* ANIMATIONS */
 @keyframes fadeRise{
 to{
 opacity:1;
@@ -1376,16 +1451,10 @@ transform:translateY(0);
 }
 }
 
-@keyframes gridMove{
-0%{
-transform:translateY(0);
-}
-50%{
-transform:translateY(-18px);
-}
-100%{
-transform:translateY(0);
-}
+@keyframes gridShift{
+0%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0);}
 }
 
 /* TABLET */
@@ -1396,7 +1465,7 @@ grid-template-columns:1fr 1fr;
 }
 
 .section.container h1{
-font-size:56px;
+font-size:52px;
 }
 
 .section.container > p{
@@ -1413,13 +1482,13 @@ padding:140px 20px 70px;
 }
 
 .section.container h1{
-font-size:40px;
+font-size:38px;
 }
 
 .section.container > p{
 font-size:16px;
 line-height:1.7;
-margin-bottom:30px;
+margin-bottom:28px;
 }
 
 .projects-grid{
@@ -1432,7 +1501,13 @@ padding:22px;
 }
 
 .project-card h3{
-font-size:24px;
+font-size:26px;
+}
+
+.footer-container,
+.footer-bottom{
+flex-direction:column;
+align-items:flex-start;
 }
 
 }
