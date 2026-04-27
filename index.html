@@ -9,50 +9,62 @@
 </head>
 <body>
 
-<!-- INTRO -->
+<!-- ===================== -->
+<!-- PREMIUM INTRO -->
+<!-- ===================== -->
 <div id="intro">
-  <div class="intro-inner">
+  <div class="intro-content">
     <h1 class="intro-logo">GR</h1>
     <div class="intro-line"></div>
-    <p class="intro-tag">Enterprise Integration Engineer</p>
+    <p class="intro-text">Senior SAP CPI Integration Consultant</p>
   </div>
 </div>
 
+<!-- ===================== -->
 <!-- NAVBAR -->
+<!-- ===================== -->
 <header class="navbar">
-  <div class="logo">GR <span>GIRIDHAR RAO</span></div>
+
+  <div class="logo">
+    GR <span>Giridhar Rao</span>
+  </div>
 
   <nav class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Experience</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <a href="#" class="top-btn">Let's Connect ↗</a>
+  <a href="contact.html" class="top-btn">Let's Connect ↗</a>
 
   <div class="menu-toggle" id="menuBtn">
     <span></span>
     <span></span>
     <span></span>
   </div>
+
 </header>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <span class="close-btn" id="closeBtn">✕</span>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Experience</a>
-  <a href="#">Projects</a>
-  <a href="#">Contact</a>
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="experience.html">Experience</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
 </div>
 
+<!-- ===================== -->
 <!-- HERO -->
+<!-- ===================== -->
 <section class="hero">
 
-  <!-- LEFT -->
+  <div class="overlay"></div>
+
   <div class="hero-left">
 
     <p class="small-title">SENIOR PROFESSIONAL</p>
@@ -67,78 +79,31 @@
       business processes with SAP Integration Suite and leading technologies.
     </p>
 
-    <div class="buttons">
-      <a href="#" class="dark-btn">Explore My Work →</a>
-      <a href="#" class="light-btn">Download CV ⬇</a>
+    <div class="hero-buttons">
+      <a href="projects.html" class="btn dark-btn">Explore My Work</a>
+      <a href="contact.html" class="btn light-btn">Download CV</a>
     </div>
-
-    <div class="stats">
-
-      <div class="box">
-        <strong>6+</strong>
-        <span>Years Experience</span>
-      </div>
-
-      <div class="box">
-        <strong>30+</strong>
-        <span>Integrations Delivered</span>
-      </div>
-
-      <div class="box">
-        <strong>8+</strong>
-        <span>Industries Served</span>
-      </div>
-
-      <div class="box">
-        <strong>100%</strong>
-        <span>Client Satisfaction</span>
-      </div>
-
-    </div>
-
-    <div class="tech-title">TECHNOLOGIES & PLATFORMS</div>
-
-    <div class="tech-row">
-      <span>SAP</span>
-      <span>S/4HANA</span>
-      <span>SAP BTP</span>
-      <span>REST</span>
-      <span>SOAP</span>
-      <span>IDoc</span>
-      <span>SFTP</span>
-      <span>Groovy</span>
-    </div>
-
-  </div>
-
-  <!-- RIGHT -->
-  <div class="hero-right">
-
-    <div class="glow-ring ring1"></div>
-    <div class="glow-ring ring2"></div>
-
-    <div class="sphere"></div>
-
-    <div class="floating-card card1">INTEGRATE</div>
-    <div class="floating-card card2">AUTOMATE</div>
-    <div class="floating-card card3">TRANSFORM</div>
 
   </div>
 
 </section>
 
 <script>
-/* Intro */
-window.onload = ()=>{
- setTimeout(()=>{
-   document.getElementById("intro").classList.add("hide");
- },2200);
+/* ===================== */
+/* INTRO ZOOM */
+/* ===================== */
+window.onload = () => {
+  setTimeout(()=>{
+    document.getElementById("intro").classList.add("hide");
+  },2600);
 };
 
-/* Mobile Menu */
+/* ===================== */
+/* MENU */
+/* ===================== */
 const menuBtn = document.getElementById("menuBtn");
-const closeBtn = document.getElementById("closeBtn");
 const mobileMenu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeBtn");
 
 menuBtn.onclick = ()=> mobileMenu.classList.add("show");
 closeBtn.onclick = ()=> mobileMenu.classList.remove("show");
