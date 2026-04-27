@@ -865,184 +865,77 @@ letter-spacing:2px;
 font-size:22px;
 }
 
-/* ================================ */
-/* ABOUT PAGE MAIN CSS */
-/* ================================ */
-
+/* ABOUT TEST FIX */
 .about-hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+padding:170px 30px 80px;
 max-width:1400px;
 margin:auto;
-padding:170px 25px 90px;
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:50px;
-align-items:center;
-}
-
-.about-mini{
-font-size:13px;
-letter-spacing:6px;
-color:#777;
-margin-bottom:18px;
 }
 
 .about-left h1{
-font-size:78px;
-line-height:1.02;
-margin-bottom:24px;
-font-weight:800;
+font-size:72px;
+margin:20px 0;
 }
 
 .about-desc{
 font-size:22px;
 line-height:1.8;
-color:#444;
-max-width:760px;
-margin-bottom:34px;
+margin-bottom:25px;
 }
 
 .about-stats{
 display:flex;
-gap:18px;
+gap:16px;
 flex-wrap:wrap;
 }
 
-.about-stats div{
+.about-stats div,
+.a-card{
 background:#fff;
-padding:18px 24px;
+padding:24px;
 border-radius:22px;
-min-width:130px;
-box-shadow:0 14px 35px rgba(0,0,0,.06);
-}
-
-.about-stats h3{
-font-size:34px;
-}
-
-.about-stats span{
-font-size:14px;
-color:#666;
-}
-
-.about-right{
-position:relative;
-min-height:560px;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.glass-orb{
-width:380px;
-height:380px;
-border-radius:50%;
-background:radial-gradient(circle,#fff,#ececec,#dadada);
-}
-
-.about-panel{
-position:absolute;
-right:0;
-bottom:40px;
-background:rgba(255,255,255,.88);
-padding:28px;
-border-radius:24px;
-width:340px;
-box-shadow:0 25px 45px rgba(0,0,0,.08);
-}
-
-.about-panel h3{
-font-size:28px;
-margin-bottom:14px;
-}
-
-.about-panel li{
-line-height:1.8;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
 .about-cards{
-max-width:1400px;
-margin:auto;
-padding:20px 25px 90px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:22px;
-}
-
-.a-card{
-background:#fff;
-padding:32px;
-border-radius:26px;
-box-shadow:0 16px 38px rgba(0,0,0,.06);
-}
-
-.a-card h3{
-font-size:28px;
-margin-bottom:14px;
-}
-
-.a-card p{
-line-height:1.8;
-color:#555;
+gap:20px;
+padding:20px 30px 80px;
+max-width:1400px;
+margin:auto;
 }
 
 .about-dark{
-background:#0f1012;
+background:#111;
 color:#fff;
-padding:90px 25px;
-}
-
-.about-dark h2{
-font-size:56px;
-text-align:center;
-margin-bottom:50px;
+padding:80px 30px;
 }
 
 .trust-grid{
-max-width:1300px;
-margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:24px;
+gap:20px;
+max-width:1300px;
+margin:auto;
 }
 
 .trust-grid div{
-background:rgba(255,255,255,.04);
-padding:30px;
-border-radius:24px;
-}
-
-@media(max-width:992px){
-
-.about-hero{
-grid-template-columns:1fr;
-}
-
-.about-cards{
-grid-template-columns:1fr 1fr;
-}
-
-.trust-grid{
-grid-template-columns:1fr;
-}
-
+background:#1c1c1c;
+padding:24px;
+border-radius:20px;
 }
 
 @media(max-width:768px){
-
-.about-left h1{
-font-size:46px;
-}
-
-.about-desc{
-font-size:17px;
-}
-
-.about-cards{
+.about-hero,
+.about-cards,
+.trust-grid{
 grid-template-columns:1fr;
 }
-
-.about-dark h2{
-font-size:36px;
+.about-left h1{
+font-size:42px;
 }
-
 }
