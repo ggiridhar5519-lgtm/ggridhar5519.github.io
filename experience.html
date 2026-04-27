@@ -1,162 +1,246 @@
-
+<!-- experience.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Experience</title>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience | Giridhar Rao</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+<!-- ========================= -->
 <!-- NAVBAR -->
+<!-- ========================= -->
 <header class="navbar">
-  <h2>Giridhar Rao</h2>
 
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<div class="brand">
+<span class="brand-logo">GR</span>
+<span class="brand-text">Giridhar Rao</span>
+</div>
 
-  <div class="menu-toggle" id="menuBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="experience.html" class="active-link">Experience</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<a href="contact.html" class="nav-btn">Let's Connect ↗</a>
+
+<div class="menu-toggle" id="menuBtn">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
 </header>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <span id="closeMenu">✕</span>
+<span class="close-btn" id="closeBtn">✕</span>
 
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="experience.html">Experience</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="experience.html">Experience</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
 </div>
 
-<!-- ===================== -->
-<!-- EXPERIENCE -->
-<!-- ===================== -->
-<section class="section container">
+<!-- ========================= -->
+<!-- PAGE HERO -->
+<!-- ========================= -->
+<section class="exp-hero">
 
-  <h1>Experience</h1>
+<p class="exp-mini">MY EXPERIENCE</p>
+<h1>Experience</h1>
+<div class="hero-divider"></div>
 
-  <h2>Target Corporate Services Pvt Ltd</h2>
-  <p>Oct 2019 – Present</p>
-
-  <div class="timeline">
-
-    <!-- PROJECT 1 -->
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>Apple Analytics Platform</h3>
-        <p>Enterprise integration platform connecting SAP systems with analytics tools</p>
-
-        <ul>
-          <li>Developed SAP CPI iFlows for real-time integration</li>
-          <li>Implemented REST-based communication</li>
-          <li>Designed routing, splitter & aggregator patterns</li>
-          <li>Handled monitoring and error handling</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>Citi Bank Integration Platform</h3>
-        <p>Secure financial integration between SAP ECC and banking systems</p>
-
-        <ul>
-          <li>Built SOAP, REST, OData integrations</li>
-          <li>Implemented OAuth2 & certificate authentication</li>
-          <li>Configured SFTP batch processing</li>
-          <li>Managed deployments across environments</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- PROJECT 3 -->
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>Athena Health Integration</h3>
-        <p>Healthcare data integration platform using SAP CPI</p>
-
-        <ul>
-          <li>XML, JSON, CSV transformations</li>
-          <li>Configured HTTPS and SFTP adapters</li>
-          <li>Implemented retry and error handling</li>
-          <li>Monitored integration flows</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
+<p class="exp-sub">
+6+ years of delivering robust and scalable integration solutions using
+SAP CPI / BTP for global enterprises.
+</p>
 
 </section>
 
-<div class="page-indicator">Experience</div>
+<!-- ========================= -->
+<!-- EXPERIENCE TIMELINE -->
+<!-- ========================= -->
+<section class="experience-wrap">
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
+<div class="timeline-line"></div>
 
-    <div class="footer-col">
-      <h3>Useful Links</h3>
-      <a href="#">AICTE</a>
-      <a href="#">UGC</a>
-    </div>
+<!-- CARD 1 -->
+<div class="exp-row">
 
-    <div class="footer-col">
-      <h3>Academics</h3>
-      <a href="#">Departments</a>
-      <a href="#">Research</a>
-    </div>
+<div class="year-box">
+<span>2019 - Present</span>
+<small>5+ Years</small>
+</div>
 
-    <div class="footer-col">
-      <h3>Important</h3>
-      <a href="#">Privacy Policy</a>
-    </div>
+<div class="exp-card">
 
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <p>Giridhar Rao</p>
-<div class="social-icons">
+<div class="exp-left">
+<h2>Apple Analytics Platform</h2>
+<p class="exp-label">Enterprise Integration Platform</p>
 
-  <!-- LINKEDIN -->
-  <a href="https://www.linkedin.com/in/giridhar-rao-sap-cpi/" target="_blank" class="social linkedin" title="LinkedIn">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
-  </a>
+<p class="exp-desc">
+Enterprise integration platform connecting SAP systems with analytics tools.
+</p>
 
-  <!-- NAUKRI (fallback) -->
-  <a href="mailto:ggiridhar5519@gmail.com" class="social naukri" title="Contact via Naukri">
-    <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png">
-  </a>
+<div class="tags">
+<span>SAP CPI</span>
+<span>REST</span>
+<span>APIs</span>
+<span>Monitoring</span>
+</div>
+</div>
 
-  <!-- FREELANCER (fix when you get profile) -->
-  <a href="#" class="social freelance" title="Freelancer (Coming Soon)">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
-  </a>
-
-  <!-- WHATSAPP -->
-  <a href="https://wa.me/919515504419" target="_blank" class="social whatsapp" title="WhatsApp">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-  </a>
+<div class="exp-right">
+<ul>
+<li>Developed SAP CPI iFlows for real-time integration</li>
+<li>Implemented REST-based communication</li>
+<li>Designed routing, splitter & aggregator patterns</li>
+<li>Handled monitoring and error handling</li>
+</ul>
+</div>
 
 </div>
-      </div>
-    </div>
+</div>
 
-  </div>
+<!-- CARD 2 -->
+<div class="exp-row">
+
+<div class="year-box">
+<span>2021 - 2023</span>
+<small>2 Years</small>
+</div>
+
+<div class="exp-card">
+
+<div class="exp-left">
+<h2>Citi Bank Integration Platform</h2>
+<p class="exp-label">Secure Financial Integration</p>
+
+<p class="exp-desc">
+Secure financial integration between SAP ECC and banking systems.
+</p>
+
+<div class="tags">
+<span>SOAP</span>
+<span>REST</span>
+<span>OData</span>
+<span>SFTP</span>
+</div>
+</div>
+
+<div class="exp-right">
+<ul>
+<li>Built SOAP, REST and OData integrations</li>
+<li>Implemented OAuth2 & certificate authentication</li>
+<li>Configured SFTP batch processing</li>
+<li>Managed deployments across environments</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="exp-row">
+
+<div class="year-box">
+<span>2019 - 2021</span>
+<small>2 Years</small>
+</div>
+
+<div class="exp-card">
+
+<div class="exp-left">
+<h2>Athena Health Integration</h2>
+<p class="exp-label">Healthcare Data Integration</p>
+
+<p class="exp-desc">
+Healthcare data integration platform using SAP CPI.
+</p>
+
+<div class="tags">
+<span>XML</span>
+<span>JSON</span>
+<span>CSV</span>
+<span>HTTPS</span>
+</div>
+</div>
+
+<div class="exp-right">
+<ul>
+<li>XML, JSON and CSV transformations</li>
+<li>Configured HTTPS and SFTP adapters</li>
+<li>Implemented retry and error handling</li>
+<li>Monitored integration flows</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TECH STACK -->
+<!-- ========================= -->
+<section class="stack-box">
+
+<h3>Technologies & Tools</h3>
+
+<div class="stack-grid">
+<span>SAP CPI / BTP</span>
+<span>SOAP / REST / OData</span>
+<span>XML / JSON / CSV</span>
+<span>SFTP / FTP / HTTPS</span>
+<span>OAuth2 / Security</span>
+<span>Monitoring / Alerting</span>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+<footer class="footer">
+
+<div class="footer-top">
+<h2>Ready to build powerful integrations together?</h2>
+<a href="contact.html" class="footer-btn">Let's Connect ↗</a>
+</div>
+
+<div class="social-row">
+
+<a href="https://www.linkedin.com/in/giridhar-rao-sap-cpi/" target="_blank">LinkedIn</a>
+
+<a href="mailto:ggiridhar5519@gmail.com">Email</a>
+
+<a href="https://wa.me/919515504419" target="_blank">WhatsApp</a>
+
+<a href="#">Freelancer</a>
+
+</div>
+
+<div class="footer-copy">
+© 2026 Giridhar Rao. All Rights Reserved.
+</div>
+
 </footer>
 
-<script src="main.js"></script>
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeBtn");
+
+menuBtn.onclick = ()=> mobileMenu.classList.add("show");
+closeBtn.onclick = ()=> mobileMenu.classList.remove("show");
+</script>
 
 </body>
 </html>
