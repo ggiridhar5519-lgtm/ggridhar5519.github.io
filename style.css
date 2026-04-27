@@ -428,9 +428,7 @@ bottom:34px;
 }
 
 }
-/* ========================= */
-/* EXPERIENCE PAGE */
-/* ========================= */
+/* EXPERIENCE PAGE CSS */
 
 .exp-hero{
 padding:170px 20px 90px;
@@ -465,80 +463,60 @@ line-height:1.8;
 color:#444;
 }
 
+/* MAIN */
 .experience-wrap{
 max-width:1400px;
 margin:auto;
 padding:60px 20px;
-position:relative;
+display:flex;
+flex-direction:column;
+gap:30px;
 }
 
-.timeline-line{
-position:absolute;
-left:140px;
-top:0;
-bottom:0;
-width:2px;
-background:#e3e3e3;
-}
-
-.exp-row{
-display:grid;
-grid-template-columns:120px 1fr;
-gap:35px;
-margin-bottom:35px;
-align-items:start;
-}
-
-.year-box{
-background:#111;
-color:#fff;
-padding:18px;
-border-radius:16px;
-text-align:center;
-position:sticky;
-top:110px;
-}
-
-.year-box span{
-display:block;
-font-weight:700;
-font-size:14px;
-}
-
-.year-box small{
-display:block;
-margin-top:8px;
-color:#bbb;
-}
-
+/* CARD */
 .exp-card{
 background:#fff;
-border-radius:24px;
+border-radius:28px;
 padding:35px;
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-box-shadow:0 15px 40px rgba(0,0,0,.06);
+grid-template-columns:1fr 520px;
+gap:35px;
+box-shadow:0 20px 45px rgba(0,0,0,.06);
 }
 
-.exp-left h2{
+.year{
+display:inline-block;
+padding:8px 14px;
+background:#111;
+color:#fff;
+border-radius:30px;
+font-size:13px;
+margin-bottom:18px;
+}
+
+.exp-info h2{
 font-size:38px;
 margin-bottom:10px;
 }
 
-.exp-label{
-font-size:13px;
+.role{
+font-size:14px;
 letter-spacing:2px;
 text-transform:uppercase;
 color:#666;
 margin-bottom:18px;
 }
 
-.exp-desc{
-font-size:18px;
-line-height:1.8;
-color:#444;
+.exp-info ul{
+padding-left:20px;
 margin-bottom:22px;
+}
+
+.exp-info li{
+font-size:18px;
+line-height:1.7;
+margin-bottom:12px;
+color:#333;
 }
 
 .tags{
@@ -554,94 +532,56 @@ border-radius:30px;
 font-size:14px;
 }
 
-.exp-right ul{
-padding-left:20px;
+/* VISUAL */
+.exp-visual{
+position:relative;
+height:360px;
+border-radius:22px;
+overflow:hidden;
+background:#ececec;
 }
 
-.exp-right li{
-margin-bottom:16px;
-font-size:18px;
-line-height:1.7;
-color:#333;
+.slide-img{
+position:absolute;
+inset:0;
+opacity:0;
+transition:1s ease;
+background-size:cover;
+background-position:center;
+transform:scale(1.06);
 }
 
-.stack-box{
-max-width:1400px;
-margin:0 auto 60px;
-padding:0 20px;
+.slide-img.active{
+opacity:1;
+transform:scale(1);
 }
 
-.stack-box h3{
-font-size:24px;
-margin-bottom:22px;
-}
+/* SAP UI FEEL IMAGES */
+.a1{background-image:url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80");}
+.a2{background-image:url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80");}
+.a3{background-image:url("https://images.unsplash.com/photo-1518186233392-c232efbf2373?auto=format&fit=crop&w=1200&q=80");}
 
-.stack-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-}
+.b1{background-image:url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80");}
+.b2{background-image:url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80");}
+.b3{background-image:url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80");}
 
-.stack-grid span{
-background:#fff;
-padding:18px;
-border-radius:16px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-}
-
-.footer{
-background:#111;
-color:#fff;
-padding:70px 25px 30px;
-}
-
-.footer-top{
-max-width:1400px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-padding-bottom:35px;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.footer-top h2{
-font-size:36px;
-max-width:650px;
-}
-
-.footer-btn{
-padding:14px 24px;
-background:#fff;
-color:#111;
-text-decoration:none;
-border-radius:40px;
-font-weight:700;
-}
-
-.social-row{
-max-width:1400px;
-margin:30px auto 0;
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-}
-
-.social-row a{
-color:#ccc;
-text-decoration:none;
-}
-
-.footer-copy{
-text-align:center;
-margin-top:35px;
-color:#777;
-font-size:14px;
-}
+.c1{background-image:url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80");}
+.c2{background-image:url("https://images.unsplash.com/photo-1580281657527-47f249e8f3f6?auto=format&fit=crop&w=1200&q=80");}
+.c3{background-image:url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80");}
 
 /* MOBILE */
+@media(max-width:992px){
+
+.exp-card{
+grid-template-columns:1fr;
+}
+
+.exp-visual{
+height:300px;
+}
+
+}
+
 @media(max-width:768px){
 
 .exp-hero{
@@ -657,43 +597,20 @@ font-size:17px;
 line-height:1.7;
 }
 
-.timeline-line{
-display:none;
-}
-
-.exp-row{
-grid-template-columns:1fr;
-}
-
-.year-box{
-position:static;
-}
-
 .exp-card{
-grid-template-columns:1fr;
-padding:24px;
+padding:22px;
 }
 
-.exp-left h2{
+.exp-info h2{
 font-size:30px;
 }
 
-.exp-right li,
-.exp-desc{
+.exp-info li{
 font-size:16px;
 }
 
-.stack-grid{
-grid-template-columns:1fr;
-}
-
-.footer-top{
-flex-direction:column;
-align-items:flex-start;
-}
-
-.footer-top h2{
-font-size:28px;
+.exp-visual{
+height:230px;
 }
 
 }
