@@ -1,153 +1,221 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Projects</title>
+<!-- =============================== -->
+<!-- projects.html ELITE VERSION -->
+<!-- Replace old projects.html -->
+<!-- =============================== -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Giridhar Rao</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
-  <h2>Giridhar Rao</h2>
+<div class="logo">GR <span>Giridhar Rao</span></div>
 
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="experience.html">Experience</a>
+<a href="projects.html" class="active">Projects</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-  <div class="menu-toggle" id="menuBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<a href="contact.html" class="nav-btn">Let's Connect ↗</a>
 </header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <span id="closeMenu">✕</span>
-
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="experience.html">Experience</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- ===================== -->
-<!-- PROJECTS -->
-<!-- ===================== -->
+<!-- HERO + PROJECTS -->
 <section class="section container">
 
-  <h1>Projects</h1>
-  <p>Selected enterprise integration projects showcasing SAP CPI expertise</p>
+<p class="section-tag">MY WORK</p>
 
-  <div class="projects-grid">
+<h1>Enterprise Projects</h1>
 
-    <!-- PROJECT 1 -->
-    <div class="project-card">
-      <h3>Apple Analytics Platform</h3>
+<p>
+Selected SAP CPI / BTP integration programs delivering scalable,
+secure and measurable business outcomes across enterprise platforms.
+</p>
 
-      <p>
-        Designed enterprise integrations between SAP systems and analytics platforms,
-        enabling real-time data synchronization.
-      </p>
+<div class="projects-grid">
 
-      <div class="project-metrics">
-        ✔ Reduced data latency by ~40%  
-        ✔ Improved data reliability & monitoring
-      </div>
+<!-- CARD 1 -->
+<div class="project-card">
+<h3>Apple Analytics Platform</h3>
 
-      <div class="project-tags">
-        <span>SAP CPI</span>
-        <span>REST</span>
-        <span>JSON</span>
-        <span>Groovy</span>
-      </div>
-    </div>
+<p>
+Designed enterprise integrations connecting SAP systems with
+analytics platforms for real-time reporting and decision making.
+</p>
 
-    <!-- PROJECT 2 -->
-    <div class="project-card">
-      <h3>Citi Bank Integration Platform</h3>
+<div class="project-metrics">
+✓ Reduced latency by ~40% <br>
+✓ Improved monitoring visibility <br>
+✓ Real-time data synchronization
+</div>
 
-      <p>
-        Built secure financial integrations between SAP ECC and banking systems
-        with real-time and batch processing.
-      </p>
+<div class="project-tags">
+<span>SAP CPI</span>
+<span>REST</span>
+<span>JSON</span>
+<span>Monitoring</span>
+</div>
+</div>
 
-      <div class="project-metrics">
-        ✔ Automated transaction corrections  
-        ✔ Secure OAuth2-based integrations
-      </div>
+<!-- CARD 2 -->
+<div class="project-card">
+<h3>Citi Bank Integration Platform</h3>
 
-      <div class="project-tags">
-        <span>SOAP</span>
-        <span>OData</span>
-        <span>SFTP</span>
-        <span>OAuth2</span>
-      </div>
-    </div>
+<p>
+Built secure financial integrations between SAP ECC and banking
+systems supporting batch and real-time transactions.
+</p>
 
-    <!-- PROJECT 3 -->
-    <div class="project-card">
-      <h3>Healthcare Integration Platform</h3>
+<div class="project-metrics">
+✓ OAuth2 secure connectivity <br>
+✓ Faster reconciliation cycles <br>
+✓ Stable batch processing
+</div>
 
-      <p>
-        Enabled secure healthcare data exchange between SAP and external systems
-        with high reliability.
-      </p>
+<div class="project-tags">
+<span>SOAP</span>
+<span>OData</span>
+<span>SFTP</span>
+<span>OAuth2</span>
+</div>
+</div>
 
-      <div class="project-metrics">
-        ✔ Improved data processing reliability  
-        ✔ Reduced manual intervention
-      </div>
+<!-- CARD 3 -->
+<div class="project-card">
+<h3>Healthcare Data Exchange</h3>
 
-      <div class="project-tags">
-        <span>XML</span>
-        <span>CSV</span>
-        <span>HTTPS</span>
-        <span>SFTP</span>
-      </div>
-    </div>
+<p>
+Enabled reliable healthcare integrations between SAP and external
+systems with automated transformation flows.
+</p>
 
-  </div>
+<div class="project-metrics">
+✓ Reduced manual effort <br>
+✓ Improved reliability <br>
+✓ Faster data exchange
+</div>
 
+<div class="project-tags">
+<span>XML</span>
+<span>CSV</span>
+<span>HTTPS</span>
+<span>SFTP</span>
+</div>
+</div>
+
+<!-- CARD 4 -->
+<div class="project-card">
+<h3>Retail Supply Chain Hub</h3>
+
+<p>
+Integrated procurement, warehouse and supplier systems to streamline
+inventory visibility and fulfillment operations.
+</p>
+
+<div class="project-metrics">
+✓ Better stock accuracy <br>
+✓ Faster replenishment <br>
+✓ Reduced delays
+</div>
+
+<div class="project-tags">
+<span>IDoc</span>
+<span>REST</span>
+<span>Groovy</span>
+<span>API</span>
+</div>
+</div>
+
+<!-- CARD 5 -->
+<div class="project-card">
+<h3>HR Employee Sync Platform</h3>
+
+<p>
+Connected HR master data across SAP SuccessFactors and enterprise
+applications with automated synchronization.
+</p>
+
+<div class="project-metrics">
+✓ Clean employee data flow <br>
+✓ Reduced duplicate entries <br>
+✓ Automated updates
+</div>
+
+<div class="project-tags">
+<span>SuccessFactors</span>
+<span>CPI</span>
+<span>JSON</span>
+<span>API</span>
+</div>
+</div>
+
+<!-- CARD 6 -->
+<div class="project-card">
+<h3>Manufacturing Integration Core</h3>
+
+<p>
+Built plant-floor integrations for production orders, material
+movements and quality reporting.
+</p>
+
+<div class="project-metrics">
+✓ Improved process speed <br>
+✓ Better traceability <br>
+✓ Reliable operations
+</div>
+
+<div class="project-tags">
+<span>IDoc</span>
+<span>XML</span>
+<span>SAP ECC</span>
+<span>SFTP</span>
+</div>
+</div>
+
+</div>
 </section>
 
-<div class="page-indicator">Projects</div>
+<div class="page-indicator">03 / PROJECTS</div>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer>
 
-<div class="footer-top">
-<h2>Let’s build powerful enterprise integrations together.</h2>
-<a href="contact.html" class="footer-btn">Contact Me ↗</a>
+<div class="footer-container">
+
+<div class="footer-left">
+<h3>Giridhar Rao</h3>
+<p>
+SAP CPI / BTP Integration Consultant <br>
+Building scalable enterprise integrations.
+</p>
 </div>
 
-<div class="social-row">
-
-<a href="https://www.linkedin.com/in/giridhar-rao-sap-cpi/" target="_blank">in</a>
-
-<a href="mailto:ggiridhar5519@gmail.com">@</a>
-
-<a href="https://wa.me/919515504419" target="_blank">WA</a>
-
-<a href="#">F</a>
+<div class="footer-social">
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fas fa-envelope"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+</div>
 
 </div>
 
-<div class="footer-copy">
-© 2026 Giridhar Rao. All Rights Reserved.
+<div class="footer-bottom">
+<span>© 2026 Giridhar Rao</span>
+<span>Designed for Premium Portfolio Experience</span>
 </div>
 
 </footer>
 
 <script src="main.js"></script>
-
 </body>
 </html>
