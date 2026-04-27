@@ -10,22 +10,35 @@
 <body>
 
 <!-- ========================= -->
-<!-- INTRO -->
+<!-- MARVEL STYLE CORPORATE INTRO -->
 <!-- ========================= -->
 <div id="intro">
 
-  <div class="intro-film"></div>
+  <!-- sliding cinematic panels -->
+  <div class="intro-panels">
+    <span class="panel p1"></span>
+    <span class="panel p2"></span>
+    <span class="panel p3"></span>
+    <span class="panel p4"></span>
+  </div>
 
-  <div class="intro-content">
+  <div class="intro-center">
     <p class="intro-small">ENTERPRISE CONSULTANT</p>
-    <h1 class="intro-logo">GR</h1>
+
+    <h1 class="intro-logo">
+      <span>G</span><span>R</span>
+    </h1>
+
     <div class="intro-line"></div>
+
     <p class="intro-tag">SAP CPI / BTP Integration Consultant</p>
   </div>
 
   <div class="loader-wrap">
-    <div class="loader-bar" id="loaderBar"></div>
     <span class="loader-num" id="loaderNum">0%</span>
+    <div class="loader-track">
+      <div class="loader-fill" id="loaderFill"></div>
+    </div>
   </div>
 
 </div>
@@ -36,8 +49,8 @@
 <header class="navbar">
 
 <div class="brand">
-<span class="gr-logo">GR</span>
-<span class="brand-name">Giridhar Rao</span>
+<span class="brand-logo">GR</span>
+<span class="brand-text">Giridhar Rao</span>
 </div>
 
 <nav class="nav-links">
@@ -58,9 +71,10 @@
 
 </header>
 
-<!-- MOBILE -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
 <span class="close-btn" id="closeBtn">✕</span>
+
 <a href="#">Home</a>
 <a href="#">About</a>
 <a href="#">Experience</a>
@@ -69,7 +83,7 @@
 </div>
 
 <!-- ========================= -->
-<!-- HERO (UNCHANGED) -->
+<!-- HERO (KEEP SAME) -->
 <!-- ========================= -->
 <section class="hero">
 
@@ -102,60 +116,24 @@ processes with SAP Integration Suite and enterprise technologies.
 
 </section>
 
-<!-- ========================= -->
-<!-- FOOTER -->
-<!-- ========================= -->
-<footer class="footer">
-
-<div class="footer-grid">
-
-<div class="footer-box">
-<h3>SOAP</h3>
-<p>XML-based web services used for enterprise integrations between SAP and external systems.</p>
-</div>
-
-<div class="footer-box">
-<h3>Mail Adapter</h3>
-<p>Used to send notifications, approvals, alerts and automated business emails.</p>
-</div>
-
-<div class="footer-box">
-<h3>Cloud Connector</h3>
-<p>Secure tunnel connecting on-premise SAP systems with SAP BTP cloud services.</p>
-</div>
-
-<div class="footer-box">
-<h3>Contact</h3>
-<p>Giridhar Rao</p>
-<p>SAP CPI / BTP Consultant</p>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-© 2026 Giridhar Rao. All Rights Reserved.
-</div>
-
-</footer>
-
 <script>
 /* INTRO COUNTER */
 let count = 0;
 const loaderNum = document.getElementById("loaderNum");
-const loaderBar = document.getElementById("loaderBar");
+const loaderFill = document.getElementById("loaderFill");
 
-const load = setInterval(()=>{
+const introTimer = setInterval(()=>{
 count++;
 loaderNum.innerText = count + "%";
-loaderBar.style.width = count + "%";
+loaderFill.style.width = count + "%";
 
 if(count >= 100){
-clearInterval(load);
+clearInterval(introTimer);
 setTimeout(()=>{
 document.getElementById("intro").classList.add("hide");
-},300);
+},350);
 }
-},25);
+},22);
 
 /* MOBILE MENU */
 const menuBtn = document.getElementById("menuBtn");
@@ -165,7 +143,7 @@ const closeBtn = document.getElementById("closeBtn");
 menuBtn.onclick = ()=> mobileMenu.classList.add("show");
 closeBtn.onclick = ()=> mobileMenu.classList.remove("show");
 
-/* IMAGE SHUFFLE */
+/* HERO SHUFFLE */
 const slides = document.querySelectorAll(".slide");
 let current = 0;
 
