@@ -14,36 +14,24 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-/* NAV FIX */
-.navbar{
-position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-width:95%;
-max-width:1650px;
-z-index:9999;
-pointer-events:auto;
-}
+<!-- ===================================== -->
+<!-- ADD inside NAVBAR (replace nav section) -->
+<!-- Works all pages -->
+<!-- ===================================== -->
 
-.navbar *{
-pointer-events:auto;
-}
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-.nav-links a,
-.nav-btn{
-position:relative;
-z-index:10000;
-cursor:pointer;
-}
-
-/* PAGE SPACE */
-body{
-padding-top:110px;
-}
-</style>
-
+<nav class="nav-links" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="experience.html">Experience</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</nav>
 </head>
 
 <body>
