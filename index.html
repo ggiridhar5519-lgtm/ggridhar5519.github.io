@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Giridhar Rao | SAP Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- ========================= -->
-<!-- CINEMATIC INTRO -->
+<!-- INTRO -->
 <!-- ========================= -->
 <div id="intro">
 
@@ -23,20 +23,21 @@
     <p class="intro-tag">SAP CPI / BTP Integration Consultant</p>
   </div>
 
-  <!-- short loading bar -->
   <div class="loader-wrap">
-    <div class="loader-bar"></div>
+    <div class="loader-bar" id="loaderBar"></div>
+    <span class="loader-num" id="loaderNum">0%</span>
   </div>
 
 </div>
 
 <!-- ========================= -->
-<!-- NAVBAR -->
+<!-- PREMIUM NAVBAR -->
 <!-- ========================= -->
 <header class="navbar">
 
 <div class="brand">
-GR <span>Giridhar Rao</span>
+<span class="gr-logo">GR</span>
+<span class="brand-name">Giridhar Rao</span>
 </div>
 
 <nav class="nav-links">
@@ -47,6 +48,8 @@ GR <span>Giridhar Rao</span>
 <a href="#">Contact</a>
 </nav>
 
+<a href="#" class="nav-btn">Let's Connect ↗</a>
+
 <div class="menu-toggle" id="menuBtn">
 <span></span>
 <span></span>
@@ -55,7 +58,7 @@ GR <span>Giridhar Rao</span>
 
 </header>
 
-<!-- MOBILE MENU -->
+<!-- MOBILE -->
 <div class="mobile-menu" id="mobileMenu">
 <span class="close-btn" id="closeBtn">✕</span>
 <a href="#">Home</a>
@@ -66,53 +69,95 @@ GR <span>Giridhar Rao</span>
 </div>
 
 <!-- ========================= -->
-<!-- HERO -->
+<!-- HERO (UNCHANGED) -->
 <!-- ========================= -->
 <section class="hero">
 
-  <!-- image slider -->
-  <div class="bg-slider">
-    <div class="slide s1 active"></div>
-    <div class="slide s2"></div>
-    <div class="slide s3"></div>
-    <div class="slide s4"></div>
-  </div>
+<div class="bg-slider">
+<div class="slide s1 active"></div>
+<div class="slide s2"></div>
+<div class="slide s3"></div>
+<div class="slide s4"></div>
+</div>
 
-  <div class="hero-overlay"></div>
+<div class="hero-overlay"></div>
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <p class="mini-title">SENIOR PROFESSIONAL</p>
+<p class="mini-title">SENIOR PROFESSIONAL</p>
 
-    <h1>
-      SAP CPI / BTP<br>
-      Integration Consultant
-    </h1>
+<h1>
+SAP CPI / BTP<br>
+Integration Consultant
+</h1>
 
-    <p>
-      Helping enterprises integrate, automate and transform business
-      processes with SAP Integration Suite and enterprise technologies.
-    </p>
+<p>
+Helping enterprises integrate, automate and transform business
+processes with SAP Integration Suite and enterprise technologies.
+</p>
 
-    <a href="#" class="cta-btn">Explore My Work</a>
+<a href="#" class="cta-btn">Explore My Work</a>
 
-  </div>
+</div>
 
 </section>
 
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+<footer class="footer">
+
+<div class="footer-grid">
+
+<div class="footer-box">
+<h3>SOAP</h3>
+<p>XML-based web services used for enterprise integrations between SAP and external systems.</p>
+</div>
+
+<div class="footer-box">
+<h3>Mail Adapter</h3>
+<p>Used to send notifications, approvals, alerts and automated business emails.</p>
+</div>
+
+<div class="footer-box">
+<h3>Cloud Connector</h3>
+<p>Secure tunnel connecting on-premise SAP systems with SAP BTP cloud services.</p>
+</div>
+
+<div class="footer-box">
+<h3>Contact</h3>
+<p>Giridhar Rao</p>
+<p>SAP CPI / BTP Consultant</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Giridhar Rao. All Rights Reserved.
+</div>
+
+</footer>
+
 <script>
-/* ========================= */
-/* INTRO */
-/* ========================= */
-window.onload = ()=>{
+/* INTRO COUNTER */
+let count = 0;
+const loaderNum = document.getElementById("loaderNum");
+const loaderBar = document.getElementById("loaderBar");
+
+const load = setInterval(()=>{
+count++;
+loaderNum.innerText = count + "%";
+loaderBar.style.width = count + "%";
+
+if(count >= 100){
+clearInterval(load);
 setTimeout(()=>{
 document.getElementById("intro").classList.add("hide");
-},3200);
-};
+},300);
+}
+},25);
 
-/* ========================= */
 /* MOBILE MENU */
-/* ========================= */
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const closeBtn = document.getElementById("closeBtn");
@@ -120,9 +165,7 @@ const closeBtn = document.getElementById("closeBtn");
 menuBtn.onclick = ()=> mobileMenu.classList.add("show");
 closeBtn.onclick = ()=> mobileMenu.classList.remove("show");
 
-/* ========================= */
 /* IMAGE SHUFFLE */
-/* ========================= */
 const slides = document.querySelectorAll(".slide");
 let current = 0;
 
