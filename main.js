@@ -184,3 +184,25 @@ statsObserver.observe(document.querySelector(".about-stats"));
 }
 
 });
+/* ===================================== */
+/* NOTEBOOK ABOUT JS */
+/* PASTE IN main.js bottom */
+/* ===================================== */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:.18});
+
+document.querySelectorAll(".a-card").forEach(el=>observer.observe(el));
+document.querySelectorAll(".trust-grid div").forEach(el=>observer.observe(el));
+
+const darkTitle = document.querySelector(".about-dark h2");
+if(darkTitle) observer.observe(darkTitle);
+
+});
