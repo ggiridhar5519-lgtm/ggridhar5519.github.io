@@ -114,3 +114,73 @@ document.querySelectorAll("a").forEach(link => {
   }
 
 });
+/* ================================= */
+/* ABOUT PAGE ANIMATION JS */
+/* PASTE IN main.js bottom */
+/* ================================= */
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:.18});
+
+/* cards */
+document.querySelectorAll(".a-card").forEach(el=>{
+observer.observe(el);
+});
+
+/* trust blocks */
+document.querySelectorAll(".trust-grid div").forEach(el=>{
+observer.observe(el);
+});
+
+/* dark title */
+const darkTitle = document.querySelector(".about-dark h2");
+if(darkTitle) observer.observe(darkTitle);
+
+
+/* COUNTER ANIMATION */
+function countUp(el,target,suffix=""){
+let n = 0;
+const speed = Math.ceil(target/35);
+
+const timer = setInterval(()=>{
+n += speed;
+
+if(n >= target){
+n = target;
+clearInterval(timer);
+}
+
+el.innerText = n + suffix;
+
+},40);
+}
+
+const stats = document.querySelectorAll(".about-stats h3");
+
+if(stats.length >= 3){
+
+const statsObserver = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+
+countUp(stats[0],6,"+");
+countUp(stats[1],30,"+");
+countUp(stats[2],100,"%");
+
+statsObserver.disconnect();
+}
+});
+},{threshold:.6});
+
+statsObserver.observe(document.querySelector(".about-stats"));
+
+}
+
+});
