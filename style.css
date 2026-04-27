@@ -8,19 +8,19 @@ box-sizing:border-box;
 
 body{
 font-family:Arial,sans-serif;
-background:#070707;
-color:#fff;
+background:#f6f3ed;
+color:#111;
 overflow-x:hidden;
 }
 
-/* ================= */
+/* ===================== */
 /* INTRO */
-/* ================= */
+/* ===================== */
 #intro{
 position:fixed;
 inset:0;
+background:#fff;
 z-index:9999;
-background:#000;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -37,27 +37,27 @@ text-align:center;
 }
 
 .intro-logo{
-font-size:72px;
+font-size:70px;
 letter-spacing:8px;
-color:#d4af37;
+color:#c79b3b;
 }
 
 .intro-line{
 width:140px;
 height:2px;
-background:#d4af37;
-margin:18px auto;
+background:#111;
+margin:15px auto;
 }
 
 .intro-tag{
 font-size:13px;
 letter-spacing:3px;
-color:#ddd;
+color:#555;
 }
 
-/* ================= */
+/* ===================== */
 /* NAVBAR */
-/* ================= */
+/* ===================== */
 .navbar{
 position:fixed;
 top:0;
@@ -66,21 +66,20 @@ z-index:1000;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:22px 50px;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(212,175,55,.15);
+padding:22px 45px;
+background:rgba(255,255,255,.65);
+backdrop-filter:blur(16px);
 }
 
 .logo{
 font-size:26px;
 font-weight:700;
-color:#d4af37;
+color:#c79b3b;
 }
 
 .logo span{
 font-size:14px;
-color:#fff;
+color:#111;
 margin-left:8px;
 }
 
@@ -91,16 +90,19 @@ gap:28px;
 
 .nav-links a{
 text-decoration:none;
+color:#111;
+font-size:15px;
+}
+
+.top-btn{
+padding:12px 24px;
+background:#111;
 color:#fff;
-font-weight:500;
-transition:.3s;
+text-decoration:none;
+border-radius:40px;
+font-size:14px;
 }
 
-.nav-links a:hover{
-color:#d4af37;
-}
-
-/* HAMBURGER */
 .menu-toggle{
 display:none;
 flex-direction:column;
@@ -109,10 +111,9 @@ cursor:pointer;
 }
 
 .menu-toggle span{
-width:26px;
+width:25px;
 height:3px;
-background:#fff;
-border-radius:20px;
+background:#111;
 }
 
 /* MOBILE MENU */
@@ -122,12 +123,12 @@ right:-100%;
 top:0;
 width:280px;
 height:100%;
-background:#111;
+background:#fff;
 z-index:2000;
 padding:80px 30px;
 display:flex;
 flex-direction:column;
-gap:22px;
+gap:20px;
 transition:.35s;
 }
 
@@ -137,77 +138,78 @@ right:0;
 
 .mobile-menu a{
 text-decoration:none;
-color:#fff;
+color:#111;
 font-size:18px;
 }
 
-.close-menu{
+.close-btn{
 position:absolute;
 top:20px;
 right:20px;
 font-size:28px;
 cursor:pointer;
-color:#d4af37;
 }
 
-/* ================= */
+/* ===================== */
 /* HERO */
-/* ================= */
+/* ===================== */
 .hero{
 min-height:100vh;
-padding:130px 60px 60px;
+padding:130px 55px 50px;
 display:grid;
 grid-template-columns:1.1fr .9fr;
 align-items:center;
-gap:30px;
+gap:20px;
 
 background:
-radial-gradient(circle at top right,rgba(212,175,55,.15),transparent 25%),
-radial-gradient(circle at bottom left,rgba(212,175,55,.08),transparent 20%),
-#070707;
+radial-gradient(circle at top right,#fff7dd 0%,transparent 30%),
+linear-gradient(135deg,#faf8f4,#ece8e0);
 }
 
-.mini-title{
+/* LEFT */
+.small-title{
 font-size:12px;
 letter-spacing:4px;
-color:#d4af37;
-margin-bottom:18px;
+color:#c79b3b;
+margin-bottom:20px;
 }
 
 .hero h1{
-font-size:72px;
-line-height:1.03;
+font-size:68px;
+line-height:1.05;
+font-weight:500;
 margin-bottom:20px;
 }
 
 .hero-text{
-font-size:20px;
-color:#cfcfcf;
-line-height:1.7;
-max-width:650px;
+font-size:21px;
+line-height:1.8;
+color:#555;
+max-width:620px;
 }
 
-.hero-buttons{
+.buttons{
 display:flex;
 gap:16px;
 margin-top:30px;
 }
 
-.btn{
-padding:14px 26px;
-border-radius:40px;
+.dark-btn,.light-btn{
+padding:14px 24px;
+border-radius:14px;
 text-decoration:none;
 font-weight:600;
 }
 
-.gold-btn{
-background:#d4af37;
-color:#000;
+.dark-btn{
+background:#111;
+color:#fff;
 }
 
-.dark-btn{
-border:1px solid #d4af37;
-color:#fff;
+.light-btn{
+background:#fff;
+color:#111;
+box-shadow:0 10px 20px rgba(0,0,0,.06);
 }
 
 /* STATS */
@@ -218,57 +220,99 @@ gap:14px;
 margin-top:35px;
 }
 
-.card{
-background:#111;
-padding:20px;
+.box{
+background:rgba(255,255,255,.7);
+padding:22px;
 border-radius:18px;
-border:1px solid rgba(212,175,55,.12);
+box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
-.card strong{
+.box strong{
 display:block;
-font-size:28px;
-color:#d4af37;
+font-size:34px;
+font-weight:600;
 }
 
-.card span{
+.box span{
 font-size:13px;
-color:#bbb;
+color:#666;
+}
+
+/* TECH */
+.tech-title{
+margin-top:28px;
+font-size:12px;
+letter-spacing:4px;
+color:#888;
+}
+
+.tech-row{
+display:flex;
+flex-wrap:wrap;
+gap:18px;
+margin-top:16px;
+font-size:15px;
+color:#666;
 }
 
 /* RIGHT */
 .hero-right{
 position:relative;
-height:600px;
+height:650px;
 display:flex;
 justify-content:center;
 align-items:center;
 }
 
 .sphere{
-width:320px;
-height:320px;
+width:340px;
+height:340px;
 border-radius:50%;
-background:radial-gradient(circle at 30% 30%,#222,#000);
-border:1px solid rgba(212,175,55,.25);
-box-shadow:0 0 50px rgba(212,175,55,.15);
+background:radial-gradient(circle at 30% 30%,#fff,#ddd);
+box-shadow:
+0 0 0 25px rgba(199,155,59,.08),
+0 25px 80px rgba(0,0,0,.12);
 animation:float 5s ease-in-out infinite;
 }
 
-.gold-ring{
+.glow-ring{
 position:absolute;
-border:1px solid rgba(212,175,55,.25);
+border:1px solid rgba(199,155,59,.2);
 border-radius:50%;
 }
 
 .ring1{
-width:420px;
-height:420px;
+width:440px;
+height:440px;
 }
 
 .ring2{
-width:520px;
-height:520px;
+width:540px;
+height:540px;
+}
+
+.floating-card{
+position:absolute;
+background:rgba(255,255,255,.72);
+padding:14px 18px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+font-size:13px;
+font-weight:600;
+}
+
+.card1{
+top:120px;
+right:10px;
+}
+
+.card2{
+right:0;
+}
+
+.card3{
+bottom:120px;
+right:30px;
 }
 
 @keyframes float{
@@ -285,14 +329,14 @@ padding:120px 25px 50px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:48px;
 }
 
 .hero-text{
 margin:auto;
 }
 
-.hero-buttons{
+.buttons{
 justify-content:center;
 }
 
@@ -309,7 +353,7 @@ height:420px;
 /* MOBILE */
 @media(max-width:768px){
 
-.nav-links{
+.nav-links,.top-btn{
 display:none;
 }
 
@@ -325,7 +369,7 @@ padding:18px 20px;
 font-size:38px;
 }
 
-.hero-buttons{
+.buttons{
 flex-direction:column;
 }
 
@@ -338,18 +382,22 @@ height:320px;
 }
 
 .sphere{
-width:210px;
-height:210px;
+width:220px;
+height:220px;
 }
 
 .ring1{
-width:280px;
-height:280px;
+width:290px;
+height:290px;
 }
 
 .ring2{
-width:340px;
-height:340px;
+width:360px;
+height:360px;
+}
+
+.floating-card{
+display:none;
 }
 
 .intro-logo{
