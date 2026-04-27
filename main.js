@@ -206,3 +206,27 @@ const darkTitle = document.querySelector(".about-dark h2");
 if(darkTitle) observer.observe(darkTitle);
 
 });
+/* ===================================== */
+/* PROJECTS PAGE JS */
+/* ADD IN main.js bottom */
+/* ===================================== */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const cards = document.querySelectorAll(".project-card");
+
+if(cards.length){
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:.18});
+
+cards.forEach(card=>observer.observe(card));
+
+}
+
+});
