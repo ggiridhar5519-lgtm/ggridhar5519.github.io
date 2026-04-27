@@ -8,19 +8,19 @@ box-sizing:border-box;
 
 body{
 font-family:Arial,sans-serif;
-background:#f8f5ef;
-color:#111;
+background:#070707;
+color:#fff;
 overflow-x:hidden;
 }
 
-/* ===================== */
-/* INTRO OLD STYLE */
-/* ===================== */
+/* ================= */
+/* INTRO */
+/* ================= */
 #intro{
 position:fixed;
 inset:0;
 z-index:9999;
-background:linear-gradient(180deg,#ffffff,#eef2f7);
+background:#000;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -38,26 +38,26 @@ text-align:center;
 
 .intro-logo{
 font-size:72px;
-color:#c89b3c;
 letter-spacing:8px;
+color:#d4af37;
 }
 
 .intro-line{
 width:140px;
 height:2px;
-background:#111;
-margin:16px auto;
+background:#d4af37;
+margin:18px auto;
 }
 
 .intro-tag{
 font-size:13px;
 letter-spacing:3px;
-color:#555;
+color:#ddd;
 }
 
-/* ===================== */
+/* ================= */
 /* NAVBAR */
-/* ===================== */
+/* ================= */
 .navbar{
 position:fixed;
 top:0;
@@ -67,19 +67,20 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:22px 50px;
-background:rgba(255,255,255,.65);
-backdrop-filter:blur(14px);
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(212,175,55,.15);
 }
 
-.brand{
+.logo{
 font-size:26px;
 font-weight:700;
-color:#c89b3c;
+color:#d4af37;
 }
 
-.brand span{
+.logo span{
 font-size:14px;
-color:#111;
+color:#fff;
 margin-left:8px;
 }
 
@@ -90,10 +91,16 @@ gap:28px;
 
 .nav-links a{
 text-decoration:none;
-color:#111;
+color:#fff;
 font-weight:500;
+transition:.3s;
 }
 
+.nav-links a:hover{
+color:#d4af37;
+}
+
+/* HAMBURGER */
 .menu-toggle{
 display:none;
 flex-direction:column;
@@ -104,7 +111,7 @@ cursor:pointer;
 .menu-toggle span{
 width:26px;
 height:3px;
-background:#111;
+background:#fff;
 border-radius:20px;
 }
 
@@ -115,7 +122,7 @@ right:-100%;
 top:0;
 width:280px;
 height:100%;
-background:#fff;
+background:#111;
 z-index:2000;
 padding:80px 30px;
 display:flex;
@@ -130,21 +137,22 @@ right:0;
 
 .mobile-menu a{
 text-decoration:none;
-color:#111;
+color:#fff;
 font-size:18px;
 }
 
-.close-btn{
+.close-menu{
 position:absolute;
 top:20px;
 right:20px;
 font-size:28px;
 cursor:pointer;
+color:#d4af37;
 }
 
-/* ===================== */
+/* ================= */
 /* HERO */
-/* ===================== */
+/* ================= */
 .hero{
 min-height:100vh;
 padding:130px 60px 60px;
@@ -154,26 +162,27 @@ align-items:center;
 gap:30px;
 
 background:
-radial-gradient(circle at top right,#fff6dc 0%,transparent 30%),
-linear-gradient(135deg,#faf8f3,#ece7dd);
+radial-gradient(circle at top right,rgba(212,175,55,.15),transparent 25%),
+radial-gradient(circle at bottom left,rgba(212,175,55,.08),transparent 20%),
+#070707;
 }
 
 .mini-title{
 font-size:12px;
 letter-spacing:4px;
-color:#c89b3c;
+color:#d4af37;
 margin-bottom:18px;
 }
 
 .hero h1{
-font-size:68px;
+font-size:72px;
 line-height:1.03;
 margin-bottom:20px;
 }
 
 .hero-text{
 font-size:20px;
-color:#555;
+color:#cfcfcf;
 line-height:1.7;
 max-width:650px;
 }
@@ -191,40 +200,40 @@ text-decoration:none;
 font-weight:600;
 }
 
-.primary{
-background:#111;
+.gold-btn{
+background:#d4af37;
+color:#000;
+}
+
+.dark-btn{
+border:1px solid #d4af37;
 color:#fff;
 }
 
-.secondary{
-background:#fff;
-color:#111;
-border:1px solid #ddd;
-}
-
 /* STATS */
-.stats-row{
+.stats{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:14px;
 margin-top:35px;
 }
 
-.stat-box{
-background:rgba(255,255,255,.75);
+.card{
+background:#111;
 padding:20px;
 border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
+border:1px solid rgba(212,175,55,.12);
 }
 
-.stat-box strong{
+.card strong{
 display:block;
 font-size:28px;
+color:#d4af37;
 }
 
-.stat-box span{
+.card span{
 font-size:13px;
-color:#666;
+color:#bbb;
 }
 
 /* RIGHT */
@@ -240,16 +249,15 @@ align-items:center;
 width:320px;
 height:320px;
 border-radius:50%;
-background:radial-gradient(circle at 30% 30%,#fff,#ddd);
-box-shadow:
-0 0 0 30px rgba(200,155,60,.08),
-0 25px 80px rgba(0,0,0,.12);
+background:radial-gradient(circle at 30% 30%,#222,#000);
+border:1px solid rgba(212,175,55,.25);
+box-shadow:0 0 50px rgba(212,175,55,.15);
 animation:float 5s ease-in-out infinite;
 }
 
-.ring{
+.gold-ring{
 position:absolute;
-border:1px solid rgba(200,155,60,.25);
+border:1px solid rgba(212,175,55,.25);
 border-radius:50%;
 }
 
@@ -261,25 +269,6 @@ height:420px;
 .ring2{
 width:520px;
 height:520px;
-}
-
-.glass-card{
-position:absolute;
-background:rgba(255,255,255,.7);
-padding:16px 20px;
-border-radius:18px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-font-weight:600;
-}
-
-.top-card{
-top:100px;
-right:20px;
-}
-
-.bottom-card{
-bottom:100px;
-left:20px;
 }
 
 @keyframes float{
@@ -296,7 +285,7 @@ padding:120px 25px 50px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:50px;
 }
 
 .hero-text{
@@ -307,7 +296,7 @@ margin:auto;
 justify-content:center;
 }
 
-.stats-row{
+.stats{
 grid-template-columns:repeat(2,1fr);
 }
 
@@ -340,7 +329,7 @@ font-size:38px;
 flex-direction:column;
 }
 
-.stats-row{
+.stats{
 grid-template-columns:1fr;
 }
 
@@ -361,18 +350,6 @@ height:280px;
 .ring2{
 width:340px;
 height:340px;
-}
-
-.top-card{
-top:20px;
-right:0;
-font-size:12px;
-}
-
-.bottom-card{
-bottom:20px;
-left:0;
-font-size:12px;
 }
 
 .intro-logo{
