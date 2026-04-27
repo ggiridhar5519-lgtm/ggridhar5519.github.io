@@ -1209,10 +1209,17 @@ bottom:auto;
 width:100%;
 margin-top:20px;
 }
-
 .glass-orb{
-width:220px;
-height:220px;
+width:260px;
+height:260px;
+border-radius:50%;
+background:radial-gradient(circle,
+rgba(255,255,255,.10),
+transparent 70%);
+filter:blur(18px);
+position:absolute;
+right:80px;
+top:90px;
 }
 
 }
