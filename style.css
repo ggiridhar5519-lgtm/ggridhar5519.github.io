@@ -865,100 +865,184 @@ letter-spacing:2px;
 font-size:22px;
 }
 
-}
-/* ================================= */
-/* ABOUT PAGE PREMIUM ANIMATIONS */
-/* PASTE IN style.css */
-/* ================================= */
+/* ================================ */
+/* ABOUT PAGE MAIN CSS */
+/* ================================ */
 
-/* HERO ENTRY */
-.about-mini,
-.about-left h1,
-.about-desc,
+.about-hero{
+max-width:1400px;
+margin:auto;
+padding:170px 25px 90px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:50px;
+align-items:center;
+}
+
+.about-mini{
+font-size:13px;
+letter-spacing:6px;
+color:#777;
+margin-bottom:18px;
+}
+
+.about-left h1{
+font-size:78px;
+line-height:1.02;
+margin-bottom:24px;
+font-weight:800;
+}
+
+.about-desc{
+font-size:22px;
+line-height:1.8;
+color:#444;
+max-width:760px;
+margin-bottom:34px;
+}
+
 .about-stats{
-opacity:0;
-transform:translateY(40px);
-animation:riseIn .9s ease forwards;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
 }
 
-.about-mini{animation-delay:.1s;}
-.about-left h1{animation-delay:.25s;}
-.about-desc{animation-delay:.45s;}
-.about-stats{animation-delay:.65s;}
-
-@keyframes riseIn{
-to{
-opacity:1;
-transform:translateY(0);
-}
+.about-stats div{
+background:#fff;
+padding:18px 24px;
+border-radius:22px;
+min-width:130px;
+box-shadow:0 14px 35px rgba(0,0,0,.06);
 }
 
-/* ORB UPGRADE */
+.about-stats h3{
+font-size:34px;
+}
+
+.about-stats span{
+font-size:14px;
+color:#666;
+}
+
+.about-right{
+position:relative;
+min-height:560px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
 .glass-orb{
-animation:
-floatOrb 5s ease-in-out infinite,
-orbGlow 4s ease-in-out infinite;
+width:380px;
+height:380px;
+border-radius:50%;
+background:radial-gradient(circle,#fff,#ececec,#dadada);
 }
 
-@keyframes orbGlow{
-0%,100%{
-box-shadow:
-0 40px 80px rgba(0,0,0,.08),
-inset 0 10px 40px rgba(255,255,255,.6);
-}
-50%{
-box-shadow:
-0 55px 110px rgba(0,0,0,.12),
-inset 0 14px 55px rgba(255,255,255,.75);
-}
-}
-
-/* PANEL FLOAT */
 .about-panel{
-animation:panelFloat 4s ease-in-out infinite;
+position:absolute;
+right:0;
+bottom:40px;
+background:rgba(255,255,255,.88);
+padding:28px;
+border-radius:24px;
+width:340px;
+box-shadow:0 25px 45px rgba(0,0,0,.08);
 }
 
-@keyframes panelFloat{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
+.about-panel h3{
+font-size:28px;
+margin-bottom:14px;
 }
 
-/* REVEAL ITEMS */
-.a-card,
-.trust-grid div{
-opacity:0;
-transform:translateY(45px);
-transition:.8s ease;
+.about-panel li{
+line-height:1.8;
 }
 
-.a-card.show,
-.trust-grid div.show{
-opacity:1;
-transform:translateY(0);
+.about-cards{
+max-width:1400px;
+margin:auto;
+padding:20px 25px 90px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
 }
 
-/* STAGGER EFFECT */
-.a-card:nth-child(2){transition-delay:.08s;}
-.a-card:nth-child(3){transition-delay:.16s;}
-.a-card:nth-child(4){transition-delay:.24s;}
-.a-card:nth-child(5){transition-delay:.32s;}
-.a-card:nth-child(6){transition-delay:.40s;}
-
-/* HOVER PREMIUM */
-.a-card:hover,
-.trust-grid div:hover{
-transform:translateY(-8px) scale(1.01);
-box-shadow:0 24px 48px rgba(0,0,0,.08);
+.a-card{
+background:#fff;
+padding:32px;
+border-radius:26px;
+box-shadow:0 16px 38px rgba(0,0,0,.06);
 }
 
-/* DARK TITLE */
+.a-card h3{
+font-size:28px;
+margin-bottom:14px;
+}
+
+.a-card p{
+line-height:1.8;
+color:#555;
+}
+
+.about-dark{
+background:#0f1012;
+color:#fff;
+padding:90px 25px;
+}
+
 .about-dark h2{
-opacity:0;
-transform:translateY(40px);
-transition:.8s ease;
+font-size:56px;
+text-align:center;
+margin-bottom:50px;
 }
 
-.about-dark h2.show{
-opacity:1;
-transform:translateY(0);
+.trust-grid{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.trust-grid div{
+background:rgba(255,255,255,.04);
+padding:30px;
+border-radius:24px;
+}
+
+@media(max-width:992px){
+
+.about-hero{
+grid-template-columns:1fr;
+}
+
+.about-cards{
+grid-template-columns:1fr 1fr;
+}
+
+.trust-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.about-left h1{
+font-size:46px;
+}
+
+.about-desc{
+font-size:17px;
+}
+
+.about-cards{
+grid-template-columns:1fr;
+}
+
+.about-dark h2{
+font-size:36px;
+}
+
 }
