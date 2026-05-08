@@ -742,3 +742,29 @@ p{color:var(--muted)}
 .social:hover img {
   filter: brightness(0) invert(1);
 }
+
+
+/* FORCE FIX SOCIAL ICONS */
+.social-icons a{
+width:48px !important;
+height:48px !important;
+
+display:flex !important;
+align-items:center !important;
+justify-content:center !important;
+
+overflow:hidden !important;
+border-radius:50% !important;
+background:#fff;
+flex-shrink:0;
+}
+
+.social-icons a img{
+width:24px !important;
+height:24px !important;
+max-width:24px !important;
+max-height:24px !important;
+
+object-fit:contain !important;
+display:block !important;
+}
