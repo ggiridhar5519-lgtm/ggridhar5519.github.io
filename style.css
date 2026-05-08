@@ -693,11 +693,12 @@ p{color:var(--muted)}
   display: flex;
   gap: 12px;
   margin-top: 15px;
+  flex-wrap: wrap;
 }
 
 .social {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: #fff;
 
@@ -705,12 +706,17 @@ p{color:var(--muted)}
   align-items: center;
   justify-content: center;
 
+  overflow: hidden;
+
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   transition: 0.3s ease;
 }
 
 .social img {
-  width: 20px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
 }
 
 /* HOVER EFFECT */
