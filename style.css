@@ -1617,9 +1617,7 @@ width:100%;
 max-width:1200px;
 
 display:grid;
-grid-template-columns:620px 520px;
-
-justify-content:center;
+grid-template-columns:58% 42%;
 
 margin:auto;
 
@@ -1630,7 +1628,6 @@ box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 .contact-wrapper{
 display:flex;
-justify-content:center;
 padding:170px 20px 80px;
 }
 
