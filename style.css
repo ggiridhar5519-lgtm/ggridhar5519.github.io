@@ -1637,37 +1637,60 @@ font-weight:700;
 }
 
 /* LEFT */
+/* LEFT PANEL */
 .contact-info{
-border-right:1px solid #e5e5e5;
+border-right:1px solid #dcdcdc;
+background:#fff;
+}
+
+.contact-title{
+background:#1f2c73;
+color:#fff;
+
+padding:14px;
+text-align:center;
+
+font-size:18px;
+font-weight:700;
 }
 
 .info-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
-
-padding:45px;
 }
 
 .info-item{
+padding:38px 20px;
+
 text-align:center;
+
+border-right:1px solid #e5e5e5;
+border-bottom:1px solid #e5e5e5;
 }
 
-.info-icon{
-font-size:34px;
-margin-bottom:16px;
+.info-item:nth-child(2),
+.info-item:nth-child(4){
+border-right:none;
+}
+
+.info-item img{
+width:28px;
+height:28px;
+object-fit:contain;
+
+margin-bottom:18px;
 }
 
 .info-item h3{
-font-size:22px;
-margin-bottom:10px;
+font-size:18px;
+margin-bottom:12px;
 color:#111;
 }
 
 .info-item p{
-font-size:16px;
+font-size:14px;
 line-height:1.7;
-color:#555;
+color:#666;
 }
 
 /* RIGHT */
