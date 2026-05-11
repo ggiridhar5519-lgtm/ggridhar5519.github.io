@@ -1,16 +1,33 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contact | Giridhar Rao</title>
-
+<title>About | Giridhar Rao</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+<!-- ELITE LOADER -->
+<div class="elite-loader" id="eliteLoader">
+  <div class="glass-bg">
+    <span class="glass g1"></span>
+    <span class="glass g2"></span>
+    <span class="glass g3"></span>
+  </div>
+
+  <div class="elite-center">
+    <h2>GIRIDHAR RAO</h2>
+    <p id="loaderTitle">Loading Profile...</p>
+
+    <div class="elite-track">
+      <div class="elite-fill" id="eliteFill"></div>
+    </div>
+
+    <div class="elite-percent" id="elitePercent">0%</div>
+  </div>
+</div>
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -21,15 +38,16 @@
 </div>
 
 <nav class="nav-links">
-<a href="./index.html">Home</a>
-<a href="./about.html">About</a>
-<a href="./experience.html">Experience</a>
-<a href="./contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html" class="active-link">About</a>
+<a href="experience.html">Experience</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
 </nav>
 
-<a href="#" class="nav-btn">Let's Connect ↗</a>
+<a href="contact.html" class="nav-btn">Let's Connect ↗</a>
 
-<div class="menu-toggle" id="menuBtn">
+<div class="menu-toggle">
 <span></span>
 <span></span>
 <span></span>
@@ -39,110 +57,127 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
+<span class="close-btn">✕</span>
 
-<span class="close-btn" id="closeBtn">✕</span>
-
-<a href="./index.html">Home</a>
-<a href="./about.html">About</a>
-<a href="./experience.html">Experience</a>
-<a href="./projects.html">Projects</a>
-<a href="./contact.html">Contact</a>
-
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="experience.html">Experience</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
 </div>
 
-<!-- CONTACT SECTION -->
-<section class="contact-wrapper">
+<!-- HERO -->
+<section class="about-hero">
 
-<div class="contact-box">
+<div class="about-left">
 
-<!-- LEFT -->
-<div class="contact-info">
+<p class="about-mini">ABOUT ME</p>
 
-<div class="contact-title">
-Get In Touch With Us Now!
+<h1>
+Enterprise<br>
+Integration Specialist
+</h1>
+
+<p class="about-desc">
+SAP CPI Consultant with 6+ years of experience delivering scalable enterprise integrations using SAP BTP Integration Suite.
+Specialized in connecting SAP S/4HANA, SAP ECC, Datasphere and external systems.
+</p>
+
+<div class="about-stats">
+<div>
+<h3>6+</h3>
+<span>Years</span>
 </div>
 
-<div class="info-grid">
-
-<div class="info-item">
-<div class="info-icon">📞</div>
-<h3>Phone Number</h3>
-<p>+91 9515504419</p>
+<div>
+<h3>30+</h3>
+<span>Interfaces</span>
 </div>
 
-<div class="info-item">
-<div class="info-icon">✉️</div>
-<h3>Email</h3>
-<p>ggiridhar5519@gmail.com</p>
+<div>
+<h3>100%</h3>
+<span>Commitment</span>
 </div>
-
-<div class="info-item">
-<div class="info-icon">📍</div>
-<h3>Location</h3>
-<p>India</p>
-</div>
-
-<div class="info-item">
-<div class="info-icon">🕒</div>
-<h3>Working Hours</h3>
-<p>Monday to Saturday</p>
-<p>09:00 AM to 06:00 PM</p>
 </div>
 
 </div>
 
-</div>
+<div class="about-right">
 
-<!-- RIGHT -->
-<div class="contact-form-area">
+<div class="glass-orb"></div>
 
-<div class="contact-title">
-Contact Us
-</div>
+<div class="about-panel">
+<h3>Core Strengths</h3>
 
-<form class="contact-form"
-action="https://formsubmit.co/ggiridhar5519@gmail.com"
-method="POST">
-
-<input type="hidden" name="_subject" value="New Portfolio Message">
-
-<input type="hidden" name="_captcha" value="false">
-
-<div class="form-grid">
-
-<input type="text"
-name="firstname"
-placeholder="First Name"
-required>
-
-<input type="text"
-name="lastname"
-placeholder="Last Name"
-required>
-
-<input type="tel"
-name="mobile"
-placeholder="Mobile No"
-required>
-
-<input type="email"
-name="email"
-placeholder="Email ID"
-required>
+<ul>
+<li>SAP CPI / BTP Integration Suite</li>
+<li>REST / SOAP / IDoc / SFTP</li>
+<li>XML / JSON / Groovy</li>
+<li>Routing / Splitter / Aggregator</li>
+<li>Monitoring / Support</li>
+</ul>
 
 </div>
 
-<textarea
-name="message"
-placeholder="Message"
-required></textarea>
+</div>
 
-<button type="submit">
-Submit ↗
-</button>
+</section>
 
-</form>
+<!-- CARDS -->
+<section class="about-cards">
 
+<div class="a-card">
+<h3>Integration Expertise</h3>
+<p>Designing secure integrations across SAP and external enterprise platforms.</p>
+</div>
+
+<div class="a-card">
+<h3>SAP BTP & CPI</h3>
+<p>Hands-on experience with SAP CPI, API Management and cloud integrations.</p>
+</div>
+
+<div class="a-card">
+<h3>Transformation Logic</h3>
+<p>XML, JSON, CSV transformations with Groovy scripting and mappings.</p>
+</div>
+
+<div class="a-card">
+<h3>Architecture Thinking</h3>
+<p>Reusable patterns, scalability, resilience and operational readiness.</p>
+</div>
+
+<div class="a-card">
+<h3>Delivery Focus</h3>
+<p>Ownership from requirement gathering to deployment and support.</p>
+</div>
+
+<div class="a-card">
+<h3>Business Value</h3>
+<p>Reliable integrations that reduce manual effort and improve speed.</p>
+</div>
+
+</section>
+
+<!-- DARK TRUST SECTION -->
+<section class="about-dark">
+
+<h2>Why Organizations Trust My Delivery</h2>
+
+<div class="trust-grid">
+
+<div>
+<h3>Reliable</h3>
+<p>Stable integrations built for production scale.</p>
+</div>
+
+<div>
+<h3>Technical Depth</h3>
+<p>Strong expertise in adapters, security and message processing.</p>
+</div>
+
+<div>
+<h3>Ownership</h3>
+<p>Responsible execution from build to post-go-live support.</p>
 </div>
 
 </div>
@@ -153,34 +188,19 @@ Submit ↗
 <footer class="footer">
 
 <div class="footer-top">
-
-<h2>
-Let’s build powerful enterprise integrations together.
-</h2>
-
-<a href="./contact.html" class="footer-btn">
-Contact Me ↗
-</a>
-
+<h2>Let’s build powerful enterprise integrations together.</h2>
+<a href="contact.html" class="footer-btn">Contact Me ↗</a>
 </div>
 
 <div class="social-row">
 
-<a href="https://www.linkedin.com/in/giridhar-rao-sap-cpi/" target="_blank">
-in
-</a>
+<a href="https://www.linkedin.com/in/giridhar-rao-sap-cpi/" target="_blank">in</a>
 
-<a href="mailto:ggiridhar5519@gmail.com">
-@
-</a>
+<a href="mailto:ggiridhar5519@gmail.com">@</a>
 
-<a href="https://wa.me/919515504419" target="_blank">
-WA
-</a>
+<a href="https://wa.me/919515504419" target="_blank">WA</a>
 
-<a href="#">
-F
-</a>
+<a href="#">F</a>
 
 </div>
 
@@ -190,22 +210,6 @@ F
 
 </footer>
 
-<script>
-
-/* MOBILE MENU */
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeBtn = document.getElementById("closeBtn");
-
-menuBtn.onclick = ()=>{
-mobileMenu.classList.add("show");
-}
-
-closeBtn.onclick = ()=>{
-mobileMenu.classList.remove("show");
-}
-
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>
