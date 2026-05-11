@@ -186,28 +186,30 @@ box-shadow:0 12px 30px rgba(0,0,0,.08);
 .brand{
 display:flex;
 align-items:center;
-gap:6px;
+gap:22px;
+flex:1;
 }
 
 .nav-logo{
-width:140px;
+width:110px;
 height:auto;
 display:block;
 object-fit:contain;
+mix-blend-mode:multiply;
 }
 
 .brand-text{
-font-size:16px;
+font-size:18px;
 font-weight:700;
 color:#111;
-letter-spacing:.3px;
+letter-spacing:.4px;
 }
-
 .nav-links{
 display:flex;
-gap:26px;
+gap:38px;
+justify-content:center;
+flex:1;
 }
-
 .nav-links a{
 text-decoration:none;
 color:#111;
@@ -409,7 +411,7 @@ display:flex;
 .navbar{
 top:10px;
 width:94%;
-padding:14px 18px;
+padding:18px 38px;
 }
 
 .hero h1{
