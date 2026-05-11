@@ -186,18 +186,21 @@ box-shadow:0 12px 30px rgba(0,0,0,.08);
 .brand{
 display:flex;
 align-items:center;
-gap:10px;
+gap:14px;
 }
 
-.brand-logo{
-font-size:32px;
-font-weight:800;
-color:#222;
+.nav-logo{
+width:68px;
+height:auto;
+display:block;
+object-fit:contain;
 }
 
 .brand-text{
-font-size:17px;
+font-size:20px;
 font-weight:700;
+color:#111;
+letter-spacing:.3px;
 }
 
 .nav-links{
