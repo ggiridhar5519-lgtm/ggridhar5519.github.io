@@ -175,7 +175,8 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:14px 22px;
+padding:10px 28px;   /* reduced */
+
 border-radius:18px;
 
 background:rgba(255,255,255,.70);
@@ -186,8 +187,7 @@ box-shadow:0 12px 30px rgba(0,0,0,.08);
 .brand{
 display:flex;
 align-items:center;
-gap:22px;
-flex:1;
+gap:14px;
 }
 
 .nav-logo{
@@ -195,7 +195,6 @@ width:110px;
 height:auto;
 display:block;
 object-fit:contain;
-mix-blend-mode:multiply;
 }
 
 .brand-text{
